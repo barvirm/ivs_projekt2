@@ -1,4 +1,4 @@
-import mathtxt
+import mathnada
 
 def main():
     for i in range(5):
