@@ -1,4 +1,4 @@
-import math
+import mathtxt
 
 def main():
     for i in range(5):
