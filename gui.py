@@ -3,6 +3,9 @@ import pygtk
 pygtk.require("2.0")
 import gtk
 
+def setup_menu():
+    None
+
 def setup_main_win(win):
     win.set_title("The Calculator")
     win.set_position(gtk.WIN_POS_CENTER)
@@ -13,7 +16,7 @@ def hello(e=None):
 def gui_show():
     main_window = gtk.Window()
     setup_main_win(main_window)
-
+###############
     menu_open = gtk.Menu()
     items=["open1","open2","open3"]
     for i in items:
@@ -37,6 +40,7 @@ def gui_show():
 
     main_window.add(fixed)
     fixed.show()
+#############
     main_window.show_all()
     gtk.main()
 
