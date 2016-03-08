@@ -1,5 +1,8 @@
-import mathnada
+import math
+import gui
+import plot
 
-def main():
-    for i in range(5):
-        print i
+class Calculator():
+
+    def __init__(self):
+        ## gui
