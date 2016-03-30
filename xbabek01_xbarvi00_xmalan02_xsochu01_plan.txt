@@ -1,0 +1,35 @@
+Stanovené termíny:	Návrh testů --> 29. 3.
+					První verze GUI --> 29.3.
+					Matematická knihovna --> 5.4.
+					Finální GUI -->	5.4.
+					1. spustitelný prototyp --> 6.4.
+					Testování matematické knihovny --> 7.4.
+					PLOT --> 12.4.
+					Dokumentace --> 19.4.
+					Instalátor --> 20.4.
+
+
+Programovací jazyk:	Python 2.7
+
+
+Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
+					Matematická knihovna - Marek Barvíř
+					Dokumentace - Celá skupina
+					Grafická knihovna (PLOT) - Marek Barvíř, Petr Malaník
+					Dodatečné funkce - Jakub Sochůrek
+					Návrh testů - David Bábek
+					Uživatelská dokumentace - Jakub Sochůrek
+					Instalátor (.deb - Závislosti na knihovnách) - David Bábek
+
+
+
+Komunikační kanál:	Osobní schůze --> (ÚT 20:00)
+					Skype --> PO - ČT (18:00-20:00) 
+					Email --> MIN 2x týdně
+					Telefon
+					Facebook.com
+
+
+Správce verzí:	GIT
+
+
