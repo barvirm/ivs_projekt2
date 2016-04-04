@@ -1,32 +1,22 @@
-
 pi = 3.14159265359
+e =  2.71828182846
 
-def add(a,b):
-    """ return a + b """
-    return (a) + (b)
-def odd(a,b):
-    """ return a - b """
-    return (a) - (b)
-def division(a,b):
-    """ return a / b """
-    if (b == 0 ):
-        return None
-    return ( float(a) / float(b) )
-def multiplication(a,b):
-    """ return a * b """
-    return a*b
 def sqrt(a,n=2):
     """ return sqrt of a """
     if (a < 0):
         return None
     return a**(1./ (n) )
+
 def pow(a,n):
     """ return pow of a """
     return (a)**(n)
+
 def factorial(n):
     """ return factorial of number n """
-    if (n <= 0):
+    if (n < 0):
         return None
+    if ( n == 0 ):
+        return 1
     if ( isinstance(n,float) ):
         return None
     res = 1
@@ -53,7 +43,7 @@ def cos(x):
     result += 1
     return result
 
-def tan(x):
+def tg(x):
     if (x == pi/2 or x == -(pi/2) ):
         return None
     return (sin(x)/cos(x))
@@ -70,20 +60,15 @@ def ln(x):
     x = (x-1)/float(x+1)
     n = 250
     liche=2*n-1
-    while (n > 1 ):
+
+    while ( n > 1 ):
         n=n-1
         result= (n**2 * x*x) / float( liche - result )
         liche-=2
     result = 2*x / (1-result)
     return result
 
-def abx(x):
-    if (x<0):
-        return -(x)
-    else:
-        return x
-
 def modulo(a,n):
     if (a < 0 ):
-        a=abx(a)
+        a=abs(a)
     return (a)%(n)
