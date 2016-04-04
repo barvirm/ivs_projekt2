@@ -2,31 +2,7 @@
 
 import unittest as ut
 import my_math as m
-
 class TestMyMath(ut.TestCase):
-
-    def test_add(self):
-        self.assertEqual(m.add(1,5),6)
-        self.assertEqual(m.add(-5,5),0)
-        self.assertEqual(m.add(123,0),123)
-
-    def test_odd(self):
-        self.assertEqual(m.odd(1,5),-4)
-        self.assertEqual(m.odd(-5,-5),0)
-        self.assertEqual(m.odd(5,-5),10)
-
-    def test_division(self):
-        self.assertAlmostEqual(m.division(5,6),0.83333333)
-        self.assertEqual(m.division(5,0),None)
-        self.assertEqual(m.division(6,5),1.2)
-        self.assertAlmostEqual(m.division(-2,5),-0.4)
-
-    def test_multiplication(self):
-        self.assertEqual(m.multiplication(5,6),30)
-        self.assertEqual(m.multiplication(5,0),0)
-        self.assertEqual(m.multiplication(-2,6),-12)
-        self.assertEqual(m.multiplication(-6,-3),18)
-        self.assertAlmostEqual(m.multiplication(-2.12,5),-10.6)
 
     def test_sqrt(self):
         self.assertAlmostEqual(m.sqrt(5),2.236067977)
@@ -60,11 +36,11 @@ class TestMyMath(ut.TestCase):
         self.assertAlmostEqual(round( m.cos(m.pi/2),8),0)
     
     def test_tan(self):
-        self.assertAlmostEqual(m.tan(m.pi/2),None)
-        self.assertAlmostEqual(m.tan(2),-2.18503986)
-        self.assertAlmostEqual(m.tan(123),0.51792747)
-        self.assertAlmostEqual(m.tan(-1),-1.55740772)
-        self.assertAlmostEqual(m.tan(-32),-0.66100604)
+        self.assertAlmostEqual(m.tg(m.pi/2),None)
+        self.assertAlmostEqual(m.tg(2),-2.18503986)
+        self.assertAlmostEqual(m.tg(123),0.51792747)
+        self.assertAlmostEqual(m.tg(-1),-1.55740772)
+        self.assertAlmostEqual(m.tg(-32),-0.66100604)
     
 #    def cotg(self):
         #TODO       
@@ -75,11 +51,6 @@ class TestMyMath(ut.TestCase):
         self.assertAlmostEqual(m.ln(0),None)
         self.assertAlmostEqual(m.ln(-10),None)
     
-    def test_abx(self):
-        self.assertEqual(m.abx(-2),2)
-        self.assertEqual(m.abx(2),2)
-        self.assertEqual(m.abx(0),0)
-
     def test_modulo(self):
         self.assertEqual(m.modulo(32,16),0)
         self.assertEqual(m.modulo(33,16),1)
