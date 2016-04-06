@@ -1,7 +1,7 @@
-Stanovené termíny:	Návrh testů --> 29. 3.
-					První verze GUI --> 29.3.
+Stanovené termíny:			Návrh testů --> 29. 3.
+					Návrh GUI --> 29.3.
 					Matematická knihovna --> 5.4.
-					Finální GUI -->	5.4.
+					GUI -->	5.4.
 					1. spustitelný prototyp --> 6.4.
 					Testování matematické knihovny --> 7.4.
 					PLOT --> 12.4.
@@ -9,11 +9,14 @@ Stanovené termíny:	Návrh testů --> 29. 3.
 					Instalátor --> 20.4.
 
 
-Programovací jazyk:	Python 2.7
+Programovací jazyk:			Python 2.7
 
 
-Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
+Rozdělení úkolů:			Grafické rozhraní - Petr Malaník
 					Matematická knihovna - Marek Barvíř
+					Převod stringu - David Bábek, Jakub Sochůrek
+					Převod stringu (testy) - Marek Barvíř, Jakub Sochůrek
+					Binární operace - Petr Malaník, Jakub Sochůrek
 					Dokumentace - Celá skupina
 					Grafická knihovna (PLOT) - Marek Barvíř, Petr Malaník
 					Dodatečné funkce - Jakub Sochůrek
@@ -23,7 +26,7 @@ Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
 
 
 
-Komunikační kanál:	Osobní schůze --> (ÚT 20:00)
+Komunikační kanál:			Osobní schůze --> (ÚT 20:00)
 					Skype --> PO - ČT (18:00-20:00) 
 					Email --> MIN 2x týdně
 					Telefon
