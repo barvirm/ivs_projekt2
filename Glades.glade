@@ -9,6 +9,7 @@
   </object>
   <object class="GtkWindow" id="main_window">
     <property name="can_focus">False</property>
+    <property name="resizable">False</property>
     <property name="modal">True</property>
     <property name="window_position">center</property>
     <property name="destroy_with_parent">True</property>
@@ -19,6 +20,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="resize_mode">queue</property>
+        <signal name="switch-page" handler="switch_page" swapped="no"/>
         <child>
           <object class="GtkVBox" id="vbox1">
             <property name="visible">True</property>
@@ -34,10 +36,12 @@
                     <property name="can_focus">True</property>
                     <property name="has_frame">False</property>
                     <property name="invisible_char">•</property>
+                    <property name="xalign">1</property>
                     <property name="primary_icon_activatable">False</property>
                     <property name="secondary_icon_activatable">False</property>
                     <property name="primary_icon_sensitive">True</property>
                     <property name="secondary_icon_sensitive">True</property>
+                    <signal name="changed" handler="entry_changed" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -49,9 +53,11 @@
                   <object class="GtkEntry" id="entry2">
                     <property name="height_request">30</property>
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="editable">False</property>
                     <property name="has_frame">False</property>
                     <property name="invisible_char">•</property>
+                    <property name="xalign">1</property>
                     <property name="primary_icon_activatable">False</property>
                     <property name="secondary_icon_activatable">False</property>
                     <property name="primary_icon_sensitive">True</property>
@@ -81,8 +87,6 @@
                     <property name="can_focus">False</property>
                     <property name="n_rows">4</property>
                     <property name="n_columns">3</property>
-                    <property name="column_spacing">5</property>
-                    <property name="row_spacing">5</property>
                     <child>
                       <object class="GtkButton" id="button1">
                         <property name="label" translatable="yes">4</property>
@@ -92,6 +96,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">1</property>
@@ -109,6 +114,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -128,6 +134,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -147,6 +154,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -164,6 +172,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -181,6 +190,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="x_options">GTK_FILL</property>
@@ -196,6 +206,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -215,6 +226,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -234,6 +246,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -246,13 +259,13 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="button11">
-                        <property name="label" translatable="yes">0
-</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="height_request">50</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="right_attach">2</property>
@@ -271,6 +284,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">2</property>
@@ -292,26 +306,6 @@
                     <property name="can_focus">False</property>
                     <property name="n_rows">4</property>
                     <property name="n_columns">2</property>
-                    <property name="column_spacing">5</property>
-                    <property name="row_spacing">5</property>
-                    <child>
-                      <object class="GtkButton" id="button13">
-                        <property name="label" translatable="yes">=</property>
-                        <property name="width_request">50</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="use_action_appearance">False</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
-                        <property name="top_attach">2</property>
-                        <property name="bottom_attach">4</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options">GTK_FILL</property>
-                      </packing>
-                    </child>
                     <child>
                       <object class="GtkButton" id="button15">
                         <property name="label" translatable="yes">←</property>
@@ -321,6 +315,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -340,6 +335,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="x_options">GTK_FILL</property>
@@ -355,6 +351,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -372,6 +369,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">2</property>
@@ -389,6 +387,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">3</property>
@@ -406,12 +405,29 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">1</property>
                         <property name="bottom_attach">2</property>
                         <property name="x_options">GTK_FILL</property>
                         <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button13">
+                        <property name="label" translatable="yes">=</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" after="yes" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">4</property>
                       </packing>
                     </child>
                   </object>
@@ -438,7 +454,6 @@
           </object>
           <packing>
             <property name="tab_fill">False</property>
-            <property name="reorderable">True</property>
           </packing>
         </child>
         <child>
@@ -452,11 +467,13 @@
                 <property name="can_focus">True</property>
                 <property name="has_frame">False</property>
                 <property name="invisible_char">•</property>
+                <property name="xalign">1</property>
                 <property name="invisible_char_set">True</property>
                 <property name="primary_icon_activatable">False</property>
                 <property name="secondary_icon_activatable">False</property>
                 <property name="primary_icon_sensitive">True</property>
                 <property name="secondary_icon_sensitive">True</property>
+                <signal name="changed" handler="entry_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -471,6 +488,7 @@
                 <property name="can_focus">True</property>
                 <property name="has_frame">False</property>
                 <property name="invisible_char">•</property>
+                <property name="xalign">1</property>
                 <property name="invisible_char_set">True</property>
                 <property name="primary_icon_activatable">False</property>
                 <property name="secondary_icon_activatable">False</property>
@@ -503,6 +521,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">1</property>
@@ -520,6 +539,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -539,6 +559,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -558,6 +579,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -575,6 +597,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -592,6 +615,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="x_options">GTK_FILL</property>
@@ -607,6 +631,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -626,6 +651,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -645,6 +671,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -657,13 +684,13 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="button28">
-                        <property name="label" translatable="yes">0
-</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="height_request">50</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="right_attach">2</property>
@@ -677,11 +704,11 @@
                       <object class="GtkButton" id="button29">
                         <property name="label" translatable="yes">1</property>
                         <property name="width_request">50</property>
-                        <property name="height_request">50</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">2</property>
@@ -712,6 +739,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">1</property>
@@ -729,6 +757,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -748,6 +777,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -767,6 +797,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -784,6 +815,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -801,6 +833,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="x_options">GTK_FILL</property>
@@ -816,6 +849,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -835,6 +869,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -854,6 +889,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -873,6 +909,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">3</property>
@@ -890,6 +927,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">2</property>
@@ -907,6 +945,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -939,6 +978,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">1</property>
@@ -955,6 +995,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="x_options">GTK_FILL</property>
@@ -970,6 +1011,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">3</property>
@@ -987,6 +1029,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">2</property>
@@ -1004,6 +1047,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1021,6 +1065,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1040,6 +1085,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1060,7 +1106,7 @@
               </object>
               <packing>
                 <property name="expand">True</property>
-                <property name="fill">True</property>
+                <property name="fill">False</property>
                 <property name="position">2</property>
               </packing>
             </child>
@@ -1070,7 +1116,7 @@
           </packing>
         </child>
         <child type="tab">
-          <object class="GtkLabel" id="label4">
+          <object class="GtkLabel" id="label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Extened</property>
@@ -1085,13 +1131,748 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <placeholder/>
+              <object class="GtkVBox" id="vbox11">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkEntry" id="entry3">
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="has_frame">False</property>
+                    <property name="invisible_char">•</property>
+                    <property name="xalign">1</property>
+                    <property name="invisible_char_set">True</property>
+                    <property name="primary_icon_activatable">False</property>
+                    <property name="secondary_icon_activatable">False</property>
+                    <property name="primary_icon_sensitive">True</property>
+                    <property name="secondary_icon_sensitive">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry4">
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="has_frame">False</property>
+                    <property name="invisible_char">•</property>
+                    <property name="xalign">1</property>
+                    <property name="invisible_char_set">True</property>
+                    <property name="primary_icon_activatable">False</property>
+                    <property name="secondary_icon_activatable">False</property>
+                    <property name="primary_icon_sensitive">True</property>
+                    <property name="secondary_icon_sensitive">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
             </child>
             <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
+              <object class="GtkHBox" id="hbox3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkVBox" id="vbox8">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkVBox" id="vbox9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkRadioButton" id="radiobutton1">
+                            <property name="label" translatable="yes">BIN</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="active">True</property>
+                            <property name="draw_indicator">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="radiobutton2">
+                            <property name="label" translatable="yes">OCT</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                            <property name="group">radiobutton1</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="radiobutton3">
+                            <property name="label" translatable="yes">DEC</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                            <property name="group">radiobutton1</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="radiobutton4">
+                            <property name="label" translatable="yes">HEX</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                            <property name="group">radiobutton1</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">3</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">to</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkVBox" id="vbox10">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkRadioButton" id="radiobutton8">
+                            <property name="label" translatable="yes">BIN</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="active">True</property>
+                            <property name="draw_indicator">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="radiobutton7">
+                            <property name="label" translatable="yes">OCT</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                            <property name="group">radiobutton8</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="radiobutton6">
+                            <property name="label" translatable="yes">DEC</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                            <property name="group">radiobutton8</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="radiobutton5">
+                            <property name="label" translatable="yes">HEX</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                            <property name="group">radiobutton8</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">3</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkTable" id="table6">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">4</property>
+                    <property name="n_columns">4</property>
+                    <child>
+                      <object class="GtkButton" id="button45">
+                        <property name="label" translatable="yes">7</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button47">
+                        <property name="label" translatable="yes">8</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button48">
+                        <property name="label" translatable="yes">9</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button49">
+                        <property name="label" translatable="yes">F</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button53">
+                        <property name="label" translatable="yes">E</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button54">
+                        <property name="label" translatable="yes">6</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button55">
+                        <property name="label" translatable="yes">5</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button56">
+                        <property name="label" translatable="yes">4</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button57">
+                        <property name="label" translatable="yes">1</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button58">
+                        <property name="label" translatable="yes">3</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button59">
+                        <property name="label" translatable="yes">0</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button60">
+                        <property name="label" translatable="yes">2</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button61">
+                        <property name="label" translatable="yes">A</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button62">
+                        <property name="label" translatable="yes">B</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button63">
+                        <property name="label" translatable="yes">D</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button64">
+                        <property name="label" translatable="yes">C</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkTable" id="table7">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">4</property>
+                    <property name="n_columns">3</property>
+                    <child>
+                      <object class="GtkButton" id="button65">
+                        <property name="label" translatable="yes">&amp;</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button66">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button67">
+                        <property name="label" translatable="yes">←</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button68">
+                        <property name="label" translatable="yes">|</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button69">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button70">
+                        <property name="label" translatable="yes">=</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">4</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button71">
+                        <property name="label" translatable="yes">xor</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button72">
+                        <property name="label" translatable="yes">*</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button73">
+                        <property name="label" translatable="yes">/</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button75">
+                        <property name="label" translatable="yes">xand</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button76">
+                        <property name="label" translatable="yes">CLR</property>
+                        <property name="width_request">50</property>
+                        <property name="height_request">50</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -1102,7 +1883,7 @@
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Programming</property>
+            <property name="label" translatable="yes">Prog.</property>
           </object>
           <packing>
             <property name="position">2</property>
@@ -1125,16 +1906,13 @@
                 <property name="position">0</property>
               </packing>
             </child>
-            <child>
-              <placeholder/>
-            </child>
           </object>
           <packing>
             <property name="position">3</property>
           </packing>
         </child>
         <child type="tab">
-          <object class="GtkLabel" id="label3">
+          <object class="GtkLabel" id="label4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Plot</property>
@@ -1149,7 +1927,16 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <placeholder/>
+              <object class="GtkLabel" id="label3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
             </child>
             <child>
               <placeholder/>
@@ -1176,6 +1963,45 @@
           </object>
           <packing>
             <property name="position">4</property>
+            <property name="tab_fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkVBox" id="vbox7">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label7">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Autoři:
+✝ Bábek David
+Barvíř Marek
+Malaník Petr
+Sochůrek Jakub</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="label6">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Autors</property>
+          </object>
+          <packing>
+            <property name="position">5</property>
             <property name="tab_fill">False</property>
           </packing>
         </child>
