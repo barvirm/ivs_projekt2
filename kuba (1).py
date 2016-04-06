@@ -2,7 +2,7 @@
 """
 Created on Tue Apr 05 23:02:07 2016
 
-@author: wykys
+@author: kuba
 """
 
 def faktorial(x):
