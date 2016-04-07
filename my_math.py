@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 ## @package my_math
 # Mathematical library
 
