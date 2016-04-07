@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['factorial',['factorial',['../namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9',1,'my_math']]]
+  ['e',['e',['../namespacemy__math.html#a7e5013f24e6d29cd499e5c322eaf5d24',1,'my_math']]]
 ];

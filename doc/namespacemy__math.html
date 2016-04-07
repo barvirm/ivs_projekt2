@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Mathematical library.  
+<p>Implementation of basic matematic function.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -96,9 +96,8 @@ Functions</h2></td></tr>
 <tr class="memitem:aa4f454b8a6c77bcd2828ff09919623ad"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad">sqrt</a></td></tr>
 <tr class="memdesc:aa4f454b8a6c77bcd2828ff09919623ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n  <a href="#aa4f454b8a6c77bcd2828ff09919623ad">More...</a><br/></td></tr>
 <tr class="separator:aa4f454b8a6c77bcd2828ff09919623ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0241da41067f587799aa70ee6fd4dbc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0241da41067f587799aa70ee6fd4dbc"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">pow</a></td></tr>
-<tr class="memdesc:af0241da41067f587799aa70ee6fd4dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times  number that will be power  n-th power  to the power of n. <br/></td></tr>
+<tr class="memitem:af0241da41067f587799aa70ee6fd4dbc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">pow</a></td></tr>
+<tr class="memdesc:af0241da41067f587799aa70ee6fd4dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times.  <a href="#af0241da41067f587799aa70ee6fd4dbc">More...</a><br/></td></tr>
 <tr class="separator:af0241da41067f587799aa70ee6fd4dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c3193149960da6571481b7cb24ff3d9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">factorial</a></td></tr>
 <tr class="memdesc:a6c3193149960da6571481b7cb24ff3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n  <a href="#a6c3193149960da6571481b7cb24ff3d9">More...</a><br/></td></tr>
@@ -132,9 +131,13 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#a7e5013f24e6d29cd499e5c322eaf5d24">e</a> = 2.71828182846</td></tr>
 <tr class="memdesc:a7e5013f24e6d29cd499e5c322eaf5d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">constant e <br/></td></tr>
 <tr class="separator:a7e5013f24e6d29cd499e5c322eaf5d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1841a6720706e0f3b8be8d026a000bc6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1841a6720706e0f3b8be8d026a000bc6"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#a1841a6720706e0f3b8be8d026a000bc6">digits</a> = 8</td></tr>
+<tr class="memdesc:a1841a6720706e0f3b8be8d026a000bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of decimeter digits <br/></td></tr>
+<tr class="separator:a1841a6720706e0f3b8be8d026a000bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Mathematical library. </p>
+<div class="textblock"><p>Implementation of basic matematic function. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a3164511f86af2be4d02fc4be0d0c31d8"></a>
 <div class="memitem">
@@ -281,6 +284,42 @@ if x&lt;=0 return None </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="af0241da41067f587799aa70ee6fd4dbc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def my_math.pow </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>number that will be power </td></tr>
+    <tr><td class="paramname">n</td><td>n-th power </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a to the power of n </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a60595834565d64bf955029a9cefdd8d4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -376,7 +415,7 @@ if x = π/2 or -π/2 return None </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 7 2016 11:26:33 for The calculator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 7 2016 14:01:28 for The calculator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['testmymath',['TestMyMath',['../classtest__math_1_1TestMyMath.html',1,'test_math']]],
-  ['tg',['tg',['../namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8',1,'my_math']]]
+  ['sin',['sin',['../namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4',1,'my_math']]],
+  ['sqrt',['sqrt',['../namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad',1,'my_math']]]
 ];

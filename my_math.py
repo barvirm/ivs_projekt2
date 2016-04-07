@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-
 ## @package my_math
-# Mathematical library
+# Implementation of basic matematic function
 
 ## @var pi
 # constant π
@@ -9,7 +8,9 @@ pi = 3.14159265359
 ## @var e
 # constant e
 e =  2.71828182846
-
+## @var digits
+# number of decimeter digits 
+digits = 8
 ## n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n
 # @param a number that will be root
 # @param n nth root, default is 2
@@ -18,14 +19,14 @@ e =  2.71828182846
 def sqrt(a,n=2):
     if (a < 0):
         return None
-    return a**(1./ (n) )
+    return round(a**(1./ (n) ),digits)
 
 ## When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times
-# @parama number that will be power
-# @paramn n-th power
-# @returna to the power of n
+# @param a number that will be power
+# @param n n-th power
+# @return a to the power of n
 def pow(a,n):
-    return (a)**(n)
+    return round((a)**(n),digits)
 
 ## factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n
 # @param n number t
@@ -52,7 +53,7 @@ def sin(x):
     result = 0
     for i in range(50):
         result += (-1.)**i * ( ( (x)**(2*i+1.) ) / factorial(2*i+1) )
-    return result
+    return round(result,digits)
 
 
 ## The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenuse: so called because it is the sine of the complementary or co-angle.
@@ -66,7 +67,7 @@ def cos(x):
     for i in range(1,80):
         result += (-1.)**i * ( ( (x)**(2.*i) ) / factorial(2*i) )
     result += 1
-    return result
+    return round(result,8)
 
 ## The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle, that is the line that touches the circle, from Latin linea tangens or touching line (cf. tangere, to touch).
 # @param x angle in radian
@@ -105,7 +106,7 @@ def ln(x):
         result= (n**2 * x*x) / float( liche - result )
         liche-=2
     result = 2*x / (1-result)
-    return result
+    return round(result,digits)
 
 ## The modulo operation finds the remainder after division of one number by another.
 # if a is negative number is't transform to same non-negative number
@@ -113,6 +114,10 @@ def ln(x):
 # @param n divisor
 # @return remainder after division
 def modulo(a,n):
+    if ( n == 0 ):
+        return None
     if (a < 0 ):
         a=abs(a)
+    if ( n < 0):
+        return -( (a) % (abs(n)) )
     return (a)%(n)

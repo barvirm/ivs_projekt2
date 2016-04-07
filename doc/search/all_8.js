@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pi',['pi',['../namespacemy__math.html#a71db7877037106550d8e9940748e6741',1,'my_math']]],
-  ['pow',['pow',['../namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc',1,'my_math']]]
+  ['on_5fmain_5fwindow_5fdestroy',['on_main_window_destroy',['../classmain_1_1Calculator.html#a078448eac97c0a1005c5ddffd5d9f297',1,'main::Calculator']]]
 ];
