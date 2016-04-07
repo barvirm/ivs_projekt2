@@ -15,7 +15,7 @@ Programovací jazyk:			Python 2.7
 Rozdělení úkolů:			Grafické rozhraní - Petr Malaník
 					Matematická knihovna - Marek Barvíř
 					Převod stringu - David Bábek, Jakub Sochůrek
-					Převod stringu (testy) - Marek Barvíř, Jakub Sochůrek
+					Převod stringu (testy) - Marek Barvíř, Petr Malaník
 					Binární operace - Petr Malaník, Jakub Sochůrek
 					Dokumentace - Celá skupina
 					Grafická knihovna (PLOT) - Marek Barvíř, Petr Malaník
