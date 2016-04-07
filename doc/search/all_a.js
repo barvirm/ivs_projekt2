@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sin',['sin',['../namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4',1,'my_math']]],
-  ['sqrt',['sqrt',['../namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad',1,'my_math']]]
+  ['kuba_20_281_29',['kuba (1)',['../namespacekuba_01_071_08.html',1,'']]],
+  ['kuba_20_281_29_2epy',['kuba (1).py',['../kuba_01_071_08_8py.html',1,'']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../classmain_1_1Calculator.html#aad62a56756bcf3362bee17f148f0c753',1,'main::Calculator']]],
-  ['modulo',['modulo',['../namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423',1,'my_math']]],
-  ['my_5fmath',['my_math',['../namespacemy__math.html',1,'']]]
+  ['gui_5finit',['gui_init',['../classmain_1_1Calculator.html#a0e55a23b4d6717e73f8b8bd878fe9452',1,'main::Calculator']]]
 ];

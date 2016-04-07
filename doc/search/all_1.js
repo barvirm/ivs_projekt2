@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['digits',['digits',['../namespacemy__math.html#a1841a6720706e0f3b8be8d026a000bc6',1,'my_math']]]
+  ['app',['app',['../namespacemain.html#a175d512ad2783238ce93f1bc903c0cf4',1,'main']]]
 ];

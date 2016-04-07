@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gui_5finit',['gui_init',['../classmain_1_1Calculator.html#a0e55a23b4d6717e73f8b8bd878fe9452',1,'main::Calculator']]]
+  ['digits',['digits',['../namespacemy__math.html#a1841a6720706e0f3b8be8d026a000bc6',1,'my_math']]]
 ];

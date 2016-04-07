@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sin',['sin',['../namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4',1,'my_math']]],
-  ['sqrt',['sqrt',['../namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad',1,'my_math']]]
+  ['main',['main',['../classmain_1_1Calculator.html#aad62a56756bcf3362bee17f148f0c753',1,'main::Calculator']]],
+  ['modulo',['modulo',['../namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423',1,'my_math']]]
 ];

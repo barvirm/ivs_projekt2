@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pi',['pi',['../namespacemy__math.html#a71db7877037106550d8e9940748e6741',1,'my_math']]]
+  ['digits',['digits',['../namespacemy__math.html#a1841a6720706e0f3b8be8d026a000bc6',1,'my_math']]]
 ];

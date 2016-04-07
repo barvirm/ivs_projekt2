@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gui_5finit',['gui_init',['../classmain_1_1Calculator.html#a0e55a23b4d6717e73f8b8bd878fe9452',1,'main::Calculator']]]
+  ['entry_5fchanged',['entry_changed',['../classmain_1_1Calculator.html#addac1f7c9f6bb2fbd7b642c6a3b5ec0c',1,'main::Calculator']]]
 ];
