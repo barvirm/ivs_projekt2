@@ -1,8 +1,16 @@
+## @package my_math
+# Mathematical library
+
+## @var pi constant pi
+# neco
 pi = 3.14159265359
+## @var e constant e
 e =  2.71828182846
 
+## function which return square from number a
+# @param a number that will be root
+# @param n nth root, default is 2
 def sqrt(a,n=2):
-    """ return sqrt of a """
     if (a < 0):
         return None
     return a**(1./ (n) )
