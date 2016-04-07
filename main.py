@@ -21,7 +21,7 @@ pylab.hold(False) # avoid memory leak
 
 class Calculator():
     def __init__(self):
-        self.x = []
+       self.x = []
         self.y = []
         self.gui_init()
 

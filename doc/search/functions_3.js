@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../classmain_1_1Calculator.html#aad62a56756bcf3362bee17f148f0c753',1,'main::Calculator']]]
+  ['ln',['ln',['../namespacemy__math.html#a17cb920edbd7d2300770a4c1b36ba101',1,'my_math']]]
 ];

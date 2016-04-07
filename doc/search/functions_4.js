@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['on_5fmain_5fwindow_5fdestroy',['on_main_window_destroy',['../classmain_1_1Calculator.html#a078448eac97c0a1005c5ddffd5d9f297',1,'main::Calculator']]]
+  ['main',['main',['../classmain_1_1Calculator.html#aad62a56756bcf3362bee17f148f0c753',1,'main::Calculator']]],
+  ['modulo',['modulo',['../namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423',1,'my_math']]]
 ];
