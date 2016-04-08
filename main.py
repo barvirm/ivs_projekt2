@@ -20,24 +20,33 @@ import pylab
 pylab.hold(False) # avoid memory leak
 
 class Calculator():
+
     def __init__(self):
         self.x = []
         self.y = []
-        self.gui_init()
         self.history=["","","","","","","","","",""]
+        self.gui_init()
 
+    ## Create GUI for .glade file, connect signals, add canvas and figure
+    # @param self pointer to class
+    # @todo ADD CANVAS AND FIGURE
     def gui_init(self):
-        """ Create gui from .glade file
-        add canvas and figure for graph and connect signals
-        """
-
         self.builder = gtk.Builder()
         self.builder.add_from_file("Glades.glade")
         self.window = self.builder.get_object("main_window")
         self.window.set_size_request(320,300)
 
-        self.builder.connect_signals({"switch_page": self.switch_page,"on_main_window_destroy": self.on_main_window_destroy,"press_button":self.press_button,"entry_changed":self.entry_changed,"num_base_chaged":self.num_base_chaged,"press_keyboard":self.press_keyboard,"history_change":self.history_change})
+        self.builder.connect_signals({
+                                      "switch_page": self.switch_page,
+                                      "on_main_window_destroy": self.on_main_window_destroy,
+                                      "press_button":self.press_button,
+                                      "entry_changed":self.entry_changed,
+                                      "num_base_chaged":self.num_base_chaged,
+                                      "press_keyboard":self.press_keyboard,
+                                      "history_change":self.history_change
+                                     })
         self.num_base_chaged(self.builder.get_object("radiobutton1"))   #Switching of programming calculator to Binaries
+
         """
         # figsize -- size of tuple (wight,heigth)
         self.figure = Figure(figsize=(100,100), dpi=75 )
@@ -52,11 +61,15 @@ class Calculator():
         """ 
 
     ######################### GUI funcions #####################
-
-    def on_main_window_destroy(self, widget, data = None ):
+    
+    ## Close application after hit X on bar
+    # @param self pointer to class
+    # @param widget pointer to widget that call this function
+    def on_main_window_destroy(self, widget):
         gtk.main_quit()
 
-    def press_keyboard(self, widget,data):
+    # TODO WHAT IS THIS
+    def press_keyboard(self, widget,data = None):
         key = gtk.gdk.keyval_name(data.keyval)
         if key == "Return":
             notebook=self.builder.get_object("notebook1").get_current_page()
@@ -65,7 +78,9 @@ class Calculator():
             print eval_string
 
 
-    #Switching of programming calculator to numeral system of the selected base
+    ## Switching of programming calculator to numeral system of the selected base
+    # @param self pointer to class
+    # @param widget pointer to widget that call this function
     def num_base_chaged(self,widget):
         print widget.get_label()
         st=0
@@ -86,7 +101,9 @@ class Calculator():
         for i in range((st),16):
             buttons[i].set_sensitive(False)
 
-    #Add number or funcion to Classic and Science calculator entry when id pressed button
+    ## Add number or funcion to Classic and Science calculator entry when id pressed button
+    # @param self pointer to class
+    # @param widget pointer to widget that call this function
     def press_button(self,widget):
         notebook=self.builder.get_object("notebook1").get_current_page()
         char =  widget.get_label()
@@ -112,7 +129,7 @@ class Calculator():
             self.history_add(eval_string)
             print eval_string
         self.builder.get_object("entry"+str(1-notebook)).set_text(self.builder.get_object("entry"+str(notebook)).get_text())                                                                                                                     
-
+    # TODO WHAT IS THIS
     def set_entry(self,notebook,position,data):
         ent = self.builder.get_object("entry"+str(notebook)).get_text()
         before = ent[:position]
@@ -128,8 +145,12 @@ class Calculator():
 
     #Update Classic and Science calculator entry when is typed to entry
     def entry_changed(self,widget):
+        #TODO FIX IT !! UNREADABLE
         self.builder.get_object("entry"+str(1-(self.builder.get_object("notebook1").get_current_page()))).set_text(self.builder.get_object("entry"+str(self.builder.get_object("notebook1").get_current_page())).get_text())
-
+    
+    ## Add old calculation to history tab
+    # @param self pointer to class
+    # TODO DATA PARAM ??
     def history_add(self,data):
         if data != self.history[9]:
             for i in range(0,9):
@@ -137,12 +158,16 @@ class Calculator():
             self.history[9]=data
             for i in range(0,10):
                 self.builder.get_object("label"+str(101+i)).set_text(self.history[i])
-
+    
+    # TODO WHAT IS THIS ??
     def history_change(self,widget):
         print widget
         print widget.get_tooltip()
 
-    #change window size for each mode of calculator
+    ## Change window size for each mode of calculator
+    # @param self pointer to class
+    # @param widget pointer to widget that call this function
+    # TODO WHAT THE FUCK IS p1,p2
     def switch_page(self,widget,p1,p2):
         if p2 == 0:
             self.window.set_size_request(320,300)
@@ -156,18 +181,14 @@ class Calculator():
             self.window.set_size_request(480,400)
         elif p2 == 5:
             self.window.set_size_request(320,300)
-
-    #######################################################
+    
+    ## Main loop for GUI
+    # @param self pointer to class
     def main(self):
-        """ mainloop for gui """
         self.window.show()
         gtk.main()
 
-    #def plot(self, widget = None ):
-    
 
-
-############################ Start app ####################
 if __name__ == '__main__':
     app = Calculator()
     app.main()

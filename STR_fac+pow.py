@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 05 23:02:07 2016
-
-@author: wykys
-"""
 
 def faktorial(x):
     if x == 0:
@@ -25,8 +20,11 @@ def pow_(a,n):
     return (a)**(n)
 
 
-
-
+## Transform entry input to form ready for eval function.
+# replace x! --> factorial(x)
+# replace a**b --> pow(a,b)
+# @param vstup string from entry input
+# @return String ready for eval funtion
 def StrFce(vstup):    
     if type(vstup) == str:        
         # nahrazení řárek za tečku
@@ -54,24 +52,24 @@ def StrFce(vstup):
             p1 = vstup[:i+1]
             p2 = vstup[i+1:i_end]
             p3 = vstup[i_end+1:]
-            print "p1:",p1
-            print "p2:",p2
-            print "p3:",p3
+            #print "p1:",p1
+            #print "p2:",p2
+            #print "p3:",p3
 
             if p2 == "":
                 return False
             
             vstup =  p1 + "faktorial(" + p2 + ")" + p3
-            print "p1:",p1
-            print "p2:",p2
-            print "p3:",p3
+            #print "p1:",p1
+            #print "p2:",p2
+            #print "p3:",p3
             if vstup[0] == "+":
                 vstup = vstup[1:]
             print vstup
         
            
         while "mm" in vstup:
-            print "sqrt "
+            print "pow_"
             if len(vstup) <= 1:
                 return False
                           
@@ -91,11 +89,11 @@ def StrFce(vstup):
             o2 = vstup[i+5:]
             o3 = vstup[i_end+2:i_end+3]
             o4 = vstup[:i+1]
-            print i_end
-            print "p1:",o1
-            print "p2:",o2
-            print "p3:",o3
-            print "p4:",o4
+            #print i_end
+            #print "p1:",o1
+            #print "p2:",o2
+            #print "p3:",o3
+            #print "p4:",o4
             vstup= o4 + "pow_(" + o1 + "," + o3 + ")" +o2
             
             
