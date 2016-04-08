@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 
 # Nebude tu
 import numpy as np

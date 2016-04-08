@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 ## @package my_math
 # Implementation of basic matematic function
