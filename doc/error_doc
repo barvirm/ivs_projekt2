@@ -1,0 +1,6 @@
+/home/makku/Google Drive/VUT_FIT/2.semestr/ivs/ivs_projekt2/test_math.py:6: warning: the name `mathematical' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
+/home/makku/Google Drive/VUT_FIT/2.semestr/ivs/ivs_projekt2/main.py:152: warning: The following parameters of main.Calculator.history_add(self,data) are not documented:
+  parameter 'data'
+/home/makku/Google Drive/VUT_FIT/2.semestr/ivs/ivs_projekt2/main.py:169: warning: The following parameters of main.Calculator.switch_page(self,widget,p1,p2) are not documented:
+  parameter 'p1'
+  parameter 'p2'
