@@ -13,8 +13,9 @@ pygtk.require("2.0")
 import gtk
 import gtk.glade
 
-import numpy as np
-import  matplotlib.figure as Figure
+from numpy import arange, sin
+import matplotlib
+from matplotlib.figure import Figure
 from matplotlib.backends.backend_gtkagg import FigureCanvasGTKAgg as FigureCanvas
 import pylab
 
@@ -36,7 +37,9 @@ class Calculator():
         self.builder.add_from_file("Glades.glade")
         self.window = self.builder.get_object("main_window")
         self.window.set_size_request(320,300)
+        self.window.set_title("The Calculator")
 
+        # builder.connect_signals(self)
         self.builder.connect_signals({
                                       "switch_page": self.switch_page,
                                       "on_main_window_destroy": self.on_main_window_destroy,
@@ -47,6 +50,21 @@ class Calculator():
                                       "history_change":self.history_change
                                      })
         self.num_base_chaged(self.builder.get_object("radiobutton1"))   #Switching of programming calculator to Binaries
+
+        self.figure = Figure(figsize=(100,100),dpi=150)
+        self.axis = self.figure.add_subplot(111)
+
+        t = arange(0.0,3.0,0.01)
+        s = sin(2*my_math.pi*t)
+        self.axis.plot(t,s)
+
+        self.canvas = FigureCanvas(self.figure)
+        self.canvas.show()
+
+        self.graphview = self.builder.get_object("plot")
+        self.graphview.pack_start(self.canvas,True,True)
+
+
 
         """
         # figsize -- size of tuple (wight,heigth)
