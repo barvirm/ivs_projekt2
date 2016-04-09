@@ -51,6 +51,25 @@ class Calculator():
                                      })
         self.num_base_chaged(self.builder.get_object("radiobutton1"))   #Switching of programming calculator to Binaries
 
+<<<<<<< HEAD
+=======
+        self.figure = Figure(figsize=(100,100),dpi=150)
+        self.axis = self.figure.add_subplot(111)
+
+        t = arange(0.0,3.0,0.01)
+        s = sin(2*my_math.pi*t)
+        self.axis.plot(t,s)
+
+        self.canvas = FigureCanvas(self.figure)
+        self.canvas.show()
+
+        self.graphview = self.builder.get_object("plot")
+        self.graphview.pack_start(self.canvas,True,True)
+
+
+
+        """
+>>>>>>> master
         # figsize -- size of tuple (wight,heigth)
         self.figure = Figure(figsize=(100,100),dpi=150)
         self.axis = self.figure.add_subplot(111)
