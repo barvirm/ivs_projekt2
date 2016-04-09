@@ -4,36 +4,36 @@
 # Implementation of basic matematic function
 
 ## @var pi
-# constant π
+# Constant π
 pi = 3.14159265359
 ## @var e
-# constant e
+# Constant e
 e =  2.71828182846
 ## @var digits
-# number of decimeter digits 
+# Number of decimeter digits 
 digits = 8
-## n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n
-# @param a number that will be root
-# @param n nth root, default is 2
-# @return[float] n-th root of number a 
-# @return if a is negative integer return None
+## N-th roots are treated as special cases of exponentiation, where the exponent is a fraction \f$ \frac{1}{n} \f$
+# @param a Number that will be root
+# @param n N-th root, default is 2
+# @return[float] N-th root of number a 
+# @return If a is negative integer return None
 def sqrt(a,n=2):
     if (a < 0):
         return None
     return round(a**(1./ (n) ),digits)
 
 ## When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times
-# @param a number that will be power
-# @param n n-th power
+# @param a Number that will be power
+# @param n N-th power
 # @return a to the power of n
 def pow(a,n):
     return round((a)**(n),digits)
 
 ## factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n
-# @param n number t
+# @param n Number t
 # @return a to the power of n
-# @return if n is float return None
-# @return if n < 0 return None
+# @return If n is float return None
+# @return If n < 0 return None
 def factorial(n):
     if (n < 0):
         return None
@@ -47,8 +47,9 @@ def factorial(n):
     return res
 
 ## Sine, is a trigonometric function of an angle. The sine of an angle is defined in the context of a right triangle: for the specified angle, it is the ratio of the length of the side that is opposite that angle (that is not the hypotenuse) to the length of the longest side of the triangle.
-# @param x angle in radian
-# @return[float] sin(x)
+# @note Implement --> \f$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots  \f$
+# @param x Angle in radian
+# @return [float] sin(x)
 def sin(x):
     x = (x) % (2*pi)
     result = 0
@@ -58,8 +59,9 @@ def sin(x):
 
 
 ## The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenuse: so called because it is the sine of the complementary or co-angle.
-# @param x angle in radian
-# @return[float] cos(x)
+# @note Implement --> \f$ cos x  = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \f$
+# @param x Angle in radian
+# @return [float] cos(x)
 def cos(x):
     result = 0
 
@@ -70,28 +72,30 @@ def cos(x):
     result += 1
     return round(result,8)
 
-## The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle, that is the line that touches the circle, from Latin linea tangens or touching line (cf. tangere, to touch).
-# @param x angle in radian
+## The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle,
+# that is the line that touches the circle, from Latin linea tangens or touching line (cf. tangere, to touch).
+# @param x Angle in radian
 # @return [float] tg(x)
-# @return if x = π/2 or -π/2 return None 
+# @return If x = π/2 or -π/2 return None 
 def tg(x):
     if (x == pi/2 or x == -(pi/2) ):
         return None
     return (sin(x)/cos(x))
 
 ## The cotg of an angle is the ratio of the length of the adjacent side to the length of the opposite: so called because it is the tg of the complementary or co-angle.
-# @param x angle in radian
-# @return[float] cotg(x)
-# @return if x = π or 0 return None 
+# @param x Angle in radian
+# @return [float] cotg(x)
+# @return If x = π or 0 return None 
 def cotg(x):
     if (x == pi or x == 0 ):
         return None
     return (cos(x)/sin(x))
 
 ## The natural logarithm of a number is its logarithm to the base of the mathematical constant e, where e is an irrational and transcendental approximately equal to 2.718281828459.
-# @param x number
-# @return[float] ln(x)
-# @return if x<=0 return None
+# @note Implement --> \f$ \log(\frac{1+z}{1-z}) = \cfrac{2z}{1-\cfrac{z^2}{3-\cfrac{4z^2}{5-\cfrac{9z^2}{7-\cfrac{16z^2}{9-\cfrac{25z^2}{11-\cfrac{36z^2}{13-\cdots}}}}}}} \f$
+# @param x Number
+# @return [float] ln(x)
+# @return If x<=0 return None
 def ln(x):
     if ( x == 1):
         return 0;
@@ -110,10 +114,10 @@ def ln(x):
     return round(result,digits)
 
 ## The modulo operation finds the remainder after division of one number by another.
-# if a is negative number is't transform to same non-negative number
-# @param a divident
-# @param n divisor
-# @return remainder after division
+# If a is negative number is't transform to same non-negative number
+# @param a Divident
+# @param n Divisor
+# @return Remainder after division
 def modulo(a,n):
     if ( n == 0 ):
         return None

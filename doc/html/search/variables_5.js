@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pi',['pi',['../namespacemy__math.html#a71db7877037106550d8e9940748e6741',1,'my_math']]]
+  ['figure',['figure',['../classmain_1_1Calculator.html#a72f29fbd514aa0bd23087e7398621b4b',1,'main::Calculator']]]
 ];

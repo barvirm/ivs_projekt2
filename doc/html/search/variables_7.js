@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window',['window',['../classmain_1_1Calculator.html#a825a7def33881d46c00b0c15b35caa67',1,'main::Calculator']]]
+  ['history',['history',['../classmain_1_1Calculator.html#aff03dd055c46c579327f6e25c3ed26ff',1,'main::Calculator']]]
 ];

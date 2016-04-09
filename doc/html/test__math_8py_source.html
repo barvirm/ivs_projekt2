@@ -20,6 +20,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -101,10 +107,10 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">## @class Testing mathematical library</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtest__math_1_1TestMyMath.html">TestMyMath</a>(ut.TestCase):</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">## Test of function sqrt</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment"># @test square root of positive and negative numbers, negative=None</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment"># @test cube root of positive and negative numbers, negative=None</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment"># @test negative n-th root</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment"># @param self pointer to class</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment"># @test Square root of positive and negative numbers, negative=None</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment"># @test Cube root of positive and negative numbers, negative=None</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment"># @test Negative n-th root</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment"># @param self Pointer to class</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html#a7861e6be02fc3a9d485f2b0b890431d7">   14</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtest__math_1_1TestMyMath.html#a7861e6be02fc3a9d485f2b0b890431d7">test_sqrt</a>(self):</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        self.assertAlmostEqual(m.sqrt(5),2.236067977)</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        self.assertEqual(m.sqrt(-2),<span class="keywordtype">None</span>)</div>
@@ -115,8 +121,8 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        self.assertAlmostEqual(m.sqrt(8,-3),0.5)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">## Test of function pow</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment"># @test positive and negative numbers to the power of +/-n</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment"># @param self pointer to class</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment"># @test Positive and negative numbers to the power of +/-n</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment"># @param self Pointer to class</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html#a2ca25084e7704f6307f7dd73f23eb2fd">   26</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtest__math_1_1TestMyMath.html#a2ca25084e7704f6307f7dd73f23eb2fd">test_pow</a>(self):</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        self.assertEqual(m.pow(2,5),32)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        self.assertEqual(m.pow(2,-5),1/32.)</div>
@@ -128,9 +134,9 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        self.assertAlmostEqual(m.pow(-2.15,-5),-0.0217674572)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">## Test of function factorial</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment"># @test positive and negative intiger, negative=None</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment"># @test positive and negative float = None</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment"># @param self pointer to class</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment"># @test Positive and negative intiger, negative=None</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment"># @test Positive and negative float = None</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment"># @param self Pointer to class</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html#a05f1848be37bd6de5c344cb3c956b2c9">   40</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtest__math_1_1TestMyMath.html#a05f1848be37bd6de5c344cb3c956b2c9">test_factorial</a>(self):</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        self.assertEqual(m.factorial(5),120)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        self.assertEqual(m.factorial(-2),<span class="keywordtype">None</span>)</div>
@@ -139,8 +145,8 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">## Test of function sin</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment"># @test 0,π,π/2</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment"># @test positive and negative intiger</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment"># @param self pointer to class</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment"># @test Positive and negative intiger</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment"># @param self Pointer to class</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html#ae367441d525ec96885a60e14773e64e3">   50</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtest__math_1_1TestMyMath.html#ae367441d525ec96885a60e14773e64e3">test_sin</a>(self):</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        self.assertAlmostEqual(m.sin(123)   ,-0.45990349)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        self.assertAlmostEqual(m.sin(-23)   ,0.84622040)</div>
@@ -150,8 +156,8 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">## Test of function cos</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment"># @test 0,π,π/2</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment"># @test positive and negative intiger</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment"># @param self pointer to class</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment"># @test Positive and negative intiger</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment"># @param self Pointer to class</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html#a6db30bf611f9c79dcf9bc90fbbf3151f">   61</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtest__math_1_1TestMyMath.html#a6db30bf611f9c79dcf9bc90fbbf3151f">test_cos</a>(self):</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        self.assertAlmostEqual(m.cos(123)   ,-0.8879689)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        self.assertAlmostEqual(m.cos(-23)   ,-0.53283302)</div>
@@ -161,8 +167,8 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">## Test of function tan</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment"># @test 0,π,π/2, +/-π/2 = None</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment"># @test positive and negative intiger</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment"># @param self pointer to class</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment"># @test Positive and negative intiger</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment"># @param self Pointer to class</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html#a539e3dfb9c819d6b53c24cd00a006087">   72</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtest__math_1_1TestMyMath.html#a539e3dfb9c819d6b53c24cd00a006087">test_tan</a>(self):</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        self.assertAlmostEqual(m.tg(m.pi/2),<span class="keywordtype">None</span>)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        self.assertAlmostEqual(m.tg(-m.pi/2),<span class="keywordtype">None</span>)</div>
@@ -175,9 +181,9 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">#TODO       </span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">## Test of function ln</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment"># @test positive number</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment"># @test Positive number</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment"># @test 0 and negative number = None</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment"># @param self pointer to class</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment"># @param self Pointer to class</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html#ab10976331cb6169a74d5f06f1e20aac5">   87</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtest__math_1_1TestMyMath.html#ab10976331cb6169a74d5f06f1e20aac5">test_ln</a>(self):</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        self.assertAlmostEqual(m.ln(0.123),-2.0955709)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        self.assertAlmostEqual(m.ln(123),4.81218435)</div>
@@ -185,11 +191,11 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        self.assertAlmostEqual(m.ln(-10),<span class="keywordtype">None</span>)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">## Test of function modulo</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment"># @test positive and negative number, negative number = positive result</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment"># @test negative modulo, negative result</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment"># @test modulo 0 = None</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment"># @test negative number negative modulo = same result as positive just negative</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment"># @param self pointer to class</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment"># @test Positive and negative number, negative number = positive result</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment"># @test Negative modulo, negative result</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment"># @test Modulo 0 = None</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment"># @test Negative number negative modulo = same result as positive just negative</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment"># @param self Pointer to class</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classtest__math_1_1TestMyMath.html#a3aac2480b3861a098663bad1b298d14a">   99</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtest__math_1_1TestMyMath.html#a3aac2480b3861a098663bad1b298d14a">test_modulo</a>(self):</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        self.assertEqual(m.modulo(32,16),0)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        self.assertEqual(m.modulo(33,16),1)</div>
@@ -218,7 +224,7 @@ $(document).ready(function(){initNavTree('test__math_8py_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="test__math_8py.html">test_math.py</a></li>
-    <li class="footer">Generated on Sat Apr 9 2016 09:01:44 for The Calculator by
+    <li class="footer">Generated on Sat Apr 9 2016 20:39:46 for The Calculator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

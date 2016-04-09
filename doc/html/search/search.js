@@ -12,7 +12,7 @@ var indexSectionsWithContent =
   2: "mpst",
   3: "mprst",
   4: "_cefghlmnopst",
-  5: "abdehptwxy",
+  5: "abcdefghptwxy",
   6: "it"
 };
 

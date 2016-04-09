@@ -20,6 +20,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -102,7 +108,7 @@ $(document).ready(function(){initNavTree('namespacemy__math.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa4f454b8a6c77bcd2828ff09919623ad"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad">sqrt</a></td></tr>
-<tr class="memdesc:aa4f454b8a6c77bcd2828ff09919623ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n  <a href="#aa4f454b8a6c77bcd2828ff09919623ad">More...</a><br/></td></tr>
+<tr class="memdesc:aa4f454b8a6c77bcd2828ff09919623ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">N-th roots are treated as special cases of exponentiation, where the exponent is a fraction \( \frac{1}{n} \).  <a href="#aa4f454b8a6c77bcd2828ff09919623ad">More...</a><br/></td></tr>
 <tr class="separator:aa4f454b8a6c77bcd2828ff09919623ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0241da41067f587799aa70ee6fd4dbc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">pow</a></td></tr>
 <tr class="memdesc:af0241da41067f587799aa70ee6fd4dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times.  <a href="#af0241da41067f587799aa70ee6fd4dbc">More...</a><br/></td></tr>
@@ -132,13 +138,13 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a71db7877037106550d8e9940748e6741"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#a71db7877037106550d8e9940748e6741">pi</a> = 3.14159265359</td></tr>
-<tr class="memdesc:a71db7877037106550d8e9940748e6741"><td class="mdescLeft">&#160;</td><td class="mdescRight">constant π  <a href="#a71db7877037106550d8e9940748e6741">More...</a><br/></td></tr>
+<tr class="memdesc:a71db7877037106550d8e9940748e6741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant π  <a href="#a71db7877037106550d8e9940748e6741">More...</a><br/></td></tr>
 <tr class="separator:a71db7877037106550d8e9940748e6741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e5013f24e6d29cd499e5c322eaf5d24"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#a7e5013f24e6d29cd499e5c322eaf5d24">e</a> = 2.71828182846</td></tr>
-<tr class="memdesc:a7e5013f24e6d29cd499e5c322eaf5d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">constant e  <a href="#a7e5013f24e6d29cd499e5c322eaf5d24">More...</a><br/></td></tr>
+<tr class="memdesc:a7e5013f24e6d29cd499e5c322eaf5d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant e.  <a href="#a7e5013f24e6d29cd499e5c322eaf5d24">More...</a><br/></td></tr>
 <tr class="separator:a7e5013f24e6d29cd499e5c322eaf5d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1841a6720706e0f3b8be8d026a000bc6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#a1841a6720706e0f3b8be8d026a000bc6">digits</a> = 8</td></tr>
-<tr class="memdesc:a1841a6720706e0f3b8be8d026a000bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of decimeter digits  <a href="#a1841a6720706e0f3b8be8d026a000bc6">More...</a><br/></td></tr>
+<tr class="memdesc:a1841a6720706e0f3b8be8d026a000bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of decimeter digits.  <a href="#a1841a6720706e0f3b8be8d026a000bc6">More...</a><br/></td></tr>
 <tr class="separator:a1841a6720706e0f3b8be8d026a000bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -159,15 +165,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenuse: so called because it is the sine of the complementary or co-angle. </p>
+<dl class="section note"><dt>Note</dt><dd>Implement &ndash;&gt; \( cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>angle in radian </td></tr>
+    <tr><td class="paramname">x</td><td>Angle in radian </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[float] cos(x) </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00063">63</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00065">65</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -188,15 +195,15 @@ Variables</h2></td></tr>
 <p>The cotg of an angle is the ratio of the length of the adjacent side to the length of the opposite: so called because it is the tg of the complementary or co-angle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>angle in radian </td></tr>
+    <tr><td class="paramname">x</td><td>Angle in radian </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[float] cotg(x) </dd>
 <dd>
-if x = π or 0 return None </dd></dl>
+If x = π or 0 return None </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00086">86</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00089">89</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -217,15 +224,15 @@ if x = π or 0 return None </dd></dl>
 <p>factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>number t </td></tr>
+    <tr><td class="paramname">n</td><td>Number t </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a to the power of n </dd>
 <dd>
-if n is float return None </dd>
+If n is float return None </dd>
 <dd>
-if n &lt; 0 return None </dd></dl>
+If n &lt; 0 return None </dd></dl>
 
 <p>Definition at line <a class="el" href="my__math_8py_source.html#l00037">37</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
@@ -246,17 +253,18 @@ if n &lt; 0 return None </dd></dl>
 </div><div class="memdoc">
 
 <p>The natural logarithm of a number is its logarithm to the base of the mathematical constant e, where e is an irrational and transcendental approximately equal to 2.718281828459. </p>
+<dl class="section note"><dt>Note</dt><dd>Implement &ndash;&gt; \( \log(\frac{1+z}{1-z}) = \cfrac{2z}{1-\cfrac{z^2}{3-\cfrac{4z^2}{5-\cfrac{9z^2}{7-\cfrac{16z^2}{9-\cfrac{25z^2}{11-\cfrac{36z^2}{13-\cdots}}}}}}} \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>number </td></tr>
+    <tr><td class="paramname">x</td><td>Number </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[float] ln(x) </dd>
 <dd>
-if x&lt;=0 return None </dd></dl>
+If x&lt;=0 return None </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00095">95</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00099">99</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -285,17 +293,17 @@ if x&lt;=0 return None </dd></dl>
 </div><div class="memdoc">
 
 <p>The modulo operation finds the remainder after division of one number by another. </p>
-<p>if a is negative number is't transform to same non-negative number </p>
+<p>If a is negative number is't transform to same non-negative number </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>divident </td></tr>
-    <tr><td class="paramname">n</td><td>divisor </td></tr>
+    <tr><td class="paramname">a</td><td>Divident </td></tr>
+    <tr><td class="paramname">n</td><td>Divisor </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>remainder after division </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Remainder after division </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00117">117</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00121">121</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -326,8 +334,8 @@ if x&lt;=0 return None </dd></dl>
 <p>When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>number that will be power </td></tr>
-    <tr><td class="paramname">n</td><td>n-th power </td></tr>
+    <tr><td class="paramname">a</td><td>Number that will be power </td></tr>
+    <tr><td class="paramname">n</td><td>N-th power </td></tr>
   </table>
   </dd>
 </dl>
@@ -353,15 +361,16 @@ if x&lt;=0 return None </dd></dl>
 
 <p>Sine, is a trigonometric function of an angle. </p>
 <p>The sine of an angle is defined in the context of a right triangle: for the specified angle, it is the ratio of the length of the side that is opposite that angle (that is not the hypotenuse) to the length of the longest side of the triangle. </p>
+<dl class="section note"><dt>Note</dt><dd>Implement &ndash;&gt; \(\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>angle in radian </td></tr>
+    <tr><td class="paramname">x</td><td>Angle in radian </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[float] sin(x) </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00052">52</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00053">53</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -389,17 +398,17 @@ if x&lt;=0 return None </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n </p>
+<p>N-th roots are treated as special cases of exponentiation, where the exponent is a fraction \( \frac{1}{n} \). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>number that will be root </td></tr>
-    <tr><td class="paramname">n</td><td>nth root, default is 2 </td></tr>
+    <tr><td class="paramname">a</td><td>Number that will be root </td></tr>
+    <tr><td class="paramname">n</td><td>N-th root, default is 2 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[float] n-th root of number a </dd>
+<dl class="section return"><dt>Returns</dt><dd>[float] N-th root of number a </dd>
 <dd>
-if a is negative integer return None </dd></dl>
+If a is negative integer return None </dd></dl>
 
 <p>Definition at line <a class="el" href="my__math_8py_source.html#l00020">20</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
@@ -423,15 +432,15 @@ if a is negative integer return None </dd></dl>
 <p>tangere, to touch). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>angle in radian </td></tr>
+    <tr><td class="paramname">x</td><td>Angle in radian </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[float] tg(x) </dd>
 <dd>
-if x = π/2 or -π/2 return None </dd></dl>
+If x = π/2 or -π/2 return None </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00077">77</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00080">80</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -446,7 +455,7 @@ if x = π/2 or -π/2 return None </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>number of decimeter digits </p>
+<p>Number of decimeter digits. </p>
 
 <p>Definition at line <a class="el" href="my__math_8py_source.html#l00014">14</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
@@ -462,7 +471,7 @@ if x = π/2 or -π/2 return None </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>constant e </p>
+<p>Constant e. </p>
 
 <p>Definition at line <a class="el" href="my__math_8py_source.html#l00011">11</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
@@ -478,7 +487,7 @@ if x = π/2 or -π/2 return None </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>constant π </p>
+<p>Constant π </p>
 
 <p>Definition at line <a class="el" href="my__math_8py_source.html#l00008">8</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
@@ -490,7 +499,7 @@ if x = π/2 or -π/2 return None </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemy__math.html">my_math</a></li>
-    <li class="footer">Generated on Sat Apr 9 2016 09:01:44 for The Calculator by
+    <li class="footer">Generated on Sat Apr 9 2016 20:39:46 for The Calculator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

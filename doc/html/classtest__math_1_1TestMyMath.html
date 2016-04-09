@@ -20,6 +20,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -151,10 +157,10 @@ Inheritance diagram for test_math.TestMyMath:</div>
 
 <p>Test of function cos. </p>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000005">Test:</a></b></dt><dd><p class="startdd">0,π,π/2 </p>
-<p class="enddd">positive and negative intiger </p>
+<p class="enddd">Positive and negative intiger </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td>pointer to class </td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to class </td></tr>
   </table>
   </dd>
 </dl>
@@ -179,11 +185,11 @@ Inheritance diagram for test_math.TestMyMath:</div>
 </div><div class="memdoc">
 
 <p>Test of function factorial. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000003">Test:</a></b></dt><dd><p class="startdd">positive and negative intiger, negative=None </p>
-<p class="enddd">positive and negative float = None </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000003">Test:</a></b></dt><dd><p class="startdd">Positive and negative intiger, negative=None </p>
+<p class="enddd">Positive and negative float = None </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td>pointer to class </td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to class </td></tr>
   </table>
   </dd>
 </dl>
@@ -208,11 +214,11 @@ Inheritance diagram for test_math.TestMyMath:</div>
 </div><div class="memdoc">
 
 <p>Test of function ln. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000007">Test:</a></b></dt><dd><p class="startdd">positive number </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000007">Test:</a></b></dt><dd><p class="startdd">Positive number </p>
 <p class="enddd">0 and negative number = None </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td>pointer to class </td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to class </td></tr>
   </table>
   </dd>
 </dl>
@@ -237,13 +243,13 @@ Inheritance diagram for test_math.TestMyMath:</div>
 </div><div class="memdoc">
 
 <p>Test of function modulo. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000008">Test:</a></b></dt><dd><p class="startdd">positive and negative number, negative number = positive result </p>
-<p>negative modulo, negative result </p>
-<p>modulo 0 = None </p>
-<p class="enddd">negative number negative modulo = same result as positive just negative </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000008">Test:</a></b></dt><dd><p class="startdd">Positive and negative number, negative number = positive result </p>
+<p>Negative modulo, negative result </p>
+<p>Modulo 0 = None </p>
+<p class="enddd">Negative number negative modulo = same result as positive just negative </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td>pointer to class </td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to class </td></tr>
   </table>
   </dd>
 </dl>
@@ -268,9 +274,9 @@ Inheritance diagram for test_math.TestMyMath:</div>
 </div><div class="memdoc">
 
 <p>Test of function pow. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000002">Test:</a></b></dt><dd>positive and negative numbers to the power of +/-n <dl class="params"><dt>Parameters</dt><dd>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000002">Test:</a></b></dt><dd>Positive and negative numbers to the power of +/-n <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td>pointer to class </td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to class </td></tr>
   </table>
   </dd>
 </dl>
@@ -296,10 +302,10 @@ Inheritance diagram for test_math.TestMyMath:</div>
 
 <p>Test of function sin. </p>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000004">Test:</a></b></dt><dd><p class="startdd">0,π,π/2 </p>
-<p class="enddd">positive and negative intiger </p>
+<p class="enddd">Positive and negative intiger </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td>pointer to class </td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to class </td></tr>
   </table>
   </dd>
 </dl>
@@ -324,12 +330,12 @@ Inheritance diagram for test_math.TestMyMath:</div>
 </div><div class="memdoc">
 
 <p>Test of function sqrt. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000001">Test:</a></b></dt><dd><p class="startdd">square root of positive and negative numbers, negative=None </p>
-<p>cube root of positive and negative numbers, negative=None </p>
-<p class="enddd">negative n-th root </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000001">Test:</a></b></dt><dd><p class="startdd">Square root of positive and negative numbers, negative=None </p>
+<p>Cube root of positive and negative numbers, negative=None </p>
+<p class="enddd">Negative n-th root </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td>pointer to class </td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to class </td></tr>
   </table>
   </dd>
 </dl>
@@ -355,10 +361,10 @@ Inheritance diagram for test_math.TestMyMath:</div>
 
 <p>Test of function tan. </p>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000006">Test:</a></b></dt><dd><p class="startdd">0,π,π/2, +/-π/2 = None </p>
-<p class="enddd">positive and negative intiger </p>
+<p class="enddd">Positive and negative intiger </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td>pointer to class </td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to class </td></tr>
   </table>
   </dd>
 </dl>
@@ -377,7 +383,7 @@ Inheritance diagram for test_math.TestMyMath:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetest__math.html">test_math</a></li><li class="navelem"><a class="el" href="classtest__math_1_1TestMyMath.html">TestMyMath</a></li>
-    <li class="footer">Generated on Sat Apr 9 2016 09:01:44 for The Calculator by
+    <li class="footer">Generated on Sat Apr 9 2016 20:39:46 for The Calculator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
