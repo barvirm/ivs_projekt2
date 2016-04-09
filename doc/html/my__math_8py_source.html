@@ -29,6 +29,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_happy_potato.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The Calculator
    </div>
@@ -91,145 +92,146 @@ $(document).ready(function(){initNavTree('my__math_8py_source.html','');});
 <div class="title">/home/makku/Google Drive/VUT_FIT/2.semestr/ivs/ivs_projekt2/my_math.py</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="my__math_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacemy__math.html">    1</a></span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">## @package my_math</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Implementation of basic matematic function</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">## @var pi</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># constant π</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a71db7877037106550d8e9940748e6741">    7</a></span>&#160;pi = 3.14159265359</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">## @var e</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"># constant e</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a7e5013f24e6d29cd499e5c322eaf5d24">   10</a></span>&#160;e =  2.71828182846</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">## @var digits</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># number of decimeter digits </span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a1841a6720706e0f3b8be8d026a000bc6">   13</a></span>&#160;digits = 8</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">## n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"># @param a number that will be root</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># @param n nth root, default is 2</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"># @return[float] n-th root of number a </span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"># @return if a is negative integer return None</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad">   19</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad">sqrt</a>(a,n=2):</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (a &lt; 0):</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> round(a**(1./ (n) ),digits)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">## When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"># @param a number that will be power</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"># @param n n-th power</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># @return a to the power of n</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">   28</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">pow</a>(a,n):</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> round((a)**(n),digits)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">## factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"># @param n number t</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"># @return a to the power of n</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"># @return if n is float return None</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"># @return if n &lt; 0 return None</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">   36</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">factorial</a>(n):</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (n &lt; 0):</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> ( n == 0 ):</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> 1</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> ( isinstance(n,float) ):</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    res = 1</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1,n+1):</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        res = res * i</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> res</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">## Sine, is a trigonometric function of an angle. The sine of an angle is defined in the context of a right triangle: for the specified angle, it is the ratio of the length of the side that is opposite that angle (that is not the hypotenuse) to the length of the longest side of the triangle.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"># @param x angle in radian</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"># @return[float] sin(x)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">   51</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">sin</a>(x):</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    x = (x) % (2*pi)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    result = 0</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(50):</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        result += (-1.)**i * ( ( (x)**(2*i+1.) ) / <a class="code" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">factorial</a>(2*i+1) )</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> round(result,digits)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<a href="my__math_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacemy__math.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/env python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">## @package my_math</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># Implementation of basic matematic function</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">## @var pi</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"># constant π</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a71db7877037106550d8e9940748e6741">    8</a></span>&#160;pi = 3.14159265359</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">## @var e</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># constant e</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a7e5013f24e6d29cd499e5c322eaf5d24">   11</a></span>&#160;e =  2.71828182846</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">## @var digits</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"># number of decimeter digits </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a1841a6720706e0f3b8be8d026a000bc6">   14</a></span>&#160;digits = 8</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">## n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># @param a number that will be root</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"># @param n nth root, default is 2</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"># @return[float] n-th root of number a </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"># @return if a is negative integer return None</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad">   20</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad">sqrt</a>(a,n=2):</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (a &lt; 0):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> round(a**(1./ (n) ),digits)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">## When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"># @param a number that will be power</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># @param n n-th power</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"># @return a to the power of n</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">   29</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">pow</a>(a,n):</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> round((a)**(n),digits)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">## factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"># @param n number t</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"># @return a to the power of n</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"># @return if n is float return None</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"># @return if n &lt; 0 return None</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">   37</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">factorial</a>(n):</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (n &lt; 0):</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> ( n == 0 ):</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> 1</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> ( isinstance(n,float) ):</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    res = 1</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1,n+1):</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        res = res * i</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> res</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">## Sine, is a trigonometric function of an angle. The sine of an angle is defined in the context of a right triangle: for the specified angle, it is the ratio of the length of the side that is opposite that angle (that is not the hypotenuse) to the length of the longest side of the triangle.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"># @param x angle in radian</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"># @return[float] sin(x)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">   52</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">sin</a>(x):</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    x = (x) % (2*pi)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    result = 0</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(50):</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        result += (-1.)**i * ( ( (x)**(2*i+1.) ) / <a class="code" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">factorial</a>(2*i+1) )</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> round(result,digits)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">## The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenuse: so called because it is the sine of the complementary or co-angle.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"># @param x angle in radian</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"># @return[float] cos(x)</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">   62</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">cos</a>(x):</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    result = 0</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    x = (x) % (2*pi)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1,80):</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        result += (-1.)**i * ( ( (x)**(2.*i) ) / <a class="code" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">factorial</a>(2*i) )</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    result += 1</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> round(result,8)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">## The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle, that is the line that touches the circle, from Latin linea tangens or touching line (cf. tangere, to touch).</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"># @param x angle in radian</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"># @return [float] tg(x)</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"># @return if x = π/2 or -π/2 return None </span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8">   76</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8">tg</a>(x):</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (x == pi/2 <span class="keywordflow">or</span> x == -(pi/2) ):</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">sin</a>(x)/<a class="code" href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">cos</a>(x))</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">## The cotg of an angle is the ratio of the length of the adjacent side to the length of the opposite: so called because it is the tg of the complementary or co-angle.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"># @param x angle in radian</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"># @return[float] cotg(x)</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"># @return if x = π or 0 return None </span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="namespacemy__math.html#ac369802e29671e5f7bd3a1abfc7d7d20">   85</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#ac369802e29671e5f7bd3a1abfc7d7d20">cotg</a>(x):</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (x == pi <span class="keywordflow">or</span> x == 0 ):</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">cos</a>(x)/<a class="code" href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">sin</a>(x))</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">## The natural logarithm of a number is its logarithm to the base of the mathematical constant e, where e is an irrational and transcendental approximately equal to 2.718281828459.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"># @param x number</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"># @return[float] ln(x)</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"># @return if x&lt;=0 return None</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a17cb920edbd7d2300770a4c1b36ba101">   94</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a17cb920edbd7d2300770a4c1b36ba101">ln</a>(x):</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> ( x == 1):</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> ( x &lt;= 0):</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    result = 0</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    x = (x-1)/float(x+1)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    n = 250</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    liche=2*n-1</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">while</span> ( n &gt; 1 ):</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        n=n-1</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        result= (n**2 * x*x) / float( liche - result )</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        liche-=2</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    result = 2*x / (1-result)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> round(result,digits)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">## The modulo operation finds the remainder after division of one number by another.</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"># if a is negative number is&#39;t transform to same non-negative number</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"># @param a divident</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"># @param n divisor</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"># @return remainder after division</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423">  116</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423">modulo</a>(a,n):</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> ( n == 0 ):</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (a &lt; 0 ):</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        a=abs(a)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> ( n &lt; 0):</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> -( (a) % (abs(n)) )</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> (a)%(n)</div>
-<div class="ttc" id="namespacemy__math_html_a9586aed4f9371618e127cdbcc4fa2bd8"><div class="ttname"><a href="namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8">my_math.tg</a></div><div class="ttdeci">def tg</div><div class="ttdoc">The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00076">my_math.py:76</a></div></div>
-<div class="ttc" id="namespacemy__math_html_a3164511f86af2be4d02fc4be0d0c31d8"><div class="ttname"><a href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">my_math.cos</a></div><div class="ttdeci">def cos</div><div class="ttdoc">The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenus...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00062">my_math.py:62</a></div></div>
-<div class="ttc" id="namespacemy__math_html_ac369802e29671e5f7bd3a1abfc7d7d20"><div class="ttname"><a href="namespacemy__math.html#ac369802e29671e5f7bd3a1abfc7d7d20">my_math.cotg</a></div><div class="ttdeci">def cotg</div><div class="ttdoc">The cotg of an angle is the ratio of the length of the adjacent side to the length of the opposite: s...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00085">my_math.py:85</a></div></div>
-<div class="ttc" id="namespacemy__math_html_af0241da41067f587799aa70ee6fd4dbc"><div class="ttname"><a href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">my_math.pow</a></div><div class="ttdeci">def pow</div><div class="ttdoc">When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n tim...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00028">my_math.py:28</a></div></div>
-<div class="ttc" id="namespacemy__math_html_a6c3193149960da6571481b7cb24ff3d9"><div class="ttname"><a href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">my_math.factorial</a></div><div class="ttdeci">def factorial</div><div class="ttdoc">factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less th...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00036">my_math.py:36</a></div></div>
-<div class="ttc" id="namespacemy__math_html_a17cb920edbd7d2300770a4c1b36ba101"><div class="ttname"><a href="namespacemy__math.html#a17cb920edbd7d2300770a4c1b36ba101">my_math.ln</a></div><div class="ttdeci">def ln</div><div class="ttdoc">The natural logarithm of a number is its logarithm to the base of the mathematical constant e...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00094">my_math.py:94</a></div></div>
-<div class="ttc" id="namespacemy__math_html_aa4f454b8a6c77bcd2828ff09919623ad"><div class="ttname"><a href="namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad">my_math.sqrt</a></div><div class="ttdeci">def sqrt</div><div class="ttdoc">n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n ...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00019">my_math.py:19</a></div></div>
-<div class="ttc" id="namespacemy__math_html_a5a5b04f873beeb56fed23f42bb1b5423"><div class="ttname"><a href="namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423">my_math.modulo</a></div><div class="ttdeci">def modulo</div><div class="ttdoc">The modulo operation finds the remainder after division of one number by another. ...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00116">my_math.py:116</a></div></div>
-<div class="ttc" id="namespacemy__math_html_a60595834565d64bf955029a9cefdd8d4"><div class="ttname"><a href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">my_math.sin</a></div><div class="ttdeci">def sin</div><div class="ttdoc">Sine, is a trigonometric function of an angle. </div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00051">my_math.py:51</a></div></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">## The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenuse: so called because it is the sine of the complementary or co-angle.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"># @param x angle in radian</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"># @return[float] cos(x)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">   63</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">cos</a>(x):</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    result = 0</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    x = (x) % (2*pi)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1,80):</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        result += (-1.)**i * ( ( (x)**(2.*i) ) / <a class="code" href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">factorial</a>(2*i) )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    result += 1</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> round(result,8)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">## The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle, that is the line that touches the circle, from Latin linea tangens or touching line (cf. tangere, to touch).</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"># @param x angle in radian</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"># @return [float] tg(x)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"># @return if x = π/2 or -π/2 return None </span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8">   77</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8">tg</a>(x):</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (x == pi/2 <span class="keywordflow">or</span> x == -(pi/2) ):</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">sin</a>(x)/<a class="code" href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">cos</a>(x))</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">## The cotg of an angle is the ratio of the length of the adjacent side to the length of the opposite: so called because it is the tg of the complementary or co-angle.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"># @param x angle in radian</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"># @return[float] cotg(x)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"># @return if x = π or 0 return None </span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="namespacemy__math.html#ac369802e29671e5f7bd3a1abfc7d7d20">   86</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#ac369802e29671e5f7bd3a1abfc7d7d20">cotg</a>(x):</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (x == pi <span class="keywordflow">or</span> x == 0 ):</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">cos</a>(x)/<a class="code" href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">sin</a>(x))</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">## The natural logarithm of a number is its logarithm to the base of the mathematical constant e, where e is an irrational and transcendental approximately equal to 2.718281828459.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"># @param x number</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"># @return[float] ln(x)</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"># @return if x&lt;=0 return None</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a17cb920edbd7d2300770a4c1b36ba101">   95</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a17cb920edbd7d2300770a4c1b36ba101">ln</a>(x):</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> ( x == 1):</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> ( x &lt;= 0):</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    result = 0</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    x = (x-1)/float(x+1)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    n = 250</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    liche=2*n-1</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">while</span> ( n &gt; 1 ):</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        n=n-1</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        result= (n**2 * x*x) / float( liche - result )</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        liche-=2</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    result = 2*x / (1-result)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> round(result,digits)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">## The modulo operation finds the remainder after division of one number by another.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"># if a is negative number is&#39;t transform to same non-negative number</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"># @param a divident</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"># @param n divisor</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"># @return remainder after division</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423">  117</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423">modulo</a>(a,n):</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> ( n == 0 ):</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> (a &lt; 0 ):</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        a=abs(a)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> ( n &lt; 0):</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> -( (a) % (abs(n)) )</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> (a)%(n)</div>
+<div class="ttc" id="namespacemy__math_html_a9586aed4f9371618e127cdbcc4fa2bd8"><div class="ttname"><a href="namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8">my_math.tg</a></div><div class="ttdeci">def tg</div><div class="ttdoc">The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00077">my_math.py:77</a></div></div>
+<div class="ttc" id="namespacemy__math_html_a3164511f86af2be4d02fc4be0d0c31d8"><div class="ttname"><a href="namespacemy__math.html#a3164511f86af2be4d02fc4be0d0c31d8">my_math.cos</a></div><div class="ttdeci">def cos</div><div class="ttdoc">The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenus...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00063">my_math.py:63</a></div></div>
+<div class="ttc" id="namespacemy__math_html_ac369802e29671e5f7bd3a1abfc7d7d20"><div class="ttname"><a href="namespacemy__math.html#ac369802e29671e5f7bd3a1abfc7d7d20">my_math.cotg</a></div><div class="ttdeci">def cotg</div><div class="ttdoc">The cotg of an angle is the ratio of the length of the adjacent side to the length of the opposite: s...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00086">my_math.py:86</a></div></div>
+<div class="ttc" id="namespacemy__math_html_af0241da41067f587799aa70ee6fd4dbc"><div class="ttname"><a href="namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc">my_math.pow</a></div><div class="ttdeci">def pow</div><div class="ttdoc">When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n tim...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00029">my_math.py:29</a></div></div>
+<div class="ttc" id="namespacemy__math_html_a6c3193149960da6571481b7cb24ff3d9"><div class="ttname"><a href="namespacemy__math.html#a6c3193149960da6571481b7cb24ff3d9">my_math.factorial</a></div><div class="ttdeci">def factorial</div><div class="ttdoc">factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less th...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00037">my_math.py:37</a></div></div>
+<div class="ttc" id="namespacemy__math_html_a17cb920edbd7d2300770a4c1b36ba101"><div class="ttname"><a href="namespacemy__math.html#a17cb920edbd7d2300770a4c1b36ba101">my_math.ln</a></div><div class="ttdeci">def ln</div><div class="ttdoc">The natural logarithm of a number is its logarithm to the base of the mathematical constant e...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00095">my_math.py:95</a></div></div>
+<div class="ttc" id="namespacemy__math_html_aa4f454b8a6c77bcd2828ff09919623ad"><div class="ttname"><a href="namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad">my_math.sqrt</a></div><div class="ttdeci">def sqrt</div><div class="ttdoc">n-th roots are treated as special cases of exponentiation, where the exponent is a fraction 1/n ...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00020">my_math.py:20</a></div></div>
+<div class="ttc" id="namespacemy__math_html_a5a5b04f873beeb56fed23f42bb1b5423"><div class="ttname"><a href="namespacemy__math.html#a5a5b04f873beeb56fed23f42bb1b5423">my_math.modulo</a></div><div class="ttdeci">def modulo</div><div class="ttdoc">The modulo operation finds the remainder after division of one number by another. ...</div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00117">my_math.py:117</a></div></div>
+<div class="ttc" id="namespacemy__math_html_a60595834565d64bf955029a9cefdd8d4"><div class="ttname"><a href="namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4">my_math.sin</a></div><div class="ttdeci">def sin</div><div class="ttdoc">Sine, is a trigonometric function of an angle. </div><div class="ttdef"><b>Definition:</b> <a href="my__math_8py_source.html#l00052">my_math.py:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="my__math_8py.html">my_math.py</a></li>
-    <li class="footer">Generated on Fri Apr 8 2016 19:51:40 for The Calculator by
+    <li class="footer">Generated on Sat Apr 9 2016 09:01:44 for The Calculator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
