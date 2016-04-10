@@ -20,6 +20,9 @@ def pow_(a,n):
     """ return pow of a """
     return (a)**(n)
 
+def modulo(a,b):
+    return a%b
+
 
 ## Transform entry input to form ready for eval function.
 # replace x! --> factorial(x)
@@ -157,4 +160,4 @@ txt ="5**3+4!+6!+123%20"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
-#print eval(txt)
+print eval(txt)
