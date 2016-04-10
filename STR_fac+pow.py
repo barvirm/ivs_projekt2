@@ -73,7 +73,6 @@ def StrFce(vstup):
         
            
         while "**" in vstup:
-            print "pow_"
             if len(vstup) <= 1:
                 return False
                           
@@ -162,7 +161,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="5%2*2%2"
+txt ="5%2"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
