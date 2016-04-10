@@ -130,14 +130,21 @@ def StrFce(vstup):
                 else:
                     break
 
+
             p1 = vstup[:i1+1]
             p2 = vstup[i1+1:i_centr]
             p3 = vstup[i_centr+1:i2]
             p4 = vstup[i2:]
-#            print "p1:",p1
-#            print "p2:",p2
-#            print "p3:",p3
-#            print "p4:",p4
+            if p1.find('modulo') != -1:
+                p2 = p1
+                p1 = ""
+            if p4.find('modulo') != -1:
+                p3 = p4
+                p4 = ""
+            print "p1:",p1
+            print "p2:",p2
+            print "p3:",p3
+            print "p4:",p4
 
             if p2 == "":
                 return False
@@ -156,7 +163,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="5**3+4!+6!+123%20"
+txt ="5%2%2"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
