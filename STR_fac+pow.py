@@ -24,6 +24,7 @@ def pow_(a,n):
 ## Transform entry input to form ready for eval function.
 # replace x! --> factorial(x)
 # replace a**b --> pow(a,b)
+# replace a%b --> modulo(a,b)
 # @param vstup string from entry input
 # @return String ready for eval funtion
 def StrFce(vstup):    
@@ -101,6 +102,49 @@ def StrFce(vstup):
             
             if vstup[0] == "+":
                 vstup = vstup[1:]
+        while "%" in vstup:
+            if len(vstup) <= 1:
+                return False
+
+            if vstup[0] != "+" and vstup[0] != "-":
+                vstup = "+" + vstup
+
+            i_centr = vstup.find("%")
+            i1 = i_centr-1
+    
+            while vstup[i1] >= '0' and vstup[i1] <= '9' or vstup[i1] == '.':
+                if i1 > 0:
+                    i1 -= 1
+                else:
+                    break
+
+            i2 = i_centr+1
+            while vstup[i2] >= '0' and vstup[i2] <= '9' or vstup[i2] == '.':
+                if i2 > 0 :
+                    i2 += 1
+                    if i2 == len(vstup):
+                        break
+                else:
+                    break
+
+            p1 = vstup[:i1+1]
+            p2 = vstup[i1+1:i_centr]
+            p3 = vstup[i_centr+1:i2]
+            p4 = vstup[i2:]
+#            print "p1:",p1
+#            print "p2:",p2
+#            print "p3:",p3
+#            print "p4:",p4
+
+            if p2 == "":
+                return False
+            if p3 == "0":
+                return False
+            
+            vstup =  p1 + "modulo(" + p2 + "," + p3 + ")" + p4
+
+            if vstup[0] == "+":
+                vstup = vstup[1:]
             
         return vstup
             
@@ -109,8 +153,8 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="5**2+4!+4!"
+txt ="5**3+4!+6!+123%20"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
-print eval(txt)
+#print eval(txt)
