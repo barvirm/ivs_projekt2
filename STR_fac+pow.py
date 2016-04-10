@@ -34,7 +34,6 @@ def StrFce(vstup):
     if type(vstup) == str:        
         # nahrazení řárek za tečku
         vstup = vstup.replace(",", ".")  
-        vstup=vstup.replace("*","m")
         #if vstup.find("m") !=0:
          #   print "sqrt"
         # factorial    
@@ -73,7 +72,7 @@ def StrFce(vstup):
             print vstup
         
            
-        while "mm" in vstup:
+        while "**" in vstup:
             print "pow_"
             if len(vstup) <= 1:
                 return False
@@ -81,7 +80,7 @@ def StrFce(vstup):
             if vstup[0] != "+" and vstup[0] != "-":
                 vstup = "+" + vstup
             
-            i_end = vstup.find("m")        
+            i_end = vstup.find("*")        
             # find number
             i = i_end-1          
             while vstup[i] >= '0' and vstup[i] <= '9' or vstup[i] == '.':
@@ -135,10 +134,10 @@ def StrFce(vstup):
             p2 = vstup[i1+1:i_centr]
             p3 = vstup[i_centr+1:i2]
             p4 = vstup[i2:]
-            if p1.find('modulo') != -1:
+            if p1.find('modulo') != -1 and p1.endswith(')'):
                 p2 = p1
                 p1 = ""
-            if p4.find('modulo') != -1:
+            if p4.find('modulo') != -1 and p4.endswith(')'):
                 p3 = p4
                 p4 = ""
             print "p1:",p1
@@ -163,7 +162,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="5%2%2"
+txt ="5%2*2%2"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
