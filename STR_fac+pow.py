@@ -33,16 +33,29 @@ def modulo(a,b):
 def StrFce(vstup):    
     if type(vstup) == str:        
         # nahrazení řárek za tečku
-        vstup = vstup.replace(",", ".")  
+        vstup = vstup.replace(",", ".")
+#        vstup = vstup.replace("(", "")
+#        vstup = vstup.replace(")", "")  
         #if vstup.find("m") !=0:
          #   print "sqrt"
-        # factorial    
-        while "!" in vstup:               
-            if len(vstup) <= 1:
-                return False
+        # factorial  
+        back = 0
+        frst = 0
+        ten = len(vstup)
+        if ten <= 1:
+            return False
+        while (ten):
+            if vstup[ten-1] == ')':
+                back += 1
+            if vstup[ten-1] == '(':
+                frst += 1
+            ten -=1
+        if back != frst:
+            return False
+        while "!" in vstup: 
                           
             if vstup[0] != "+" and vstup[0] != "-":
-                vstup = "+" + vstup
+                vstup = "" + vstup
             
             i_end = vstup.find("!")        
             # hledáme číslo
@@ -73,11 +86,9 @@ def StrFce(vstup):
         
            
         while "**" in vstup:
-            if len(vstup) <= 1:
-                return False
                           
             if vstup[0] != "+" and vstup[0] != "-":
-                vstup = "+" + vstup
+                vstup = "" + vstup
             
             i_end = vstup.find("*")        
             # find number
@@ -104,11 +115,9 @@ def StrFce(vstup):
             if vstup[0] == "+":
                 vstup = vstup[1:]
         while "%" in vstup:
-            if len(vstup) <= 1:
-                return False
-
+        
             if vstup[0] != "+" and vstup[0] != "-":
-                vstup = "+" + vstup
+                vstup = "" + vstup
 
             i_centr = vstup.find("%")
             i1 = i_centr-1
@@ -120,7 +129,7 @@ def StrFce(vstup):
                     break
 
             i2 = i_centr+1
-            while vstup[i2] >= '0' and vstup[i2] <= '9' or vstup[i2] == '.':
+            while vstup[i2] >= '0' and vstup[i2] <= '9' or vstup[i2] == '.' or vstup[i2] == '-':
                 if i2 > 0 :
                     i2 += 1
                     if i2 == len(vstup):
@@ -129,8 +138,8 @@ def StrFce(vstup):
                     break
 
 
-            p1 = vstup[:i1+1]
-            p2 = vstup[i1+1:i_centr]
+            p1 = vstup[:i1]
+            p2 = vstup[i1:i_centr]
             p3 = vstup[i_centr+1:i2]
             p4 = vstup[i2:]
             if p1.find('modulo') != -1 and p1.endswith(')'):
@@ -161,7 +170,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="5%2"
+txt ="(5%-2)"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
