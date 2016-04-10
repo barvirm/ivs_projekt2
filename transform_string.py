@@ -161,7 +161,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="5%-2"
+txt ="5%(2+3)"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
