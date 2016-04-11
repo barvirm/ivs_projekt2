@@ -70,17 +70,29 @@ def StrFce(vstup):
                     i -= 1
                 else:
                     break
+        
             z_p=1
             o=0
+            i_zac=0
+            o_z=0
+            while vstup[i_end-i_zac-1]>="0" and vstup[i_end-i_zac-1]<="9":
+                if  vstup[i_end-i_zac-1]=="+":
+                    i_zac-=1
+                i_zac += 1
+                print "zacatek",vstup[i_end-i_zac]
+                
             if vstup[i_end-z_p] == ")":
                 while vstup[i_end-z_p] !="(":
+                    if vstup[i_end-z_p] =="+" or vstup[i_end-z_p]=="-":
+                        o_z=1
+                        
                     z_p +=1
                     print vstup[i_end-z_p]
-                o=1
-            
-
-            p1 = vstup[:i_end-z_p]
-            p2 = vstup[i_end-z_p+o:i_end-o]
+                #o=1
+            #if  vstup[i_end-i_zac-1]=="+":
+                #i_zac-=1
+            p1 = vstup[:i_end-z_p-i_zac+1-o_z]
+            p2 = vstup[i_end-z_p+o-i_zac+1:i_end-o-o_z]
             p3 = vstup[i_end+1:]
             print "o1",p1
             print "o2",p2
@@ -91,7 +103,7 @@ def StrFce(vstup):
             if p2 == "":
                 return False
             
-            vstup =  p1 + "faktorial(" + p2 + ")" + p3
+            vstup =  p1 + "factorial(" + p2 + ")" + p3
             #print "p1:",p1
             #print "p2:",p2
             #print "p3:",p3
@@ -100,35 +112,7 @@ def StrFce(vstup):
             print vstup
         
            
-        while "**" in vstup:
-                          
-            if vstup[0] != "+" and vstup[0] != "-":
-                vstup = "" + vstup
-            
-            i_end = vstup.find("*")        
-            # find number
-            i = i_end-1          
-            while vstup[i] >= '0' and vstup[i] <= '9' or vstup[i] == '.':
-                if i > 0:
-                    i -= 1
-                else:
-                    break
-            
-            o1 = vstup[:i+2]
-            o2 = vstup[i+5:]
-            o3 = vstup[i_end+2:i_end+3]
-            o4 = vstup[:i+1]
-            #print i_end
-            #print "p1:",o1
-            #print "p2:",o2
-            #print "p3:",o3
-            #print "p4:",o4
-            vstup= o4 + "pow_(" + o1 + "," + o3 + ")" +o2
-            
-            
-            
-            if vstup[0] == "+":
-                vstup = vstup[1:]
+       
         while "%" in vstup:
         
             if vstup[0] != "+" and vstup[0] != "-":
