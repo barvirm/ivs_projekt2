@@ -78,11 +78,10 @@ class Calculator():
     # TODO WHAT IS THIS
     def press_keyboard(self, widget,data = None):
         key = gtk.gdk.keyval_name(data.keyval)
-        if key == "Return":
+        print key
+        if key in ["Return","KP_Enter"]:
             notebook=self.builder.get_object("notebook1").get_current_page()
-            eval_string = self.builder.get_object("entry"+str(notebook)).get_text() #To to bude předáváno do funkce zpracovávající string
-            self.history_add(eval_string)
-            print eval_string
+            self.send_to_calculate(self.builder.get_object("entry"+str(notebook)).get_text())
 
 
     ## Switching of programming calculator to numeral system of the selected base
@@ -132,11 +131,13 @@ class Calculator():
                 self.builder.get_object("entry"+str(notebook)).grab_focus()
                 self.builder.get_object("entry"+str(notebook)).set_position(position-1)
         elif char == "=":
-            eval_string = self.builder.get_object("entry"+str(notebook)).get_text() #To to bude předáváno do funkce zpracovávající string
-            self.history_add(eval_string)
-            print eval_string
-        self.builder.get_object("entry"+str(1-notebook)).set_text(self.builder.get_object("entry"+str(notebook)).get_text())                                                                                                                     
-    # TODO WHAT IS THIS
+            self.send_to_calculate(self.builder.get_object("entry"+str(notebook)).get_text())
+        self.builder.get_object("entry"+str(1-notebook)).set_text(self.builder.get_object("entry"+str(notebook)).get_text())   #Actualization of entry in another notebook
+
+    ## Insert selected expression to current position in Entry
+    ##Change the position of the cursor on the most suitable position relative to the last part of expression in entry
+    #
+    #
     def set_entry(self,notebook,position,data):
         ent = self.builder.get_object("entry"+str(notebook)).get_text()
         before = ent[:position]
@@ -177,6 +178,12 @@ class Calculator():
         print historical_text
         self.builder.get_object("entry0").set_text(historical_text)
         self.builder.get_object("entry1").set_text(historical_text)
+
+    def send_to_calculate(self,eval_string):
+        eval_string = self.builder.get_object("entry"+str(notebook)).get_text() #To to bude předáváno do funkce zpracovávající string
+        self.history_add(eval_string)
+        print eval_string
+
 
     ## Change window size for each mode of calculator
     # @param self pointer to class

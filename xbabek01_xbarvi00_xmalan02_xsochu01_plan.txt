@@ -1,23 +1,32 @@
-Stanovené termíny:			Návrh testů --> 29. 3.
+Stanovené termíny:	Návrh testů --> 29. 3.
 					Návrh GUI --> 29.3.
 					Matematická knihovna --> 5.4.
-					GUI -->	5.4.
+					GUI vzhled-->	5.4.
+					Převod stringu + vyhodnocení --> 6.4
 					1. spustitelný prototyp --> 6.4.
 					Testování matematické knihovny --> 7.4.
+					Testování převodu stringu --> 10.4
+					GUI funkční --> 12.4
 					PLOT --> 12.4.
+					2.spustitelný prototyp --> 13.4
+					Historie --> 14.4
+					Binární operace --> 19.4
 					Dokumentace --> 19.4.
 					Instalátor --> 20.4.
+					Uživatelská dokumentace --> 21.4
 
 
-Programovací jazyk:			Python 2.7
+Programovací jazyk:	Python 2.7
+			   GUI:	GTK 2.24 (Glades 3.8)
 
 
-Rozdělení úkolů:			Grafické rozhraní - Petr Malaník
+Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
 					Matematická knihovna - Marek Barvíř
 					Převod stringu - David Bábek, Jakub Sochůrek
 					Převod stringu (testy) - Marek Barvíř, Petr Malaník
 					Binární operace - Petr Malaník, Jakub Sochůrek
-					Dokumentace - Celá skupina
+					Historie - Petr Malaník
+					Dokumentace - Celá skupina (nastavení dokumentacve + správa - Marek Barvíř)
 					Grafická knihovna (PLOT) - Marek Barvíř, Petr Malaník
 					Dodatečné funkce - Jakub Sochůrek
 					Návrh testů - David Bábek
@@ -26,7 +35,7 @@ Rozdělení úkolů:			Grafické rozhraní - Petr Malaník
 
 
 
-Komunikační kanál:			Osobní schůze --> (ÚT 20:00)
+Komunikační kanál:	Osobní schůze --> (ÚT 20:00)
 					Skype --> PO - ČT (18:00-20:00) 
 					Email --> MIN 2x týdně
 					Telefon
@@ -35,4 +44,13 @@ Komunikační kanál:			Osobní schůze --> (ÚT 20:00)
 
 Správce verzí:	GIT
 
-
+Docházka na schůze
++---------------+-------+-------+-------+-------+-------+
+|Termín schůze	|  22.3 |  29.3 |  5.4  |  12.4 |  19.4 |
++---------------+-------+-------+-------+-------+-------+
+|Bábek David	|	K 	| 	M 	| 	M 	|	 	|	 	|
+|Barvíř Marek	|	X 	| 	X 	|	X 	|	 	|	 	|
+|Malaník Petr	|	X 	| 	X 	|	X 	|	 	|	 	|
+|Jakub Sochůrek	|	X  	|	X 	| 	K 	|	 	|	 	|
++---------------+-------+-------+-------+-------+-------+
+X-dorazil M-nedorazil	K-konzultoval
