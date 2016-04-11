@@ -150,10 +150,14 @@ class Calculator():
         self.builder.get_object("entry"+str(notebook)).grab_focus()
         self.builder.get_object("entry"+str(notebook)).set_position(position+entry_off_set)
 
-    #Update Classic and Science calculator entry when is typed to entry
+    #Update Classic and Science calculators entry when is typed to entry
     def entry_changed(self,widget):
         #TODO FIX IT !! UNREADABLE
-        self.builder.get_object("entry"+str(1-(self.builder.get_object("notebook1").get_current_page()))).set_text(self.builder.get_object("entry"+str(self.builder.get_object("notebook1").get_current_page())).get_text())
+        actual_page = self.builder.get_object("notebook1").get_current_page()
+        if actual_page == 4:
+            actual_page = 1
+        text_on_actual_page = self.builder.get_object("entry"+str(actual_page)).get_text()
+        self.builder.get_object("entry"+str(1-actual_page)).set_text(text_on_actual_page)
     
     ## Add old calculation to history tab
     # @param self pointer to class
@@ -168,8 +172,11 @@ class Calculator():
     
     # TODO WHAT IS THIS ??
     def history_change(self,widget):
-        print widget
-        print widget.get_tooltip()
+        button = gtk.Buildable.get_name(widget)[6:9]
+        historical_text = self.builder.get_object("label"+button).get_label()
+        print historical_text
+        self.builder.get_object("entry0").set_text(historical_text)
+        self.builder.get_object("entry1").set_text(historical_text)
 
     ## Change window size for each mode of calculator
     # @param self pointer to class
@@ -178,10 +185,13 @@ class Calculator():
     def switch_page(self,widget,p1,p2):
         if p2 == 0:
             self.window.set_size_request(320,300)
+            self.builder.get_object("entry"+str(p2)).grab_focus()
         elif p2 == 1:
             self.window.set_size_request(515,300)
+            self.builder.get_object("entry"+str(p2)).grab_focus()
         elif p2 == 2:
             self.window.set_size_request(475,300)
+            self.builder.get_object("entry"+str(p2)).grab_focus()
         elif p2 == 3:
             self.window.set_size_request(800,600)
         elif p2 == 4:
