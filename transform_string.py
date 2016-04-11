@@ -167,10 +167,10 @@ def StrFce(vstup):
                 p2 = p2[+1:-1]
             if p3.startswith('(') and p3.endswith(')'):
                 p3 = p3[+1:-1]
-            print "p1:",p1
-            print "p2:",p2
-            print "p3:",p3
-            print "p4:",p4
+#            print "p1:",p1
+#            print "p2:",p2
+#            print "p3:",p3
+#            print "p4:",p4
 
             if p2 == "":
                 return False
@@ -190,7 +190,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="(10%5)%(4%2)"
+txt ="(6%(8%9))"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
