@@ -52,27 +52,42 @@ def StrFce(vstup):
             ten -=1
         if back != frst:
             return False
-        while "!" in vstup: 
+        while "!" in vstup:               
+            if len(vstup) <= 1:
+                return False
                           
             if vstup[0] != "+" and vstup[0] != "-":
-                vstup = "" + vstup
+                vstup = "+" + vstup
+            
+            
             
             i_end = vstup.find("!")        
             # hledáme číslo
-            i = i_end-1           
+            i = i_end-1    
+            
             while vstup[i] >= '0' and vstup[i] <= '9' or vstup[i] == '.':
                 if i > 0:
                     i -= 1
                 else:
                     break
+            z_p=1
+            o=0
+            if vstup[i_end-z_p] == ")":
+                while vstup[i_end-z_p] !="(":
+                    z_p +=1
+                    print vstup[i_end-z_p]
+                o=1
             
-            p1 = vstup[:i+1]
-            p2 = vstup[i+1:i_end]
-            p3 = vstup[i_end+1:]
-            #print "p1:",p1
-            #print "p2:",p2
-            #print "p3:",p3
 
+            p1 = vstup[:i_end-z_p]
+            p2 = vstup[i_end-z_p+o:i_end-o]
+            p3 = vstup[i_end+1:]
+            print "o1",p1
+            print "o2",p2
+            print "o3",p3
+            print "vstup:",vstup
+       
+   
             if p2 == "":
                 return False
             
