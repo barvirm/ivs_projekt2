@@ -123,7 +123,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3164511f86af2be4d02fc4be0d0c31d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenuse: so called because it is the sine of the complementary or co-angle.  <a href="#a3164511f86af2be4d02fc4be0d0c31d8">More...</a><br/></td></tr>
 <tr class="separator:a3164511f86af2be4d02fc4be0d0c31d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9586aed4f9371618e127cdbcc4fa2bd8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8">tg</a></td></tr>
-<tr class="memdesc:a9586aed4f9371618e127cdbcc4fa2bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle, that is the line that touches the circle, from Latin linea tangens or touching line (cf.  <a href="#a9586aed4f9371618e127cdbcc4fa2bd8">More...</a><br/></td></tr>
+<tr class="memdesc:a9586aed4f9371618e127cdbcc4fa2bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle, that is the line that touches the circle, from Latin linea tangens or touching line.  <a href="#a9586aed4f9371618e127cdbcc4fa2bd8">More...</a><br/></td></tr>
 <tr class="separator:a9586aed4f9371618e127cdbcc4fa2bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac369802e29671e5f7bd3a1abfc7d7d20"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy__math.html#ac369802e29671e5f7bd3a1abfc7d7d20">cotg</a></td></tr>
 <tr class="memdesc:ac369802e29671e5f7bd3a1abfc7d7d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cotg of an angle is the ratio of the length of the adjacent side to the length of the opposite: so called because it is the tg of the complementary or co-angle.  <a href="#ac369802e29671e5f7bd3a1abfc7d7d20">More...</a><br/></td></tr>
@@ -165,7 +165,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The cosine of an angle is the ratio of the length of the adjacent side to the length of the hypotenuse: so called because it is the sine of the complementary or co-angle. </p>
-<dl class="section note"><dt>Note</dt><dd>Implement &ndash;&gt; \( cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>\( cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Angle in radian </td></tr>
@@ -174,7 +174,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[float] cos(x) </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00065">65</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00068">68</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -193,6 +193,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The cotg of an angle is the ratio of the length of the adjacent side to the length of the opposite: so called because it is the tg of the complementary or co-angle. </p>
+<dl class="section note"><dt>Note</dt><dd>\( \frac{cos(x)}{sin(x)}\) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Angle in radian </td></tr>
@@ -203,7 +204,7 @@ Variables</h2></td></tr>
 <dd>
 If x = π or 0 return None </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00089">89</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00094">94</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -222,6 +223,7 @@ If x = π or 0 return None </dd></dl>
 </div><div class="memdoc">
 
 <p>factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n </p>
+<dl class="section note"><dt>Note</dt><dd>n! </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>Number t </td></tr>
@@ -234,7 +236,7 @@ If n is float return None </dd>
 <dd>
 If n &lt; 0 return None </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00037">37</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00040">40</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -253,7 +255,7 @@ If n &lt; 0 return None </dd></dl>
 </div><div class="memdoc">
 
 <p>The natural logarithm of a number is its logarithm to the base of the mathematical constant e, where e is an irrational and transcendental approximately equal to 2.718281828459. </p>
-<dl class="section note"><dt>Note</dt><dd>Implement &ndash;&gt; \( \log(\frac{1+z}{1-z}) = \cfrac{2z}{1-\cfrac{z^2}{3-\cfrac{4z^2}{5-\cfrac{9z^2}{7-\cfrac{16z^2}{9-\cfrac{25z^2}{11-\cfrac{36z^2}{13-\cdots}}}}}}} \) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>\( \log(\frac{1+z}{1-z}) = \cfrac{2z}{1-\cfrac{z^2}{3-\cfrac{4z^2}{5-\cfrac{9z^2}{7-\cfrac{16z^2}{9-\cfrac{25z^2}{11-\cfrac{36z^2}{13-\cdots}}}}}}} \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Number </td></tr>
@@ -264,7 +266,7 @@ If n &lt; 0 return None </dd></dl>
 <dd>
 If x&lt;=0 return None </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00099">99</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00104">104</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -293,7 +295,8 @@ If x&lt;=0 return None </dd></dl>
 </div><div class="memdoc">
 
 <p>The modulo operation finds the remainder after division of one number by another. </p>
-<p>If a is negative number is't transform to same non-negative number </p>
+<p>If a is negative number is't transform to same non-negative number If Divisor is negative it's same result as non-negative just with - infront of result </p>
+<dl class="section note"><dt>Note</dt><dd>\( a\%n \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>Divident </td></tr>
@@ -303,7 +306,7 @@ If x&lt;=0 return None </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Remainder after division </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00121">121</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00128">128</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -332,6 +335,7 @@ If x&lt;=0 return None </dd></dl>
 </div><div class="memdoc">
 
 <p>When a is a positive integer, exponentiation corresponds to repeated multiplication of the base n times. </p>
+<dl class="section note"><dt>Note</dt><dd>\( a^n \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>Number that will be power </td></tr>
@@ -341,7 +345,7 @@ If x&lt;=0 return None </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a to the power of n </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00029">29</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00031">31</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -361,7 +365,7 @@ If x&lt;=0 return None </dd></dl>
 
 <p>Sine, is a trigonometric function of an angle. </p>
 <p>The sine of an angle is defined in the context of a right triangle: for the specified angle, it is the ratio of the length of the side that is opposite that angle (that is not the hypotenuse) to the length of the longest side of the triangle. </p>
-<dl class="section note"><dt>Note</dt><dd>Implement &ndash;&gt; \(\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>\(\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Angle in radian </td></tr>
@@ -370,7 +374,7 @@ If x&lt;=0 return None </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[float] sin(x) </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00053">53</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00056">56</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -399,6 +403,7 @@ If x&lt;=0 return None </dd></dl>
 </div><div class="memdoc">
 
 <p>N-th roots are treated as special cases of exponentiation, where the exponent is a fraction \( \frac{1}{n} \). </p>
+<dl class="section note"><dt>Note</dt><dd>\( \sqrt[n]{a} \) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>Number that will be root </td></tr>
@@ -410,7 +415,7 @@ If x&lt;=0 return None </dd></dl>
 <dd>
 If a is negative integer return None </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00020">20</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00021">21</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -428,8 +433,8 @@ If a is negative integer return None </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle, that is the line that touches the circle, from Latin linea tangens or touching line (cf. </p>
-<p>tangere, to touch). </p>
+<p>The tangent of an angle is the ratio of the length of the opposite side to the length of the adjacent side: so called because it can be represented as a line segment tangent to the circle, that is the line that touches the circle, from Latin linea tangens or touching line. </p>
+<dl class="section note"><dt>Note</dt><dd>\( \frac{sin(x)}{cos(x)}\) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Angle in radian </td></tr>
@@ -440,7 +445,7 @@ If a is negative integer return None </dd></dl>
 <dd>
 If x = π/2 or -π/2 return None </dd></dl>
 
-<p>Definition at line <a class="el" href="my__math_8py_source.html#l00080">80</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
+<p>Definition at line <a class="el" href="my__math_8py_source.html#l00084">84</a> of file <a class="el" href="my__math_8py_source.html">my_math.py</a>.</p>
 
 </div>
 </div>
@@ -499,7 +504,7 @@ If x = π/2 or -π/2 return None </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemy__math.html">my_math</a></li>
-    <li class="footer">Generated on Sat Apr 9 2016 20:39:46 for The Calculator by
+    <li class="footer">Generated on Mon Apr 11 2016 01:39:03 for The Calculator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

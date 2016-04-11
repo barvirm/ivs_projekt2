@@ -148,6 +148,9 @@ def StrFce(vstup):
             if p4.find('modulo') != -1 and p4.endswith(')'):
                 p3 = p4
                 p4 = ""
+            if p2 != "" and p3 == "" and p4 != "":
+                p3 = p4
+                p4 = ""
             print "p1:",p1
             print "p2:",p2
             print "p3:",p3
@@ -170,7 +173,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="(5%-2)"
+txt ="5%(3-2)"
 print txt
 txt = StrFce(txt)
 print "txt:",txt

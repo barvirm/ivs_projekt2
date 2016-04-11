@@ -15,5 +15,5 @@ var searchData=
   ['testmymath',['TestMyMath',['../classtest__math_1_1TestMyMath.html',1,'test_math']]],
   ['tg',['tg',['../namespacemy__math.html#a9586aed4f9371618e127cdbcc4fa2bd8',1,'my_math']]],
   ['todo_20list',['Todo List',['../todo.html',1,'']]],
-  ['txt',['txt',['../namespaceSTR__fac_09pow.html#a589c196b12f366ce13ff4423d2d9b8e6',1,'STR_fac+pow']]]
+  ['txt',['txt',['../namespacemodulo.html#a86089090dbd4af2a9c6d1de3c3f19bcf',1,'modulo.txt()'],['../namespaceSTR__fac_09pow.html#a589c196b12f366ce13ff4423d2d9b8e6',1,'STR_fac+pow.txt()']]]
 ];
