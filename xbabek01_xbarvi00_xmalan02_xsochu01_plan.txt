@@ -18,6 +18,7 @@ Stanovené termíny:	Návrh testů --> 29. 3.
 
 Programovací jazyk:	Python 2.7
 			   GUI:	GTK 2.24 (Glades 3.8)
+	   Indentation:
 
 
 Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
