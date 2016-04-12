@@ -21,8 +21,13 @@ def pow_(a,n):
     return (a)**(n)
 
 def modulo(a,b):
-    return a%b
+    return (a)%(b)
 
+def abx(a):
+    if a >= 0:
+        return a
+    else:
+        return -a
 
 ## Transform entry input to form ready for eval function.
 # replace x! --> factorial(x)
@@ -51,6 +56,14 @@ def StrFce(vstup):
                 frst += 1
             ten -=1
         if back != frst:
+            return False
+        absolut = 0
+        ten = len(vstup)
+        while (ten):
+            if vstup[ten-1] == '|':
+                absolut += 1
+            ten -= 1
+        if (absolut%2) != 0:
             return False
         while "!" in vstup:               
             if len(vstup) <= 1:
@@ -115,9 +128,6 @@ def StrFce(vstup):
        
         while "%" in vstup:
         
-            if vstup[0] != "+" and vstup[0] != "-":
-                vstup = "" + vstup
-
             i_centr = vstup.find("%")
             i1 = i_centr-1
     
@@ -137,23 +147,30 @@ def StrFce(vstup):
                     break
 
 
-            p1 = vstup[:i1]
-            p2 = vstup[i1:i_centr]
+            p1 = vstup[:i1+1]
+            p2 = vstup[i1+1:i_centr]
             p3 = vstup[i_centr+1:i2]
             p4 = vstup[i2:]
-            if p1.find('modulo') != -1 and p1.endswith(')'):
+            if p1.find('modulo(') != -1 and p1.endswith(')'):
                 p2 = p1
                 p1 = ""
-            if p4.find('modulo') != -1 and p4.endswith(')'):
+            if p4.find('modulo(') != -1 and p4.endswith(')'):
                 p3 = p4
                 p4 = ""
-            if p2 != "" and p3 == "" and p4 != "":
+            if p2 == "" and p1 != "":
+                p2 = p1
+                p1 = ""
+            if p3 == "" and p4 != "":
                 p3 = p4
                 p4 = ""
-            print "p1:",p1
-            print "p2:",p2
-            print "p3:",p3
-            print "p4:",p4
+            if p2.startswith('(') and p2.endswith(')'):
+                p2 = p2[+1:-1]
+            if p3.startswith('(') and p3.endswith(')'):
+                p3 = p3[+1:-1]
+#            print "p1:",p1
+#            print "p2:",p2
+#            print "p3:",p3
+#            print "p4:",p4
 
             if p2 == "":
                 return False
@@ -164,7 +181,8 @@ def StrFce(vstup):
 
             if vstup[0] == "+":
                 vstup = vstup[1:]
-            
+
+
         return vstup
             
     else:
@@ -172,7 +190,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="5%(3-2)"
+txt ="(6%(8%9))"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
