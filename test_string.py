@@ -13,8 +13,8 @@ class TestMyMath(ut.TestCase):
 		self.assertEqual(s.StrFce("(2%5)"),"(modulo(2,5))")							#2
 		self.assertEqual(s.StrFce("2+5%2"),"2+modulo(5,2)")							#3
 		self.assertEqual(s.StrFce("5%2*2"),"modulo(5,2)*2")							#4
-		self.assertEqual(s.StrFce("5%(2/2)"),"modulo(5,(2/2)")						#5
-		self.assertEqual(s.StrFce("2+5%(2*2)"),"2+modulo(5,2*2)")					#6
+		self.assertEqual(s.StrFce("5%(2/2)"),"modulo(5,(2/2))")						#5
+		self.assertEqual(s.StrFce("2+5%(2*2)"),"2+modulo(5,(2*2))")					#6
 		self.assertEqual(s.StrFce("2%3+5%2"),"modulo(2,3)+modulo(5,2)")				#7
 		self.assertEqual(s.StrFce("(2%3)+(5%2)"),"(modulo(2,3))+(modulo(5,2))")		#8
 		self.assertEqual(s.StrFce("(2%3**2)+5%2"),"(modulo(2,3**2))+modulo(5,2)")	#9
