@@ -138,7 +138,7 @@ def StrFce(vstup):
                     break
 
             i2 = i_centr+1
-            while vstup[i2] >= '0' and vstup[i2] <= '9' or vstup[i2] == '.' or vstup[i2] == '-':
+            while vstup[i2] >= '0' and vstup[i2] <= '9' or vstup[i2] == '.' or vstup[i2] == '-' or (vstup[i2] == '*' and (vstup[i2+1] == '*' or vstup[i2-1] == '*')):
                 if i2 > 0 :
                     i2 += 1
                     if i2 == len(vstup):
