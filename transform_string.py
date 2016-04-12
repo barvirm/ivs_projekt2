@@ -163,10 +163,10 @@ def StrFce(vstup):
             if p3 == "" and p4 != "":
                 p3 = p4
                 p4 = ""
-            if p2.startswith('(') and p2.endswith(')'):
-                p2 = p2[+1:-1]
-            if p3.startswith('(') and p3.endswith(')'):
-                p3 = p3[+1:-1]
+#            if p2.startswith('(') and p2.endswith(')'):
+#                p2 = p2[+1:-1]
+#            if p3.startswith('(') and p3.endswith(')'):
+#                p3 = p3[+1:-1]
 #            print "p1:",p1
 #            print "p2:",p2
 #            print "p3:",p3
@@ -190,7 +190,27 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="(6%(8%9))"
+txt ="(5-2)%(2+3)"
+print txt
+txt = StrFce(txt)
+print "txt:",txt
+print eval(txt)
+txt ="(5-2)%2"
+print txt
+txt = StrFce(txt)
+print "txt:",txt
+print eval(txt)
+txt ="(5%2)%2"
+print txt
+txt = StrFce(txt)
+print "txt:",txt
+print eval(txt)
+txt ="(5)%2"
+print txt
+txt = StrFce(txt)
+print "txt:",txt
+print eval(txt)
+txt ="2%2+5%3"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
