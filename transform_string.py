@@ -28,51 +28,13 @@ def abx(a):
         return a
     else:
         return -a
-
-## Transform entry input to form ready for eval function.
-# replace x! --> factorial(x)
-# replace a**b --> pow(a,b)
-# replace a%b --> modulo(a,b)
-# @param vstup string from entry input
-# @return String ready for eval funtion
-def StrFce(vstup):    
-    if type(vstup) == str:        
-        # nahrazení řárek za tečku
-        vstup = vstup.replace(",", ".")
-#        vstup = vstup.replace("(", "")
-#        vstup = vstup.replace(")", "")  
-        #if vstup.find("m") !=0:
-         #   print "sqrt"
-        # factorial  
-        back = 0
-        frst = 0
-        ten = len(vstup)
-        if ten <= 1:
-            return False
-        while (ten):
-            if vstup[ten-1] == ')':
-                back += 1
-            if vstup[ten-1] == '(':
-                frst += 1
-            ten -=1
-        if back != frst:
-            return False
-        absolut = 0
-        ten = len(vstup)
-        while (ten):
-            if vstup[ten-1] == '|':
-                absolut += 1
-            ten -= 1
-        if (absolut%2) != 0:
-            return False
-        while "!" in vstup:               
+def transform_factorial(vstup):
+      while "!" in vstup:               
             if len(vstup) <= 1:
                 return False
                           
             if vstup[0] != "+" and vstup[0] != "-":
                 vstup = "+" + vstup
-            
-            
             
             i_end = vstup.find("!")        
             # hledáme číslo
@@ -123,8 +85,87 @@ def StrFce(vstup):
             if vstup[0] == "+":
                 vstup = vstup[1:]
             print vstup
+            
+      return vstup
+def transform_abs(vstup):
+    while "|" in vstup:
+        if vstup[0] != "+" and vstup[0] != "-":
+                vstup = "+" + vstup
+        i_max=len(vstup)
+        #i=0
+        i_abs=0
+        i_kr=0
+        i_ak=0
+        while i_kr<i_max :
+            if vstup[i_kr]=="|":
+                i_abs+=1
+            i_kr+=1
+            
+        if i_abs% 2 != 0:
+            return False
+        i_abs=i_abs
         
-           
+        while vstup[i_ak]=="|" or i_abs !=0:
+            if vstup[i_ak]=="|":
+                if vstup[i_ak-1]=="-" or vstup[i_ak-1]=="+" or vstup[i_ak-1]=="("or vstup[i_ak-1]=="*" or vstup[i_ak-1]=="/":
+                    zac=vstup[:i_ak]
+                    kon=vstup[i_ak+1:]
+                    vstup= zac + "abs(" + kon
+                    i_abs-=1
+
+                elif vstup[i_ak-1]>="0" and vstup[i_ak-1]<="9" or vstup[i_ak-1]==")":
+                    zac1=vstup[:i_ak]
+                    kon1=vstup[i_ak+1:]
+                    vstup = zac1+ ")"+kon1
+                    i_abs-=1
+            else:
+                i_ak+=1
+        
+    if vstup[0] == "+":
+        vstup = vstup[1:]
+     
+    return vstup
+## Transform entry input to form ready for eval function.
+# replace x! --> factorial(x)
+# replace a**b --> pow(a,b)
+# replace a%b --> modulo(a,b)
+# @param vstup string from entry input
+# @return String ready for eval funtion
+def StrFce(vstup):    
+    if type(vstup) == str:        
+        # nahrazení řárek za tečku
+        vstup = vstup.replace(",", ".")
+#        vstup = vstup.replace("(", "")
+#        vstup = vstup.replace(")", "")  
+        #if vstup.find("m") !=0:
+         #   print "sqrt"
+        # factorial
+        
+        vstup=transform_factorial(vstup)
+        vstup=transform_abs(vstup)        
+        """
+        back = 0
+        frst = 0
+        ten = len(vstup)
+        if ten <= 1:
+            return False
+        while (ten):
+            if vstup[ten-1] == ')':
+                back += 1
+            if vstup[ten-1] == '(':
+                frst += 1
+            ten -=1
+        if back != frst:
+            return False
+        absolut = 0
+        ten = len(vstup)
+        while (ten):
+            if vstup[ten-1] == '|':
+                absolut += 1
+            ten -= 1
+        if (absolut%2) != 0:
+            return False
+        """
        
         while "%" in vstup:
         
@@ -190,7 +231,7 @@ def StrFce(vstup):
         
 
 # demo        
-txt ="(5-2)%(2+3)"
+txt ="|(3*5)|*|1-2|-(2*5)"
 print txt
 txt = StrFce(txt)
 print "txt:",txt
