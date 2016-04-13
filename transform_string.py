@@ -32,7 +32,7 @@ def transform_factorial(vstup):
                 if  vstup[i_end-i_zac-1]=="+":
                     i_zac-=1
                 i_zac += 1
-                print "zacatek",vstup[i_end-i_zac]
+#                print "zacatek",vstup[i_end-i_zac]
                 
             if vstup[i_end-z_p] == ")" : # Find a end index of number before factorial
                 while vstup[i_end-z_p] !="(":
@@ -42,7 +42,7 @@ def transform_factorial(vstup):
                         o_z=1
                         
                     z_p +=1
-                    print vstup[i_end-z_p]
+#                    print vstup[i_end-z_p]
                 while vstup[i_end-z_p-1]>="a" and vstup[i_end-z_p-1]<="z":
                     z_p +=1
                     a=1
@@ -106,52 +106,63 @@ def transform_abs(vstup):
     if vstup[0] == "+":
         vstup = vstup[1:]
     return vstup
+
+## Prevede % na modulo()
+# @param Input Vstupni string
+# @return Preformovany string pro eval
+def transform_modulo(Input):
+    while "%" in Input: 
+        CharModulo = Input.find("%") # Nalezení znaku %
+
+        BeforeModulo = CharModulo - 1 # @param BeforeModulo Deklarace znaku pred %
     
-def transform_modulo(vstup):
-    while "%" in vstup:
-        i_centr = vstup.find("%")
-        i1 = i_centr-1
-    
-        while vstup[i1] >= '0' and vstup[i1] <= '9' or vstup[i1] == '.':
-            if i1 > 0:
-                i1 -= 1
+        # Pocet znaku pred %
+        while Input[BeforeModulo] >= '0' and Input[BeforeModulo] <= '9' or Input[BeforeModulo] == '.' or Input[BeforeModulo] == '-' or (Input[BeforeModulo] == '*' and (Input[BeforeModulo+1] == '*' or Input[BeforeModulo-1] == '*')):
+            if BeforeModulo >= 0:
+                BeforeModulo -= 1
             else:
                 break
 
-        i2 = i_centr+1
-        while vstup[i2] >= '0' and vstup[i2] <= '9' or vstup[i2] == '.' or vstup[i2] == '-' or (vstup[i2] == '*' and (vstup[i2+1] == '*' or vstup[i2-1] == '*')):
-            if i2 > 0 :
-                i2 += 1
-                if i2 == len(vstup):
-                    break
-            else:
+        AfterModulo = CharModulo + 1 # @param AfterModulo Deklarace znaku za %
+
+        # Pocet znaku za %
+        while Input[AfterModulo] >= '0' and Input[AfterModulo] <= '9' or Input[AfterModulo] == '.' or Input[AfterModulo] == '-' or (Input[AfterModulo] == '*' and (Input[AfterModulo+1] == '*' or Input[AfterModulo-1] == '*')):
+            AfterModulo += 1
+            if AfterModulo == len(Input):
                 break
 
 
-        p1 = vstup[:i1+1]
-        p2 = vstup[i1+1:i_centr]
-        p3 = vstup[i_centr+1:i2]
-        p4 = vstup[i2:]
-        if p1.find('modulo(') != -1 and p1.endswith(')'):
-            p2 = p1
-            p1 = ""
-        if p4.find('modulo(') != -1 and p4.endswith(')'):
-            p3 = p4
-            p4 = ""
-        if p2 == "" and p1 != "":
-            p2 = p1
-            p1 = ""
-        if p3 == "" and p4 != "":
-            p3 = p4
-            p4 = ""
+        String_1 = Input[: BeforeModulo + 1] # @param String_1 String pred Modulo()
+        String_2 = Input[BeforeModulo + 1:CharModulo] # @param String_2 Prvni parametr Modulo()
+        String_3 = Input[CharModulo + 1:AfterModulo] # @param String_3 Druhy parametr Modulo()
+        String_4 = Input[AfterModulo:] # @param String_4 String za Modulo()
+        # Presunuti modula do modulo prvniho parametru
+        if String_1.find('modulo(') != -1 and String_1.endswith(')'):
+            String_2 = String_1
+            String_1 = ""
+        # Presunuti modula do modulo druheho parametru
+        if String_4.find('modulo(') != -1 and String_4.endswith(')'):
+            String_3 = String_4
+            String_4 = ""
+        # Osetreni, aby prvni parametr nebyl prazdny
+        if String_2 == "" and String_1 != "":
+            String_2 = String_1
+            String_1 = ""
+        # Osetreni, aby druhy paramtr nebyl prazdny
+        if String_3 == "" and String_4 != "":
+            String_3 = String_4
+            String_4 = ""
 
-        if p2 == "":
+        # Kontrola prazdneho pole v prvnim parametru Modulo
+        if String_2 == "":
             return False
-        if p3 == "0":
+        # Kontrola prazdneho pole druheho parametru a kontrola
+        if String_3 == "0" or String_3 == "":
             return False
             
-        vstup =  p1 + "modulo(" + p2 + "," + p3 + ")" + p4
-    return vstup
+        # Poskladani vystupniho retezce
+        Input =  String_1 + "modulo(" + String_2 + "," + String_3 + ")" + String_4
+    return Input
 
 
 ## Transform entry input to form ready for eval function.
@@ -170,12 +181,12 @@ def StrFce(vstup):
         
         
         vstup=transform_abs(vstup)
-        print vstup
+#        print vstup
         vstup=transform_factorial(vstup)
-        print vstup
+#        print vstup
         #vstup=transform_abs(vstup) 
         vstup=transform_modulo(vstup)
-        print vstup
+#        print vstup
        
     else:
         print "Bad input data"
