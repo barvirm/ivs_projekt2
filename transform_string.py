@@ -1,15 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-def factorial(x):
-    if x == 0:
-        return 1
-    else:
-        o = 1
-        for i in range(1,x+1):
-            o *= i
-        return o
-        
-#import my_math
+
+import my_math
 ## Transform entry input to factorial  for eval
 # @param vstup string from entry input
 # @return String ready for eval funtion
@@ -203,8 +195,3 @@ def calculate(vstup):
     
     return eval(output)
 
-txt ="|2|"
-print txt
-txt = StrFce(txt)
-print "txt:",txt
-print eval(txt)
