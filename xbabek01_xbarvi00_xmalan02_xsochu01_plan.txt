@@ -32,7 +32,7 @@ Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
 					Dodatečné funkce - Jakub Sochůrek
 					Návrh testů - David Bábek
 					Uživatelská dokumentace - Jakub Sochůrek
-					Instalátor (.deb - Závislosti na knihovnách) - David Bábek
+					Instalátor (.deb - Závislosti na knihovnách) - David Bábek, Marek Baríř
 
 
 
