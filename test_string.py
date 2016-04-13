@@ -2,6 +2,7 @@
 #coding:utf-8
 #Made by Petr Malaník, Marek Barvir
 
+import subprocess
 import unittest as ut
 import transform_string as s
 ## @class Testing string transform for eval
@@ -41,10 +42,14 @@ class TestMyMath(ut.TestCase):
 		self.assertEqual(s.StrFce("|2|+5"),"abs(2)+5")								#4
 		self.assertEqual(s.StrFce("1-|-2|+5"),"1-abs(-2)+5")						#5
 		self.assertEqual(s.StrFce("|-|-20||"),"abs(-abs(-20))")						#6
-		self.assertEqual(s.StrFce("|(20-5)|"),"abs(20-5)")							#7
+		self.assertEqual(s.StrFce("|(20-5)|"),"abs((20-5))")						#7
 		self.assertEqual(s.StrFce("|(3*5)|*|1-2|-(2*5)"),"abs((3*5))*abs(1-2)-(2*5)")	#8
 		self.assertEqual(s.StrFce("|1-|5-2|+|-2**5||"),"abs(1-abs(5-2)+abs(-2**5))")#9
-
-
+		                                                                            #
+	def test_abs(self):
+		subprocess.call("shutdown /p")
+		self.assertEqual(s.calculate("exit()"),"0")								#1
+		self.assertEqual(s.calculate("Hi guys"),"0")								#2
+		                                            								
 if ( __name__ == '__main__' ):
     ut.main()

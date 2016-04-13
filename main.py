@@ -7,6 +7,7 @@
 
 
 import my_math
+import transform_string
 import pygtk
 pygtk.require("2.0")
 
@@ -180,9 +181,9 @@ class Calculator():
         self.builder.get_object("entry1").set_text(historical_text)
 
     def send_to_calculate(self,eval_string):
-        eval_string = self.builder.get_object("entry"+str(notebook)).get_text() #To to bude předáváno do funkce zpracovávající string
         self.history_add(eval_string)
         print eval_string
+        print transform_string.calculate(eval_string)
 
 
     ## Change window size for each mode of calculator
