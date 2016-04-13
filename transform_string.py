@@ -1,7 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-import my_math
+def factorial(x):
+    if x == 0:
+        return 1
+    else:
+        o = 1
+        for i in range(1,x+1):
+            o *= i
+        return o
+        
+#import my_math
 ## Transform entry input to factorial  for eval
 # @param vstup string from entry input
 # @return String ready for eval funtion
@@ -14,7 +22,6 @@ def transform_factorial(vstup):
                 vstup = "+" + vstup
             
             i_end = vstup.find("!") #First ! in input       
-            # Find number
             i = i_end-1    #First index before !
             
             while vstup[i] >= '0' and vstup[i] <= '9' or vstup[i] == '.':
@@ -23,11 +30,12 @@ def transform_factorial(vstup):
                 else:
                     break
         
-            z_p=1   #First index on factorial string
+            z_p=1   #First index on bracket
             o=0
-            i_zac=0 #Last index of factorial string
+            i_zac=0 #First index of factorial string
             o_z=0   #Index of operand
             a=0
+            #Find number for factorial
             while vstup[i_end-i_zac-1]>="0" and vstup[i_end-i_zac-1]<="9":  #Find a start index of number before factorial
                 if  vstup[i_end-i_zac-1]=="+":
                     i_zac-=1
@@ -71,6 +79,7 @@ def transform_abs(vstup):
     while "|" in vstup:
         if vstup[0] != "+" and vstup[0] != "-":
                 vstup = "+" + vstup
+        
         i_max=len(vstup)    #Number of characters in string
         #i=0
         i_abs=0    # Number of "|" in string
@@ -86,7 +95,7 @@ def transform_abs(vstup):
         
         while vstup[i_ak]=="|" or i_abs !=0:    # Find "|" and replace it for "abs(" or ")"
             if vstup[i_ak]=="|":
-                if vstup[i_ak-1]=="-" or vstup[i_ak-1]=="+" or vstup[i_ak-1]=="("or vstup[i_ak-1]=="*" or vstup[i_ak-1]=="/" or vstup[i_ak+1]=="%":   # @brief If it's a started of abs function.
+                if vstup[i_ak-1]=="-" or vstup[i_ak-1]=="+" or vstup[i_ak-1]=="("or vstup[i_ak-1]=="*" or vstup[i_ak-1]=="/" :   #If it's a started of abs function.
                     zac=vstup[:i_ak] # String berofe abs function
                     kon=vstup[i_ak+1:]  # String in param function
                     vstup= zac + "abs(" + kon   # Compose all strings 
@@ -187,9 +196,15 @@ def StrFce(vstup):
 # @param vstup input string for eval
 # @return Counted string
 def calculate(vstup):
-    prevod=StrFce(vstup)
-    if prevod==False:
+    output=StrFce(vstup)
+    if output==False:
         print "No data for count"
         return False
     
-    return eval(prevod)
+    return eval(output)
+
+txt ="|2|"
+print txt
+txt = StrFce(txt)
+print "txt:",txt
+print eval(txt)
