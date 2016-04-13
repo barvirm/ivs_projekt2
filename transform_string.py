@@ -1,47 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def factorial(x):
-    if x == 0:
-        return 1
-    else:
-        o = 1
-        for i in range(1,x+1):
-            o *= i
-        return o
-        
-def sqrt(a,n=2):
-    """ return sqrt of a """
-    if (a < 0):
-        return None
-    return a**(1./ (n) )
-
-def pow_(a,n):
-    """ return pow of a """
-    return (a)**(n)
-
-def modulo(a,b):
-    return (a)%(b)
-
-def abx(a):
-    if a >= 0:
-        return a
-    else:
-        return -a
+import my_math
 ## Transform entry input to factorial  for eval
 # @param vstup string from entry input
 # @return String ready for eval funtion
 def transform_factorial(vstup):
       while "!" in vstup:               
-            if len(vstup) <= 1: # @brief Test of input string 
+            if len(vstup) <= 1: #Test of input string 
                 return False
                           
-            if vstup[0] != "+" and vstup[0] != "-": # @brief Test the first operand
+            if vstup[0] != "+" and vstup[0] != "-": #Test the first operand
                 vstup = "+" + vstup
             
-            i_end = vstup.find("!") # @param First ! in input       
+            i_end = vstup.find("!") #First ! in input       
             # Find number
-            i = i_end-1    # @param First index before !
+            i = i_end-1    #First index before !
             
             while vstup[i] >= '0' and vstup[i] <= '9' or vstup[i] == '.':
                 if i > 0:
@@ -49,18 +23,18 @@ def transform_factorial(vstup):
                 else:
                     break
         
-            z_p=1
+            z_p=1   #First index on factorial string
             o=0
-            i_zac=0
-            o_z=0
+            i_zac=0 #Last index of factorial string
+            o_z=0   #Index of operand
             a=0
-            while vstup[i_end-i_zac-1]>="0" and vstup[i_end-i_zac-1]<="9":  # @brief Find a start index of number before factorial
+            while vstup[i_end-i_zac-1]>="0" and vstup[i_end-i_zac-1]<="9":  #Find a start index of number before factorial
                 if  vstup[i_end-i_zac-1]=="+":
                     i_zac-=1
                 i_zac += 1
                 print "zacatek",vstup[i_end-i_zac]
                 
-            if vstup[i_end-z_p] == ")" : # @brief Find a end index of number before factorial
+            if vstup[i_end-z_p] == ")" : # Find a end index of number before factorial
                 while vstup[i_end-z_p] !="(":
                     if vstup[i_end-z_p-1]>="a" and vstup[i_end-z_p-1]<="z":
                         z_p +=1
@@ -75,17 +49,17 @@ def transform_factorial(vstup):
                     
                     
            
-            p1 = vstup[:i_end-z_p-i_zac+1-o_z]  # @param String before factorial function
-            p2 = vstup[i_end-z_p+o-i_zac+1-a:i_end-o-o_z+a] # @param String for factorial function
-            p3 = vstup[i_end+1:]    # @param String after factorial function
+            p1 = vstup[:i_end-z_p-i_zac+1-o_z]  # String before factorial function
+            p2 = vstup[i_end-z_p+o-i_zac+1-a:i_end-o-o_z+a] #String for factorial function
+            p3 = vstup[i_end+1:]    #String after factorial function
            
    
             if p2 == "":
                 return False
             
-            vstup =  p1 + "factorial(" + p2 + ")" + p3  # @brief Compose all strings 
+            vstup =  p1 + "factorial(" + p2 + ")" + p3  #Compose all strings 
          
-            if vstup[0] == "+": # @brief Delete first index,If it's +
+            if vstup[0] == "+": #Delete first index,If it's +
                 vstup = vstup[1:]
             
       return vstup
@@ -97,31 +71,31 @@ def transform_abs(vstup):
     while "|" in vstup:
         if vstup[0] != "+" and vstup[0] != "-":
                 vstup = "+" + vstup
-        i_max=len(vstup)    # @brief Number of characters in string
+        i_max=len(vstup)    #Number of characters in string
         #i=0
-        i_abs=0    # @param Number of "|" in string
-        i_kr=0     # @param Number of steps
-        i_ak=0     # @param Current index in string
-        while i_kr<i_max :  # @brief Find a number of "|"
+        i_abs=0    # Number of "|" in string
+        i_kr=0     # Number of steps
+        i_ak=0     #Current index in string
+        while i_kr<i_max :  # Find a number of "|"
             if vstup[i_kr]=="|":
                 i_abs+=1
             i_kr+=1
             
-        if i_abs% 2 != 0:   # @brief  If odd number of "|" return False
+        if i_abs% 2 != 0:   #If odd number of "|" return False
             return False
         
-        while vstup[i_ak]=="|" or i_abs !=0:    # @brief Find "|" and replace it for "abs(" or ")"
+        while vstup[i_ak]=="|" or i_abs !=0:    # Find "|" and replace it for "abs(" or ")"
             if vstup[i_ak]=="|":
                 if vstup[i_ak-1]=="-" or vstup[i_ak-1]=="+" or vstup[i_ak-1]=="("or vstup[i_ak-1]=="*" or vstup[i_ak-1]=="/" or vstup[i_ak+1]=="%":   # @brief If it's a started of abs function.
-                    zac=vstup[:i_ak] # @param String berofe abs function
-                    kon=vstup[i_ak+1:]  # @param String in param function
-                    vstup= zac + "abs(" + kon   # @brief Compose all strings 
+                    zac=vstup[:i_ak] # String berofe abs function
+                    kon=vstup[i_ak+1:]  # String in param function
+                    vstup= zac + "abs(" + kon   # Compose all strings 
                     i_abs-=1
 
                 elif vstup[i_ak-1]>="0" and vstup[i_ak-1]<="9" or vstup[i_ak-1]==")" or vstup[i_ak-1]=="!" :   # @brief If it's a end "|" of abs function.
-                    zac1=vstup[:i_ak]   # @param String in param function
-                    kon1=vstup[i_ak+1:] #@param String after abs function
-                    vstup = zac1+ ")"+kon1  # @brief Compose all strings 
+                    zac1=vstup[:i_ak]   # String in param function
+                    kon1=vstup[i_ak+1:] #String after abs function
+                    vstup = zac1+ ")"+kon1  # Compose all strings 
                     i_abs-=1
                 elif vstup[i_ak-1]=="!":
                     return False
@@ -209,7 +183,9 @@ def StrFce(vstup):
         
     return vstup
     
-    
+## Calculate input string.
+# @param vstup input string for eval
+# @return Counted string
 def calculate(vstup):
     prevod=StrFce(vstup)
     if prevod==False:
@@ -217,29 +193,3 @@ def calculate(vstup):
         return False
     
     return eval(prevod)
-# demo        
-txt ="|(3*5)|*|1-2|!-(2%5!)"
-print txt
-txt = calculate(txt)
-print "txt:",txt
-#print eval(txt)
-txt ="(5-2)%2"
-print txt
-txt = calculate(txt)
-print "txt:",txt
-#print eval(txt)
-txt ="(5%2)%2"
-print txt
-txt = calculate(txt)
-print "txt:",txt
-#print eval(txt)
-txt ="(5)%2"
-print txt
-txt = calculate(txt)
-print "txt:",txt
-#print eval(txt)
-txt ="2%2+5%3"
-print txt
-txt = calculate(txt)
-print "txt:",txt
-#print eval(txt)
