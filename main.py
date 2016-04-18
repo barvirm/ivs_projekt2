@@ -76,7 +76,9 @@ class Calculator():
     def on_main_window_destroy(self, widget):
         gtk.main_quit()
 
-    # TODO WHAT IS THIS
+    ## Performs same function as button '=' on GUI
+    # @param self pointer to class
+    # @param widget pointer to widget that call this function
     def press_keyboard(self, widget,data = None):
         key = gtk.gdk.keyval_name(data.keyval)
         print key
@@ -136,9 +138,11 @@ class Calculator():
         self.builder.get_object("entry"+str(1-notebook)).set_text(self.builder.get_object("entry"+str(notebook)).get_text())   #Actualization of entry in another notebook
 
     ## Insert selected expression to current position in Entry
-    ##Change the position of the cursor on the most suitable position relative to the last part of expression in entry
-    #
-    #
+    ## Change the position of the cursor on the most suitable position relative to the last part of expression in entry
+    # @param self pointer to class
+    # @param notebook pointer to widget that call this function
+    # @param position actual position in entry on page 0 or 1
+    # @param data actual string in entry on page 0 or 1
     def set_entry(self,notebook,position,data):
         ent = self.builder.get_object("entry"+str(notebook)).get_text()
         before = ent[:position]
@@ -152,7 +156,9 @@ class Calculator():
         self.builder.get_object("entry"+str(notebook)).grab_focus()
         self.builder.get_object("entry"+str(notebook)).set_position(position+entry_off_set)
 
-    #Update Classic and Science calculators entry when is typed to entry
+    ##Update Classic and Science calculators entry when is typed to one of thies entries
+    # @param self pointer to class
+    # @param widget pointer to widget that call this function
     def entry_changed(self,widget):
         #TODO FIX IT !! UNREADABLE
         actual_page = self.builder.get_object("notebook1").get_current_page()
@@ -161,9 +167,9 @@ class Calculator():
         text_on_actual_page = self.builder.get_object("entry"+str(actual_page)).get_text()
         self.builder.get_object("entry"+str(1-actual_page)).set_text(text_on_actual_page)
     
-    ## Add old calculation to history tab
+    ## Add old calculation to history tab at first position, shit another
     # @param self pointer to class
-    # TODO DATA PARAM ??
+    # @param data last calculated string 
     def history_add(self,data):
         if data != self.history[9]:
             for i in range(0,9):
@@ -172,7 +178,9 @@ class Calculator():
             for i in range(0,10):
                 self.builder.get_object("label"+str(101+i)).set_text(self.history[i])
     
-    # TODO WHAT IS THIS ??
+    ## When is pressed button right side of history record, this record is return to entry on page 0 or 1
+    # @param self pointer to class
+    # @param widget pointer to widget that call this function
     def history_change(self,widget):
         button = gtk.Buildable.get_name(widget)[6:9]
         historical_text = self.builder.get_object("label"+button).get_label()
@@ -189,7 +197,7 @@ class Calculator():
     ## Change window size for each mode of calculator
     # @param self pointer to class
     # @param widget pointer to widget that call this function
-    # TODO WHAT THE FUCK IS p1,p2
+    # @param p2 actual page in notebook
     def switch_page(self,widget,p1,p2):
         if p2 == 0:
             self.window.set_size_request(320,300)

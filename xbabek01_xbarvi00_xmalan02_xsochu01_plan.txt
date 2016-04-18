@@ -18,10 +18,11 @@ Stanovené termíny:	Návrh testů --> 29. 3.
 
 Programovací jazyk:	Python 2.7
 			   GUI:	GTK 2.24 (Glades 3.8)
-	   Indentation:
+	   Indentation: 4 mezery
 
 
 Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
+					Matematická knihovna (testy) - David Bábek
 					Matematická knihovna - Marek Barvíř
 					Převod stringu - David Bábek, Jakub Sochůrek
 					Převod stringu (testy) - Marek Barvíř, Petr Malaník
@@ -29,8 +30,6 @@ Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
 					Historie - Petr Malaník
 					Dokumentace - Celá skupina (nastavení dokumentacve + správa - Marek Barvíř)
 					Grafická knihovna (PLOT) - Marek Barvíř, Petr Malaník
-					Dodatečné funkce - Jakub Sochůrek
-					Návrh testů - David Bábek
 					Uživatelská dokumentace - Jakub Sochůrek
 					Instalátor (.deb - Závislosti na knihovnách) - David Bábek, Marek Baríř
 
@@ -46,12 +45,39 @@ Komunikační kanál:	Osobní schůze --> (ÚT 20:00)
 Správce verzí:	GIT
 
 Docházka na schůze
-+---------------+-------+-------+-------+-------+-------+
-|Termín schůze	|  22.3 |  29.3 |  5.4  |  12.4 |  19.4 |
-+---------------+-------+-------+-------+-------+-------+
-|Bábek David	|	K 	| 	M 	| 	M 	|	 	|	 	|
-|Barvíř Marek	|	X 	| 	X 	|	X 	|	 	|	 	|
-|Malaník Petr	|	X 	| 	X 	|	X 	|	 	|	 	|
-|Jakub Sochůrek	|	X  	|	X 	| 	K 	|	 	|	 	|
-+---------------+-------+-------+-------+-------+-------+
-X-dorazil M-nedorazil	K-konzultoval
++---------------+-------+-------+-------+-------+-------+-------+
+|Termín schůze	|  22.3 |  29.3 |  5.4  |  12.4 |  19.4 |  25.4 |
++---------------+-------+-------+-------+-------+-------+-------+
+|Bábek David	|	K 	| 	M 	| 	M 	|	K	|	 	|	 	|
+|Barvíř Marek	|	X 	| 	X 	|	X 	|	X	|	 	|	 	|
+|Malaník Petr	|	X 	| 	X 	|	X 	|	X	|	 	|	 	|
+|Jakub Sochůrek	|	X  	|	X 	| 	K 	|	K	|	 	|	 	|
++---------------+-------+-------+-------+-------+-------+-------+
+X-dorazil 	M-nedorazil		K-konzultoval
+
+
+
+ToDo (18.4):
+
+***Bábek David***
+-Wireframe
+-Mockup
+-Testy matematické knihovny
+-Dokumentace pro funkce určené pro převod stringu (anglicky)
+-Převod stringu (zabezpečení,refaktorizace,přejmenování proměných do angličtiny)
+
+***Barvíř Marek***
+-PLOT
+-Instalátor
+-Mockup
+
+***Malaník Petr***
+-PLOT
+-Binární kalkulačka
+-Úprava GUI u historie (poslední položka je roztažená)
+
+***Sochůrek Jakub***
+-Binární kalkulačka
+-Uživatelská dokumentace
+-Převod stringu (zabezpečení,refaktorizace,přejmenování proměných do angličtiny)
+-Mockup
