@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['num_5fbase_5fchaged',['num_base_chaged',['../classmain_1_1Calculator.html#a3dc1d16e86a769a9c7da7d0d4305be53',1,'main::Calculator']]]
+  ['on_5fmain_5fwindow_5fdestroy',['on_main_window_destroy',['../classmain_1_1Calculator.html#a078448eac97c0a1005c5ddffd5d9f297',1,'main::Calculator']]]
 ];
