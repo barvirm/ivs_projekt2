@@ -1,7 +1,6 @@
 var NAVTREE =
 [
   [ "The Calculator", "index.html", [
-    [ "IVS PROJEKT 2", "md__home_makku_Google_Drive_VUT_FIT_2_8semestr_ivs_ivs_projekt2_README.html", null ],
     [ "Test List", "test.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Packages", null, [
@@ -30,7 +29,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"STR__fac_09pow_8py.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

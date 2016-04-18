@@ -10,6 +10,7 @@ var classmain_1_1Calculator =
     [ "on_main_window_destroy", "classmain_1_1Calculator.html#a078448eac97c0a1005c5ddffd5d9f297", null ],
     [ "press_button", "classmain_1_1Calculator.html#ad19279f53db0a736aff65e178dee61e5", null ],
     [ "press_keyboard", "classmain_1_1Calculator.html#ab1b1b2f8f6867d38350ee78692629b5b", null ],
+    [ "send_to_calculate", "classmain_1_1Calculator.html#a528c2c536d1ea2a14d2c82de29378f90", null ],
     [ "set_entry", "classmain_1_1Calculator.html#a6194bd47a8b0913f2596134c63655b2d", null ],
     [ "switch_page", "classmain_1_1Calculator.html#a548f623b467727bb71cc09c19cbb5912", null ],
     [ "axis", "classmain_1_1Calculator.html#a97f6d847a73c4d8254785822e2778da7", null ],

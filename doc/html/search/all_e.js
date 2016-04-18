@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['pi',['pi',['../namespacemy__math.html#a71db7877037106550d8e9940748e6741',1,'my_math']]],
-  ['plot',['plot',['../namespaceplot.html',1,'plot'],['../namespaceplot.html#ac6d091db817d6013514fed9b79737797',1,'plot.plot()']]],
-  ['plot_2epy',['plot.py',['../plot_8py.html',1,'']]],
-  ['pow',['pow',['../namespacemy__math.html#af0241da41067f587799aa70ee6fd4dbc',1,'my_math']]],
-  ['pow_5f',['pow_',['../namespaceSTR__fac_09pow.html#a7ebe57abe8b8847091d0f15a2a6a00c2',1,'STR_fac+pow']]],
-  ['press_5fbutton',['press_button',['../classmain_1_1Calculator.html#ad19279f53db0a736aff65e178dee61e5',1,'main::Calculator']]],
-  ['press_5fkeyboard',['press_keyboard',['../classmain_1_1Calculator.html#ab1b1b2f8f6867d38350ee78692629b5b',1,'main::Calculator']]]
+  ['send_5fto_5fcalculate',['send_to_calculate',['../classmain_1_1Calculator.html#a528c2c536d1ea2a14d2c82de29378f90',1,'main::Calculator']]],
+  ['set_5fentry',['set_entry',['../classmain_1_1Calculator.html#a6194bd47a8b0913f2596134c63655b2d',1,'main::Calculator']]],
+  ['sin',['sin',['../namespacemy__math.html#a60595834565d64bf955029a9cefdd8d4',1,'my_math']]],
+  ['sqrt',['sqrt',['../namespacemy__math.html#aa4f454b8a6c77bcd2828ff09919623ad',1,'my_math']]],
+  ['strfce',['StrFce',['../namespacetransform__string.html#a7e51baadf5a110f8a72951b727953e16',1,'transform_string']]],
+  ['switch_5fpage',['switch_page',['../classmain_1_1Calculator.html#a548f623b467727bb71cc09c19cbb5912',1,'main::Calculator']]]
 ];
