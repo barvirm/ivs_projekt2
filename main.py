@@ -39,6 +39,7 @@ class Calculator():
         self.window = self.builder.get_object("main_window")
         self.window.set_size_request(320,300)
         self.window.set_title("The Calculator")
+        self.window.set_icon_from_file("thecalculator-icon.png")
 
         # builder.connect_signals(self)
         self.builder.connect_signals({
