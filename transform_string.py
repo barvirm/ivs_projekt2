@@ -3,112 +3,110 @@
 
 from my_math import *
 ## Transform entry input to factorial  for eval
-# @param vstup string from entry input
+# @param coming_in string from entry input
 # @return String ready for eval funtion
-def transform_factorial(vstup):
-      while "!" in vstup:               
-            if len(vstup) <= 1: #Test of input string 
+def transform_factorial(coming_in):
+      while "!" in coming_in:               
+            if len(coming_in) <= 1: #Test of input string 
                 return False
                           
-            if vstup[0] != "+" and vstup[0] != "-": #Test the first operand
-                vstup = "+" + vstup
+            if coming_in[0] != "+" and coming_in[0] != "-": #Test the first operand
+                coming_in = "+" + coming_in
             
-            i_end = vstup.find("!") #First ! in input       
+            i_end = coming_in.find("!") #First ! in input       
             i = i_end-1    #First index before !
             
-            while vstup[i] >= '0' and vstup[i] <= '9' or vstup[i] == '.':
+            while coming_in[i] >= '0' and coming_in[i] <= '9' or coming_in[i] == '.':
                 if i > 0:
                     i -= 1
                 else:
                     break
         
-            z_p=1   #First index on bracket
+            i_bracket=1   #@param First index on bracket
             o=0
-            i_zac=0 #First index of factorial string
+            i_str=0 #First index of factorial string
             o_z=0   #Index of operand
             a=0
             #Find number for factorial
-            while vstup[i_end-i_zac-1]>="0" and vstup[i_end-i_zac-1]<="9":  #Find a start index of number before factorial
-                if  vstup[i_end-i_zac-1]=="+":
-                    i_zac-=1
-                i_zac += 1
-#                print "zacatek",vstup[i_end-i_zac]
+            while coming_in[i_end-i_str-1]>="0" and coming_in[i_end-i_str-1]<="9":  #Find a start index of number before factorial
+                if  coming_in[i_end-i_str-1]=="+":
+                    i_str-=1
+                i_str += 1
                 
-            if vstup[i_end-z_p] == ")" : # Find a end index of number before factorial
-                while vstup[i_end-z_p] !="(":
-                    if vstup[i_end-z_p-1]>="a" and vstup[i_end-z_p-1]<="z":
-                        z_p +=1
-                    if vstup[i_end-z_p] =="+" or vstup[i_end-z_p]=="-" or vstup[i_end-z_p]=="*" or vstup[i_end-z_p]=="/" or vstup[i_end-z_p] == "|":
+            if coming_in[i_end-i_bracket] == ")" : # Find a end index of number before factorial
+                while coming_in[i_end-i_bracket] !="(":
+                    if coming_in[i_end-i_bracket-1]>="a" and coming_in[i_end-i_bracket-1]<="z":
+                        i_bracket +=1
+                    if coming_in[i_end-i_bracket] =="+" or coming_in[i_end-i_bracket]=="-" or coming_in[i_end-i_bracket]=="*" or coming_in[i_end-i_bracket]=="/" or coming_in[i_end-i_bracket] == "|":
                         o_z=1
                         
-                    z_p +=1
-#                    print vstup[i_end-z_p]
-                while vstup[i_end-z_p-1]>="a" and vstup[i_end-z_p-1]<="z":
-                    z_p +=1
+                    i_bracket +=1
+                while coming_in[i_end-i_bracket-1]>="a" and coming_in[i_end-i_bracket-1]<="z":
+                    i_bracket +=1
                     a=1
                     
                     
            
-            p1 = vstup[:i_end-z_p-i_zac+1-o_z]  # String before factorial function
-            p2 = vstup[i_end-z_p+o-i_zac+1-a:i_end-o-o_z+a] #String for factorial function
-            p3 = vstup[i_end+1:]    #String after factorial function
+            p1 = coming_in[:i_end-i_bracket-i_str+1-o_z]  # String before factorial function
+            p2 = coming_in[i_end-i_bracket+o-i_str+1-a:i_end-o-o_z+a] #String for factorial function
+            p3 = coming_in[i_end+1:]    #String after factorial function
            
    
             if p2 == "":
                 return False
             
-            vstup =  p1 + "factorial(" + p2 + ")" + p3  #Compose all strings 
+            coming_in =  p1 + "factorial(" + p2 + ")" + p3  #Compose all strings 
          
-            if vstup[0] == "+": #Delete first index,If it's +
-                vstup = vstup[1:]
+            if coming_in[0] == "+": #Delete first index,If it's +
+                coming_in = coming_in[1:]
             
-      return vstup
+      return coming_in
       
 ## Transform entry input to abs  for eval
-# @param vstup string from entry input
+# @param coming_in string from entry input
 # @return String ready for eval funtion
-def transform_abs(vstup):
-    while "|" in vstup:
-        if vstup[0] != "+" and vstup[0] != "-":
-                vstup = "+" + vstup
+def transform_abs(coming_in):
+    while "|" in coming_in:
+        if coming_in[0] != "+" and coming_in[0] != "-":
+                coming_in = "+" + coming_in
         
-        i_max=len(vstup)    #Number of characters in string
+        i_max=len(coming_in)    #Number of characters in string
         #i=0
         i_abs=0    # Number of "|" in string
         i_kr=0     # Number of steps
         i_ak=0     #Current index in string
         while i_kr<i_max :  # Find a number of "|"
-            if vstup[i_kr]=="|":
+            if coming_in[i_kr]=="|":
                 i_abs+=1
             i_kr+=1
             
         if i_abs% 2 != 0:   #If odd number of "|" return False
             return False
         
-        while vstup[i_ak]=="|" or i_abs !=0:    # Find "|" and replace it for "abs(" or ")"
-            if vstup[i_ak]=="|":
-                if vstup[i_ak-1]=="-" or vstup[i_ak-1]=="+" or vstup[i_ak-1]=="("or vstup[i_ak-1]=="*" or vstup[i_ak-1]=="/" :   #If it's a started of abs function.
-                    zac=vstup[:i_ak] # String berofe abs function
-                    kon=vstup[i_ak+1:]  # String in param function
-                    vstup= zac + "abs(" + kon   # Compose all strings 
+        while coming_in[i_ak]=="|" or i_abs !=0:    # Find "|" and replace it for "abs(" or ")"
+            if coming_in[i_ak]=="|":
+                if coming_in[i_ak-1]=="-" or coming_in[i_ak-1]=="+" or coming_in[i_ak-1]=="("or coming_in[i_ak-1]=="*" or coming_in[i_ak-1]=="/" :   #If it's a started of abs function.
+                    zac=coming_in[:i_ak] # String berofe abs function
+                    kon=coming_in[i_ak+1:]  # String in param function
+                    coming_in= zac + "abs(" + kon   # Compose all strings 
                     i_abs-=1
 
-                elif vstup[i_ak-1]>="0" and vstup[i_ak-1]<="9" or vstup[i_ak-1]==")" or vstup[i_ak-1]=="!" :   # @brief If it's a end "|" of abs function.
-                    zac1=vstup[:i_ak]   # String in param function
-                    kon1=vstup[i_ak+1:] #String after abs function
-                    vstup = zac1+ ")"+kon1  # Compose all strings 
+                elif coming_in[i_ak-1]>="0" and coming_in[i_ak-1]<="9" or coming_in[i_ak-1]==")" or coming_in[i_ak-1]=="!" :   # @brief If it's a end "|" of abs function.
+                    zac1=coming_in[:i_ak]   # String in param function
+                    kon1=coming_in[i_ak+1:] #String after abs function
+                    coming_in = zac1+ ")"+kon1  # Compose all strings 
                     i_abs-=1
-                elif vstup[i_ak-1]=="!":
+                elif coming_in[i_ak-1]=="!":
                     return False
             else:
                 i_ak+=1
         
-    if vstup[0] == "+":
-        vstup = vstup[1:]
-    return vstup
+    if coming_in[0] == "+":
+        coming_in = coming_in[1:]
+    return coming_in
 
 ## Prevede % na modulo()
-# @param Input Vstupni string
+# @param Input coming_inni string
 # @return Preformovany string pro eval
 def transform_modulo(Input):
     while "%" in Input: 
@@ -169,40 +167,66 @@ def transform_modulo(Input):
 # replace x! --> factorial(x)
 # replace a**b --> pow(a,b)
 # replace a%b --> modulo(a,b)
-# @param vstup string from entry input
+# @param coming_in string from entry input
 # @return String ready for eval funtion
-def StrFce(vstup):    
-    if type(vstup) == str:        
+def StrFce(coming_in):    
+    if type(coming_in) == str:        
         
-        if len(vstup)<=1:
+        if len(coming_in)<=1:
             print "No date for transforming"
             return False
-        vstup = vstup.replace(",", ".")
+        coming_in = coming_in.replace(",", ".")
         
-        
-        vstup=transform_abs(vstup)
-#        print vstup
-        vstup=transform_factorial(vstup)
-#        print vstup
-        #vstup=transform_abs(vstup) 
-        vstup=transform_modulo(vstup)
-#        print vstup
+        if coming_in[0] != "+" and coming_in[0] != "-":
+                coming_in = "+" + coming_in
        
+        
+        while "π" in coming_in:
+            i_pi = coming_in.find("π")
+            st_b=coming_in[:i_pi]
+            st_a=coming_in[i_pi+1:]
+            coming_in=st_b + "(pi)" + st_a
+        
+        while "Ï" in coming_in:
+            i_pi = coming_in.find("Ï")
+            st_b=coming_in[:i_pi]
+            st_a=coming_in[i_pi+1:]
+            coming_in=st_b + "(pi)" + st_a
+        
+        coming_in=transform_abs(coming_in)
+        coming_in=transform_factorial(coming_in)
+        coming_in=transform_modulo(coming_in)
     else:
         print "Bad input data"
         return False
 
         
-    return vstup
+    return coming_in
     
+safe_list = ["sin","cos","tg","cotg","ln","modulo","factorial","sqrt"]
+safe_dict = dict([(k, locals().get(k, None)) for k in safe_list])    
 ## Calculate input string.
-# @param vstup input string for eval
+# @param coming_in input string for eval
 # @return Counted string
-def calculate(vstup):
-    output=StrFce(vstup)
+def calculate(coming_in):
+    output=StrFce(coming_in)
     if output==False:
-        print "No data for count"
+        print "Bad data for count"
         return False
+   
+    print output
+    try:
+        output = eval(output, {"__builtins__":None}, safe_dict)
+        
+    except:
+        return "Invalid syntax on input"
+    else:
+        return output
     
-    return eval(output)
+    
 
+txt ="sin(|(2-1)*|2||)"
+print txt
+txt = calculate(txt)
+print "txt:",txt
+#print eval(txt)"""
