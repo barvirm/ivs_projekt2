@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from my_math import *
+pi = 3.14159265359
 ## Transform entry input to factorial  for eval
 # @param coming_in string from entry input
 # @return String ready for eval funtion
@@ -170,7 +171,7 @@ def transform_modulo(Input):
 # @param coming_in string from entry input
 # @return String ready for eval funtion
 def StrFce(coming_in):    
-    if type(coming_in) == str:        
+    if type(coming_in) == str or type(coming_in) == unicode:        
         
         if len(coming_in)<=1:
             print "No date for transforming"
@@ -180,19 +181,6 @@ def StrFce(coming_in):
         if coming_in[0] != "+" and coming_in[0] != "-":
                 coming_in = "+" + coming_in
        
-        
-        while "π" in coming_in:
-            i_pi = coming_in.find("π")
-            st_b=coming_in[:i_pi]
-            st_a=coming_in[i_pi+1:]
-            coming_in=st_b + "(pi)" + st_a
-        
-        while "Ï" in coming_in:
-            i_pi = coming_in.find("Ï")
-            st_b=coming_in[:i_pi]
-            st_a=coming_in[i_pi+1:]
-            coming_in=st_b + "(pi)" + st_a
-        
         coming_in=transform_abs(coming_in)
         coming_in=transform_factorial(coming_in)
         coming_in=transform_modulo(coming_in)
@@ -203,13 +191,20 @@ def StrFce(coming_in):
         
     return coming_in
     
-safe_list = ["sin","cos","tg","cotg","ln","modulo","factorial","sqrt"]
-safe_dict = dict([(k, locals().get(k, None)) for k in safe_list])    
+safe_list = ["sin","cos","tg","cotg","ln","modulo","factorial","sqrt","e","pi"]
+safe_dict = dict([(k, locals().get(k, None)) for k in safe_list])
+safe_dict['abs'] = abs    
 ## Calculate input string.
 # @param coming_in input string for eval
 # @return Counted string
 def calculate(coming_in):
+    coming_in=coming_in.decode("utf-8")
+    coming_in=coming_in.replace(u"π","(pi)")
+    #coming_in=coming_in.replace("strecha","**")
+    
+        
     output=StrFce(coming_in)
+    
     if output==False:
         print "Bad data for count"
         return False
@@ -223,9 +218,8 @@ def calculate(coming_in):
     else:
         return output
     
-    
-
-txt ="sin(|(2-1)*|2||)"
+"""
+txt ="((25-12)%5)!"
 print txt
 txt = calculate(txt)
 print "txt:",txt
