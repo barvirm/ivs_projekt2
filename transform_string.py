@@ -3,53 +3,30 @@
 
 from my_math import *
 pi = 3.14159265359
-## Transform entry input to factorial  for eval
+## Transform coming_in to transfered data for eval function.
 # @param coming_in string from entry input
 # @return String ready for eval funtion
 def transform_factorial(coming_in):
       while "!" in coming_in:               
             if len(coming_in) <= 1: #Test of input string 
                 return False
-                          
-            if coming_in[0] != "+" and coming_in[0] != "-": #Test the first operand
-                coming_in = "+" + coming_in
-            
-            i_end = coming_in.find("!") #First ! in input       
-            i = i_end-1    #First index before !
-            
-            while coming_in[i] >= '0' and coming_in[i] <= '9' or coming_in[i] == '.':
-                if i > 0:
-                    i -= 1
-                else:
-                    break
-        
-            i_bracket=1   #@param First index on bracket
-            o=0
-            i_str=0 #First index of factorial string
-            o_z=0   #Index of operand
-            a=0
-            #Find number for factorial
-            while coming_in[i_end-i_str-1]>="0" and coming_in[i_end-i_str-1]<="9":  #Find a start index of number before factorial
-                if  coming_in[i_end-i_str-1]=="+":
-                    i_str-=1
-                i_str += 1
-                
-            if coming_in[i_end-i_bracket] == ")" : # Find a end index of number before factorial
-                while coming_in[i_end-i_bracket] !="(":
-                    if coming_in[i_end-i_bracket-1]>="a" and coming_in[i_end-i_bracket-1]<="z":
-                        i_bracket +=1
-                    if coming_in[i_end-i_bracket] =="+" or coming_in[i_end-i_bracket]=="-" or coming_in[i_end-i_bracket]=="*" or coming_in[i_end-i_bracket]=="/" or coming_in[i_end-i_bracket] == "|":
-                        o_z=1
-                        
-                    i_bracket +=1
-                while coming_in[i_end-i_bracket-1]>="a" and coming_in[i_end-i_bracket-1]<="z":
-                    i_bracket +=1
-                    a=1
-                    
-                    
            
-            p1 = coming_in[:i_end-i_bracket-i_str+1-o_z]  # String before factorial function
-            p2 = coming_in[i_end-i_bracket+o-i_str+1-a:i_end-o-o_z+a] #String for factorial function
+            i_end = coming_in.find("!") # @param First ! in input      
+            i = i_end-1    # @param First index before !
+            c_bracket = 0   # @param Number of bracket in !
+            while coming_in[i] not in "(/*-+!%" or c_bracket != 0: 
+                if i == 0:
+                    i-=1
+                    break
+                elif coming_in[i] == ")":
+                    c_bracket += 1
+                elif coming_in[i] == "(":
+                    c_bracket -= 1
+                i-=1
+            i+=1
+      
+            p1 = coming_in[:i]  # String before factorial function
+            p2 = coming_in[i:i_end] #String for factorial function
             p3 = coming_in[i_end+1:]    #String after factorial function
            
    
@@ -198,17 +175,19 @@ safe_dict['abs'] = abs
 # @param coming_in input string for eval
 # @return Counted string
 def calculate(coming_in):
+    
     coming_in=coming_in.decode("utf-8")
     coming_in=coming_in.replace(u"π","(pi)")
     #coming_in=coming_in.replace("strecha","**")
     
-        
+    print "vstup",coming_in
     output=StrFce(coming_in)
     
     if output==False:
         print "Bad data for count"
         return False
-   
+    
+        
     print output
     try:
         output = eval(output, {"__builtins__":None}, safe_dict)
@@ -219,7 +198,7 @@ def calculate(coming_in):
         return output
     
 """
-txt ="((25-12)%5)!"
+txt ="(modulo((25-12).5))!"
 print txt
 txt = calculate(txt)
 print "txt:",txt

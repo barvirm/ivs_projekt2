@@ -30,9 +30,9 @@ class TestMyMath(ut.TestCase):
 		self.assertEqual(s.StrFce("2!+5"),"factorial(2)+5")							#4
 		self.assertEqual(s.StrFce("1-2!+5"),"1-factorial(2)+5")						#5
 		self.assertEqual(s.StrFce("-20!"),"-factorial(20)")							#6
-		self.assertEqual(s.StrFce("(20-5)!"),"factorial(20-5)")						#7
-		self.assertEqual(s.StrFce("1-(20-5)!+2**5"),"1-factorial(20-5)+2**5")		#8
-		self.assertEqual(s.StrFce("(20*5)!**2!"),"factorial(20*5)**factorial(2)")	#9
+		self.assertEqual(s.StrFce("(20-5)!"),"factorial((20-5))")						#7
+		self.assertEqual(s.StrFce("1-(20-5)!+2**5"),"1-factorial((20-5))+2**5")		#8
+		self.assertEqual(s.StrFce("(20*5)!**2!"),"factorial((20*5))**factorial(2)")	#9
 
 	#section 2
 	def test_abs(self):
