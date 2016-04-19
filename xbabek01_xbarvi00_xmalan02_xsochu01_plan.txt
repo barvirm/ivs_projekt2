@@ -31,7 +31,7 @@ Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
 					Dokumentace - Celá skupina (nastavení dokumentacve + správa - Marek Barvíř)
 					Grafická knihovna (PLOT) - Marek Barvíř, Petr Malaník
 					Uživatelská dokumentace - Jakub Sochůrek
-					Instalátor (.deb - Závislosti na knihovnách) - David Bábek, Marek Baríř
+					Instalátor (.deb - Závislosti na knihovnách) - David Bábek, Marek Barvíř
 
 
 
@@ -64,7 +64,14 @@ ToDo (18.4):
 -Mockup
 -Testy matematické knihovny
 -Dokumentace pro funkce určené pro převod stringu (anglicky)
--Převod stringu (zabezpečení,refaktorizace,přejmenování proměných do angličtiny)
+-Převod stringu 
+	-zabezpečení
+	-refaktorizace
+	-přejmenování proměných do angličtiny
+	-přidání výměny π za (pi)
+	-odmocnina
+	-ošetření dělení nulou
+-Instalátor
 
 ***Barvíř Marek***
 -PLOT
@@ -74,10 +81,15 @@ ToDo (18.4):
 ***Malaník Petr***
 -PLOT
 -Binární kalkulačka
--Úprava GUI u historie (poslední položka je roztažená)
 
 ***Sochůrek Jakub***
 -Binární kalkulačka
--Uživatelská dokumentace
--Převod stringu (zabezpečení,refaktorizace,přejmenování proměných do angličtiny)
+-Uživatelská dokumentace (ideálně LaTeX a anglicky, ale není nutné)
+-Převod stringu 
+	-zabezpečení
+	-refaktorizace
+	-přejmenování proměných do angličtiny
+	-přidání výměny π za (pi)
+	-odmocnina
+	-ošetření dělení nulou
 -Mockup

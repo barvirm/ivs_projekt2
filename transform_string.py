@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import my_math
+from my_math import *
 ## Transform entry input to factorial  for eval
 # @param vstup string from entry input
 # @return String ready for eval funtion

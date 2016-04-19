@@ -81,7 +81,6 @@ class Calculator():
     # @param widget pointer to widget that call this function
     def press_keyboard(self, widget,data = None):
         key = gtk.gdk.keyval_name(data.keyval)
-        print key
         if key in ["Return","KP_Enter"]:
             notebook=self.builder.get_object("notebook1").get_current_page()
             self.send_to_calculate(self.builder.get_object("entry"+str(notebook)).get_text())
@@ -91,7 +90,6 @@ class Calculator():
     # @param self pointer to class
     # @param widget pointer to widget that call this function
     def num_base_chaged(self,widget):
-        print widget.get_label()
         st=0
         buttons=[]
         for i in range(49,65):
@@ -104,7 +102,6 @@ class Calculator():
             st=10
         elif widget.get_label() == "HEX":
             st=16
-        print st
         for i in range(0,st):
             buttons[i].set_sensitive(True)
         for i in range((st),16):
@@ -117,8 +114,8 @@ class Calculator():
         notebook=self.builder.get_object("notebook1").get_current_page()
         char =  widget.get_label()
         position = self.builder.get_object("entry"+str(notebook)).get_position()
-        functions = {"√":"sqrt()","x!":"!","ln":"ln()","abs":"||","sin":"sin()","cos":"cos()","tg":"tg()","cotg":"cotg()"}
-        if char in ["0","1","2","3","4","5","6","7","8","9","+","-","/","*",",","e","π","%","^"]:
+        functions = {"√":"sqrt()","x!":"!","ln":"ln()","abs":"||","sin":"sin()","cos":"cos()","tg":"tg()","cotg":"cotg()","^":"**"}
+        if char in ["0","1","2","3","4","5","6","7","8","9","+","-","/","*",",","e","π","%"]:
             self.set_entry(notebook,position,char)
         elif char in functions:
             self.set_entry(notebook,position,functions[char])
@@ -160,7 +157,6 @@ class Calculator():
     # @param self pointer to class
     # @param widget pointer to widget that call this function
     def entry_changed(self,widget):
-        #TODO FIX IT !! UNREADABLE
         actual_page = self.builder.get_object("notebook1").get_current_page()
         if actual_page == 4:
             actual_page = 1
@@ -189,9 +185,11 @@ class Calculator():
         self.builder.get_object("entry1").set_text(historical_text)
 
     def send_to_calculate(self,eval_string):
-        self.history_add(eval_string)
-        print eval_string
-        print transform_string.calculate(eval_string)
+        #eval_string = self.builder.get_object("entry"+str(notebook)).get_text() #To to bude předáváno do funkce zpracovávající string 
+        self.history_add(eval_string) 
+        ev = str(transform_string.calculate(eval_string))
+        self.builder.get_object("entry2").set_text(ev)
+        self.builder.get_object("entry3").set_text(ev)
 
 
     ## Change window size for each mode of calculator
@@ -199,20 +197,20 @@ class Calculator():
     # @param widget pointer to widget that call this function
     # @param p2 actual page in notebook
     def switch_page(self,widget,p1,p2):
-        if p2 == 0:
+        if p2 == 0:         #Classic
             self.window.set_size_request(320,300)
             self.builder.get_object("entry"+str(p2)).grab_focus()
-        elif p2 == 1:
+        elif p2 == 1:       #Science
             self.window.set_size_request(515,300)
             self.builder.get_object("entry"+str(p2)).grab_focus()
-        elif p2 == 2:
+        elif p2 == 2:       #Prog.
             self.window.set_size_request(475,300)
             self.builder.get_object("entry"+str(p2)).grab_focus()
-        elif p2 == 3:
+        elif p2 == 3:       #PLOT
             self.window.set_size_request(800,600)
-        elif p2 == 4:
-            self.window.set_size_request(480,400)
-        elif p2 == 5:
+        elif p2 == 4:       #History
+            self.window.set_size_request(480,330)
+        elif p2 == 5:       #Authors
             self.window.set_size_request(320,300)
     
     ## Main loop for GUI

@@ -126,10 +126,10 @@ def ln(x):
 # @param n Divisor
 # @return Remainder after division
 def modulo(a,n):
-    if ( n == 0 ):
+    if ( (n) == 0 ):
         return None
-    if (a < 0 ):
+    if ((a) < 0 ):
         a=abs(a)
-    if ( n < 0):
+    if ( (n) < 0):
         return -( (a) % (abs(n)) )
     return (a)%(n)
