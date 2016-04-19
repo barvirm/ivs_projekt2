@@ -50,14 +50,15 @@ class TestMyMath(ut.TestCase):
 	def test_complete_calculating(self):
 		self.assertEqual(s.calculate("exit()"),"Invalid syntax on input")			#0
 		self.assertEqual(s.calculate("Hi guys()"),"Invalid syntax on input")		#1
-		self.assertEqual(s.calculate("tg(π/2)"),"None")								#2
+		self.assertEqual(s.calculate("tg(π/2)"),None)								#2
 		self.assertEqual(s.calculate("tg(π/2)*5"),"Invalid syntax on input")		#3
 		self.assertEqual(s.calculate("e*5"),13.5914091423)							#4
 		self.assertEqual(s.calculate("|3!*-8|"),48)									#5
 		self.assertEqual(s.calculate("sin(|(2-1)*|2||)"),0.90929743)    			#6
 		self.assertEqual(s.calculate("((25-12)%5)!"),6)								#7
-		self.assertEqual(s.calculate("|(2-7)|**((6-1)%(7-5))"),5)					#8
-		self.assertEqual(s.calculate("2/0"),"Division by zero")						#9
+		self.assertEqual(s.calculate("((25-12)%5)%2"),1)							#8
+		self.assertEqual(s.calculate("|(2-7)|**((6-1)%(7-5))"),5)					#9
+		self.assertEqual(s.calculate("2/0"),"Division by zero")						#10
 
 if ( __name__ == '__main__' ):
     ut.main()

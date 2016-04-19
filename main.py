@@ -153,7 +153,7 @@ class Calculator():
         self.builder.get_object("entry"+str(notebook)).grab_focus()
         self.builder.get_object("entry"+str(notebook)).set_position(position+entry_off_set)
 
-    ##Update Classic and Science calculators entry when is typed to one of thies entries
+    ##Synchronize Classic and Science calculators entries when is typed to one of thies entry
     # @param self pointer to class
     # @param widget pointer to widget that call this function
     def entry_changed(self,widget):
