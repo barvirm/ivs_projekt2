@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import exceptions
 from my_math import *
 pi = 3.14159265359
 ## Transform coming_in to transfered data for eval function.
@@ -11,10 +12,10 @@ def transform_factorial(coming_in):
             if len(coming_in) <= 1: #Test of input string 
                 return False
            
-            i_end = coming_in.find("!") # @param First ! in input      
-            i = i_end-1    # @param First index before !
-            c_bracket = 0   # @param Number of bracket in !
-            while coming_in[i] not in "(/*-+!%" or c_bracket != 0: 
+            i_end = coming_in.find("!") # First ! in input      
+            i = i_end-1    # First index before !
+            c_bracket = 0   # Number of bracket in !
+            while coming_in[i] not in "(/*-+!%" or c_bracket != 0: #find a string for factorial function
                 if i == 0:
                     i-=1
                     break
@@ -178,7 +179,7 @@ def calculate(coming_in):
     
     coming_in=coming_in.decode("utf-8")
     coming_in=coming_in.replace(u"π","(pi)")
-    #coming_in=coming_in.replace("strecha","**")
+    coming_in=coming_in.replace("^","**")
     
     print "vstup",coming_in
     output=StrFce(coming_in)
@@ -186,19 +187,34 @@ def calculate(coming_in):
     if output==False:
         print "Bad data for count"
         return False
+    div=output
+    i=div.find("/")+1
+    s=i
+    div_br=0
+    if "/" in div:
+        while (div[i] not in ")/*-+!%" or div_br != 0 )and i<len(div):
+            if i==len(div)-1:
+                break
+            elif coming_in[i] == "(":
+                div_br += 1
+            elif coming_in[i] == ")":
+                div_br -= 1
+            i+=1
+        div=div[s:i+1]
     
-        
-    print output
     try:
+    
         output = eval(output, {"__builtins__":None}, safe_dict)
         
+    except exceptions.ZeroDivisionError:
+        return "Division by zero"
     except:
         return "Invalid syntax on input"
     else:
         return output
     
 """
-txt ="(modulo((25-12).5))!"
+txt ="2/(1-1)"
 print txt
 txt = calculate(txt)
 print "txt:",txt
