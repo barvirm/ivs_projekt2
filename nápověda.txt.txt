@@ -1,0 +1,4 @@
+Mezi mody kalkulaèky mùžete pøepínat na horní lištì. Vybrat si mùžete z modu Classic,Extened,Programing a Plot. 
+V Historii se mùžete podívat na vaše pøedchozí výpoèty,popøípadì si je dát znovu spoèítat.
+
+Do kalkulaèky mùžete zadávat pomocí tlaèítek, nebo pøímo vepisovat z klávesnice.

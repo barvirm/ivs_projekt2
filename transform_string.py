@@ -4,9 +4,10 @@
 import exceptions
 from my_math import *
 pi = 3.14159265359
-## Transform coming_in to transfered data for eval function.
+## Convert the input string with "!" on name of factorial function
 # @param coming_in string from entry input
 # @return String ready for eval funtion
+# @return False if it's no number before "!"
 def transform_factorial(coming_in):
       while "!" in coming_in:               
             if len(coming_in) <= 1: #Test of input string 
@@ -19,9 +20,9 @@ def transform_factorial(coming_in):
                 if i == 0:
                     i-=1
                     break
-                elif coming_in[i] == ")":
+                elif coming_in[i] == ")":   #Counts a number of brackets.
                     c_bracket += 1
-                elif coming_in[i] == "(":
+                elif coming_in[i] == "(":   #Counts a number of brackets.
                     c_bracket -= 1
                 i-=1
             i+=1
@@ -34,16 +35,17 @@ def transform_factorial(coming_in):
             if p2 == "":
                 return False
             
-            coming_in =  p1 + "factorial(" + p2 + ")" + p3  #Compose all strings 
+            coming_in =  p1 + "factorial(" + p2 + ")" + p3  #Compose all section of strings 
          
             if coming_in[0] == "+": #Delete first index,If it's +
                 coming_in = coming_in[1:]
             
       return coming_in
       
-## Transform entry input to abs  for eval
+## Converts the input string "|" on name of the " abs "
 # @param coming_in string from entry input
-# @return String ready for eval funtion
+# @return Converted characters "|" to name of abs function
+# @return False if it's a odd number of "|"
 def transform_abs(coming_in):
     while "|" in coming_in:
         if coming_in[0] != "+" and coming_in[0] != "-":
@@ -149,73 +151,53 @@ def transform_modulo(Input):
 # @param coming_in string from entry input
 # @return String ready for eval funtion
 def StrFce(coming_in):    
-    if type(coming_in) == str or type(coming_in) == unicode:        
+    if type(coming_in) == str or type(coming_in) == unicode:   # Test a type of input.     
         
-        if len(coming_in)<=1:
+        if len(coming_in)<=1: # When it's a empty string,return "No date for transforming".
             print "No date for transforming"
             return False
-        coming_in = coming_in.replace(",", ".")
+        coming_in = coming_in.replace(",", ".") #replace  ","  on  ".".
         
         if coming_in[0] != "+" and coming_in[0] != "-":
                 coming_in = "+" + coming_in
        
-        coming_in=transform_abs(coming_in)
-        coming_in=transform_factorial(coming_in)
-        coming_in=transform_modulo(coming_in)
+        coming_in=transform_abs(coming_in) #call function transform abs.
+        coming_in=transform_factorial(coming_in) #call function transform factorial.
+        coming_in=transform_modulo(coming_in)   #call function transform modulo.
     else:
         print "Bad input data"
         return False
 
         
     return coming_in
-    
+#Create safe sheet features that we have in the math library. 
 safe_list = ["sin","cos","tg","cotg","ln","modulo","factorial","sqrt","e","pi"]
 safe_dict = dict([(k, locals().get(k, None)) for k in safe_list])
 safe_dict['abs'] = abs    
-## Calculate input string.
+## Calculate function reaches the input string, which is converted using StrFce . Then it check the converted string and use eval ( ) it counts .
 # @param coming_in input string for eval
-# @return Counted string
+# @return Result of converted string.
+# @return "Invalid syntax on input" if in input is bad data.
+ # @return "Division by zero" If there is a division by zero .
 def calculate(coming_in):
     
-    coming_in=coming_in.decode("utf-8")
-    coming_in=coming_in.replace(u"π","(pi)")
-    coming_in=coming_in.replace("^","**")
+    coming_in=coming_in.decode("utf-8") # transform input on "UTF-8" decode
+    coming_in=coming_in.replace(u"π","(pi)") #replace "π" on "(pi)"
+    coming_in=coming_in.replace("^","**") #replace "^" on "**"
     
-    print "vstup",coming_in
-    output=StrFce(coming_in)
+    output=StrFce(coming_in) #Converts string to eval .
     
     if output==False:
         print "Bad data for count"
         return False
-    div=output
-    i=div.find("/")+1
-    s=i
-    div_br=0
-    if "/" in div:
-        while (div[i] not in ")/*-+!%" or div_br != 0 )and i<len(div):
-            if i==len(div)-1:
-                break
-            elif coming_in[i] == "(":
-                div_br += 1
-            elif coming_in[i] == ")":
-                div_br -= 1
-            i+=1
-        div=div[s:i+1]
     
-    try:
-    
+    try:    #Chech the input transformed string,if it's good for eval function
         output = eval(output, {"__builtins__":None}, safe_dict)
         
-    except exceptions.ZeroDivisionError:
+    except exceptions.ZeroDivisionError: #If a division by zero return error
         return "Division by zero"
-    except:
+    except: #If it's bad input string return error
         return "Invalid syntax on input"
     else:
         return output
     
-"""
-txt ="2/(1-1)"
-print txt
-txt = calculate(txt)
-print "txt:",txt
-#print eval(txt)"""
