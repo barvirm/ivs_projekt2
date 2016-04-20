@@ -15,7 +15,7 @@ pygtk.require("2.0")
 import gtk
 import gtk.glade
 
-from numpy import arange, sin
+from numpy import arange, array, sin
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
@@ -30,7 +30,10 @@ class Calculator():
         self.x = []
         self.y = []
         self.history=["","","","","","","","","",""]
+        self.history_pages=[6,6,6,6,6,6,6,6,6,6]
         self.gui_init()
+
+    ######################### GUI INIT #####################
 
     ## Create GUI for .glade file, connect signals, add canvas and figure
     # @param self pointer to class
@@ -42,9 +45,13 @@ class Calculator():
         self.window.set_size_request(320,320)
         self.window.set_title("The Calculator")
         self.window.set_icon_from_file("thecalculator-icon.png")
+        self.builder.get_object("entry0").grab_focus()
 
+        #set font type and size for all entries
         for i in range(0,7):
             self.builder.get_object("entry"+str(i)).modify_font(pango.FontDescription("serif,monospace bold condensed 14"))
+        for i in range(101,111):
+            self.builder.get_object("label"+str(i)).modify_font(pango.FontDescription("serif,monospace bold condensed 14"))
 
         # builder.connect_signals(self)
         self.builder.connect_signals({
@@ -52,13 +59,15 @@ class Calculator():
                                       "on_main_window_destroy": self.on_main_window_destroy,
                                       "press_button":self.press_button,
                                       "entry_changed":self.entry_changed,
-                                      "num_base_chaged":self.num_base_chaged,
+                                      "num_base_changed":self.num_base_changed,
                                       "press_keyboard":self.press_keyboard,
                                       "history_change":self.history_change,
                                       "plot":self.plot
                                      })
-        self.num_base_chaged(self.builder.get_object("radiobutton1"))   #Switching of programming calculator to Binaries
-        
+        self.num_base_changed(self.builder.get_object("radiobutton1"))   #Switching of programming calculator to Binaries
+    
+    ######################### PLOT funcions #####################
+    
         # figsize -- size of tuple (wight,heigth)
         self.figure = Figure(figsize=(100,100),dpi=150)
         self.axis = self.figure.add_subplot(111)
@@ -66,6 +75,12 @@ class Calculator():
         t = arange(0.0,3.0,0.01)
         s = sin(2*my_math.pi*t)
         self.axis.plot(t,s)
+        self.axis.grid(True)
+
+        gridlines = self.axis.get_xgridlines() + self.axis.get_ygridlines()
+        for line in gridlines:
+            line.set_linewidth(0.1)
+            line.set_linestyle('-')
 
         self.canvas = FigureCanvas(self.figure)
         self.canvas.show()
@@ -74,18 +89,44 @@ class Calculator():
         self.graphview.pack_start(self.canvas,True,True)
 
 
-    def plot(self,string,from_x=-10,to_x=10):
-        x = arange(from_x,to_x,0.01)
-        y = []
-        for i in x:
+    def plot(self,widget=None,from_x=-10,to_x=10):
+        orig_string = self.builder.get_object("entry6").get_text()
+        self.x = []
+        self.y = []
+        self.x = arange(from_x,to_x,0.01)
+        for x in self.x:
             try:
+                string = orig_string.replace("x",str("(%f)"%(x)))
+                #print string
                 tmp_number = transform_string.calculate(string)
+                if ( type(tmp_number) != str ):
+                    self.y.append(tmp_number)
+                else:
+                    self.y.append(None)
+                    continue
             except:
                 entry = self.builder.get_object("entry6")
                 entry.set_text("Invalid synatax, use variable x")
-            y.append(tmp_number)
-        y = array(y)
-        self.axis.plot(x,y)
+        self.y = array(self.y)
+        self.axis.plot(self.x,self.y)
+        self.axis.grid(True)
+
+        gridlines = self.axis.get_xgridlines() + self.axis.get_ygridlines()
+        for line in gridlines:
+            line.set_linewidth(0.1)
+            line.set_linestyle('-')
+
+        self.canvas.draw_idle()
+
+    ######################### PROG funcions ####################
+    
+    def prog_calc(self,base_string):
+        base_string=base_string.replace("xor","^")
+        for i in range(0,len(base_string)):
+            if base_string[i] not in ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","~","^","&","|","+","-","/","*",]:
+                return "Invalid input syntax"
+        output = eval(base_string, {"__builtins__":None})
+        return output
 
     ######################### GUI funcions #####################
     
@@ -102,13 +143,15 @@ class Calculator():
         key = gtk.gdk.keyval_name(data.keyval)
         if key in ["Return","KP_Enter"]:
             notebook=self.builder.get_object("notebook1").get_current_page()
-            self.send_to_calculate(self.builder.get_object("entry"+str(notebook)).get_text())
-
+            if notebook == 3:
+                self.plot()
+            else:
+                self.send_to_calculate(self.builder.get_object("entry"+str(notebook)).get_text())
 
     ## Switching of programming calculator to numeral system of the selected base
     # @param self pointer to class
     # @param widget pointer to widget that call this function
-    def num_base_chaged(self,widget):
+    def num_base_changed(self,widget):
         st=0
         buttons=[]
         for i in range(49,65):
@@ -134,14 +177,17 @@ class Calculator():
         char =  widget.get_label()
         position = self.builder.get_object("entry"+str(notebook)).get_position()
         functions = {"√":"sqrt()","x!":"!","ln":"ln()","abs":"||","sin":"sin()","cos":"cos()","tg":"tg()","cotg":"cotg()"}
-        if char in ["0","1","2","3","4","5","6","7","8","9","+","-","/","*",",","e","π","%","^"]:
+        if char in ["0","1","2","3","4","5","6","7","8","9","+","-","/","*",",","e","π","%","^","&","|","xor","~","A","B","C","D","E","F"]:
             self.set_entry(notebook,position,char)
         elif char in functions:
             self.set_entry(notebook,position,functions[char])
         elif char == "CLR":
-            self.builder.get_object("entry"+str(notebook)).set_text("")
-            self.builder.get_object("entry2").set_text("")
-            self.builder.get_object("entry3").set_text("")
+            if notebook in [0,1]:
+                for i in [0,1,3,4]:
+                    self.builder.get_object("entry"+str(i)).set_text("")
+            elif notebook == 2:
+                self.builder.get_object("entry2").set_text("")
+                self.builder.get_object("entry5").set_text("")
         elif char == "←":
             if position != 0:
                 ent=self.builder.get_object("entry"+str(notebook)).get_text()
@@ -153,7 +199,7 @@ class Calculator():
                 self.builder.get_object("entry"+str(notebook)).set_position(position-1)
         elif char == "=":
             self.send_to_calculate(self.builder.get_object("entry"+str(notebook)).get_text())
-        self.builder.get_object("entry"+str(1-notebook)).set_text(self.builder.get_object("entry"+str(notebook)).get_text())   #Actualization of entry in another notebook
+        #self.builder.get_object("entry"+str(1-notebook)).set_text(self.builder.get_object("entry"+str(notebook)).get_text())   #Actualization of entry in another notebook
 
     ## Insert selected expression to current position in Entry
     ## Change the position of the cursor on the most suitable position relative to the last part of expression in entry
@@ -180,38 +226,54 @@ class Calculator():
     def entry_changed(self,widget):
         actual_page = self.builder.get_object("notebook1").get_current_page()
         if actual_page == 4:
-            actual_page = 1
-        text_on_actual_page = self.builder.get_object("entry"+str(actual_page)).get_text()
-        self.builder.get_object("entry0").set_text(text_on_actual_page)
-        self.builder.get_object("entry1").set_text(text_on_actual_page)
+            actual_page =0
+        if actual_page in [0,1]:
+            text_on_actual_page = self.builder.get_object("entry"+str(actual_page)).get_text()
+            self.builder.get_object("entry0").set_text(text_on_actual_page)
+            self.builder.get_object("entry1").set_text(text_on_actual_page)
     
     ## Add old calculation to history tab at first position, shit another
     # @param self pointer to class
     # @param data last calculated string 
     def history_add(self,data):
+        actual_page = self.builder.get_object("notebook1").get_current_page()
         if data != self.history[9]:
-            for i in range(0,9):
+            for i in range(0,9):                        #shif of list (records and pages)
                 self.history[i]=self.history[i+1]
-            self.history[9]=data
+                self.history_pages[i]=self.history_pages[i+1]
+            self.history[9]=data                        #save new historical record to 0.position on list
+            self.history_pages[9]=actual_page           #save actual page linked to record in list 
             for i in range(0,10):
-                self.builder.get_object("label"+str(101+i)).set_text(self.history[i])
-    
+                self.builder.get_object("label"+str(101+i)).set_text(self.history[i]) #actualize the label by the list od records
+
     ## When is pressed button right side of history record, this record is return to entry on page 0 or 1
     # @param self pointer to class
     # @param widget pointer to widget that call this function
     def history_change(self,widget):
         button = gtk.Buildable.get_name(widget)[6:9]
         historical_text = self.builder.get_object("label"+button).get_label()
-        self.builder.get_object("entry0").set_text(historical_text)
-        self.builder.get_object("entry1").set_text(historical_text)
+        final_page = self.history_pages[int(button)-101]
+        if final_page in [0,1]:
+            self.builder.get_object("entry0").set_text(historical_text)
+            self.builder.get_object("entry3").set_text("")
+            self.builder.get_object("entry4").set_text("")
+        elif final_page == 2:
+            self.builder.get_object("entry2").set_text(historical_text)
+            self.builder.get_object("entry5").set_text("")
+        self.builder.get_object("notebook1").set_current_page(final_page)
 
     def send_to_calculate(self,eval_string):
         #eval_string = self.builder.get_object("entry"+str(notebook)).get_text() #To to bude předáváno do funkce zpracovávající string 
+        actual_page = self.builder.get_object("notebook1").get_current_page()
         self.history_add(eval_string) 
-        ev = str(transform_string.calculate(eval_string))
-        self.builder.get_object("entry2").set_text("= "+ev)
-        self.builder.get_object("entry3").set_text("= "+ev)
-
+        if actual_page in [0,1]:
+            ev = str(transform_string.calculate(eval_string))
+            self.builder.get_object("entry3").set_text("= "+ev)
+            self.builder.get_object("entry4").set_text("= "+ev)
+        elif actual_page == 2:
+            ev = str(self.prog_calc(eval_string)) 
+            print ev
+            self.builder.get_object("entry5").set_text(ev)
 
     ## Change window size for each mode of calculator
     # @param self pointer to class
@@ -239,7 +301,6 @@ class Calculator():
     def main(self):
         self.window.show()
         gtk.main()
-
 
 if __name__ == '__main__':
     app = Calculator()
