@@ -16,6 +16,7 @@ import gtk.glade
 
 from numpy import arange, sin
 import matplotlib
+import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_gtkagg import FigureCanvasGTKAgg as FigureCanvas
 import pylab
@@ -37,10 +38,13 @@ class Calculator():
         self.builder = gtk.Builder()
         self.builder.add_from_file("Glades.glade")
         self.window = self.builder.get_object("main_window")
-        self.window.set_size_request(320,300)
+        self.window.set_size_request(320,320)
         self.window.set_title("The Calculator")
         self.window.set_icon_from_file("thecalculator-icon.png")
 
+        fixed_font = gtk.load_font(
+                    "-misc-fixed-medium-r-*-*-*-140-*-*-*-*-iso8859-1")
+        
         # builder.connect_signals(self)
         self.builder.connect_signals({
                                       "switch_page": self.switch_page,
@@ -49,7 +53,8 @@ class Calculator():
                                       "entry_changed":self.entry_changed,
                                       "num_base_chaged":self.num_base_chaged,
                                       "press_keyboard":self.press_keyboard,
-                                      "history_change":self.history_change
+                                      "history_change":self.history_change,
+                                      "plot":self.plot
                                      })
         self.num_base_chaged(self.builder.get_object("radiobutton1"))   #Switching of programming calculator to Binaries
         
@@ -68,6 +73,18 @@ class Calculator():
         self.graphview.pack_start(self.canvas,True,True)
 
 
+    def plot(self,string,from_x=-10,to_x=10):
+        x = arange(from_x,to_x,0.01)
+        y = []
+        for i in x:
+            try:
+                tmp_number = transform_string.calculate(string)
+            except:
+                entry = self.builder.get_object("entry6")
+                entry.set_text("Invalid synatax, use variable x")
+            y.append(tmp_number)
+        y = array(y)
+        self.axis.plot(x,y)
 
     ######################### GUI funcions #####################
     
@@ -181,7 +198,6 @@ class Calculator():
     def history_change(self,widget):
         button = gtk.Buildable.get_name(widget)[6:9]
         historical_text = self.builder.get_object("label"+button).get_label()
-        print historical_text
         self.builder.get_object("entry0").set_text(historical_text)
         self.builder.get_object("entry1").set_text(historical_text)
 
@@ -189,8 +205,8 @@ class Calculator():
         #eval_string = self.builder.get_object("entry"+str(notebook)).get_text() #To to bude předáváno do funkce zpracovávající string 
         self.history_add(eval_string) 
         ev = str(transform_string.calculate(eval_string))
-        self.builder.get_object("entry2").set_text(ev)
-        self.builder.get_object("entry3").set_text(ev)
+        self.builder.get_object("entry2").set_text("= "+ev)
+        self.builder.get_object("entry3").set_text("= "+ev)
 
 
     ## Change window size for each mode of calculator
@@ -199,13 +215,13 @@ class Calculator():
     # @param p2 actual page in notebook
     def switch_page(self,widget,p1,p2):
         if p2 == 0:         #Classic
-            self.window.set_size_request(320,300)
+            self.window.set_size_request(320,320)
             self.builder.get_object("entry"+str(p2)).grab_focus()
         elif p2 == 1:       #Science
-            self.window.set_size_request(515,300)
+            self.window.set_size_request(515,320)
             self.builder.get_object("entry"+str(p2)).grab_focus()
         elif p2 == 2:       #Prog.
-            self.window.set_size_request(475,300)
+            self.window.set_size_request(475,320)
             self.builder.get_object("entry"+str(p2)).grab_focus()
         elif p2 == 3:       #PLOT
             self.window.set_size_request(800,600)
