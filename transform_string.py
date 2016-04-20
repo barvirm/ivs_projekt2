@@ -153,7 +153,7 @@ def transform_modulo(Input):
 def StrFce(coming_in):    
     if type(coming_in) == str or type(coming_in) == unicode:   # Test a type of input.     
         
-        if len(coming_in)==1: # When it's a empty string,return "No date for transforming".
+        if len(coming_in)==0: # When it's a empty string,return "No date for transforming".
             print "No date for transforming"
             return False
         coming_in = coming_in.replace(",", ".") #replace  ","  on  ".".
