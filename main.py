@@ -117,7 +117,7 @@ class Calculator():
             line.set_linestyle('-')
 
         self.canvas.draw_idle()
-        
+
     ######################### PROG funcions ####################
     
     def prog_calc(self,base_string):
@@ -125,9 +125,7 @@ class Calculator():
         for i in range(0,len(base_string)):
             if base_string[i] not in ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","~","^","&","|","+","-","/","*",]:
                 return "Invalid input syntax"
-        print base_string
         output = eval(base_string, {"__builtins__":None})
-        print "CALC "+str(output)
         return output
 
     ######################### GUI funcions #####################
@@ -145,7 +143,6 @@ class Calculator():
         key = gtk.gdk.keyval_name(data.keyval)
         if key in ["Return","KP_Enter"]:
             notebook=self.builder.get_object("notebook1").get_current_page()
-            print notebook
             if notebook == 3:
                 self.plot()
             else:
