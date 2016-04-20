@@ -1,6 +1,5 @@
-Mezi mody kalkulaèky mùžete pøepínat na horní lištì. Vybrat si mùžete z modu Classic,Extened,Programing a Plot. 
-V Historii se mùžete podívat na vaše pøedchozí výpoèty,popøípadì si je dát znovu spoèítat.
+You can change between mods in the top bar. You can change between Classic, Science, Programming, Plot, History and Autors.
+In history you can look on the previous calculation or you return on page where was this example solve, with history text in input.
+You can use keyboard or click on button in calculator.
 
-Do kalkulaèky mùžete zadávat pomocí tlaèítek, nebo pøímo vepisovat z klávesnice.
-
-Plot - lze zadávat pouze rovnice s jednou neznámou, tato promnìná se musí jmenovat x
+Plot - Solve equation on with one unknown, this parameters must be named X.
