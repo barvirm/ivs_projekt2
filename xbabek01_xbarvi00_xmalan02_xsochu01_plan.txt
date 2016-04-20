@@ -67,41 +67,22 @@ Prezentace na EX-HDD
 ***Bábek David***
 -Wireframe
 -Mockup
--Testy matematické knihovny
 -Dokumentace pro funkce určené pro převod stringu (anglicky)
 -Převod stringu 
-	-zabezpečení
 	-refaktorizace
-	-přejmenování proměných do angličtiny
-	-přidání výměny π za (pi)
-	-přidání výměny ^ za **
-	-odmocnina
-	-ošetření dělení nulou
+	-přejmenování proměných a přepsání dokumentace do angličtiny
 -Instalátor
 -Přihlášení k obhajobě
 -Debbuging (gdb)
 
 ***Barvíř Marek***
--PLOT
 -Instalátor
--Mockup
 
 ***Malaník Petr***
--PLOT
--Binární kalkulačka
 -Nápověda
 
 ***Sochůrek Jakub***
-
--Binární kalkulačka
--Uživatelská dokumentace (ideálně LaTeX a anglicky, ale není nutné)
+-Uživatelská dokumentace (ideálně LaTeX a anglicky)
 -Převod stringu 
-	-zabezpečení
-	-refaktorizace
 	-přejmenování proměných do angličtiny
-	-přidání výměny π za (pi)
-	-přidání výměny ^ za **
-	-odmocnina
-	-ošetření dělení nulou
--Mockup
 -Help

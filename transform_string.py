@@ -188,8 +188,7 @@ def calculate(coming_in):
     output=StrFce(coming_in) #Converts string to eval .
     
     if output==False:
-        print "Bad data for count"
-        return False
+        return "Invalid syntax on input"
     
     try:    #Chech the input transformed string,if it's good for eval function
         output = eval(output, {"__builtins__":None}, safe_dict)

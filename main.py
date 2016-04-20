@@ -121,12 +121,46 @@ class Calculator():
     ######################### PROG funcions ####################
     
     def prog_calc(self,base_string):
+        base_dictionary = {"BIN":2,"OCT":8,"DEC":10,"HEX":16}
+        if len(base_string)<=0:
+            return "No input"
         base_string=base_string.replace("xor","^")
         for i in range(0,len(base_string)):
             if base_string[i] not in ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","~","^","&","|","+","-","/","*",]:
                 return "Invalid input syntax"
+        print base_string
         output = eval(base_string, {"__builtins__":None})
-        return output
+
+
+        base_to = self.get_radio_state(0)
+        insert_base = base_dictionary[self.builder.get_object("radiobutton"+str(base_to+1)).get_label()]
+
+        if self.get_radio_state(1) == insert_base:
+            return output
+        elif self.get_radio_state(1) == 0:
+            print output
+            print insert_base
+            return bin(int(str(output),insert_base))[2:]
+        elif self.get_radio_state(1) == 1:
+            return oct(int(str(output),insert_base))[1:]
+        elif self.get_radio_state(1) == 2:
+            return int(int(str(output),insert_base))
+        elif self.get_radio_state(1) == 3:
+            return hex(int(str(output),insert_base))[2:]
+
+
+
+    def get_radio_state(self,group): #group 0 is input group, 1 is output group
+        if group == 0:
+            group += 1
+        elif group == 1:
+            group +=4
+        for i in [0,1,2,3]:
+            if self.builder.get_object("radiobutton"+str(group)).get_group()[i].get_active() == True:
+                return abs(i-3)
+
+
+
 
     ######################### GUI funcions #####################
     
@@ -272,7 +306,6 @@ class Calculator():
             self.builder.get_object("entry4").set_text("= "+ev)
         elif actual_page == 2:
             ev = str(self.prog_calc(eval_string)) 
-            print ev
             self.builder.get_object("entry5").set_text(ev)
 
     ## Change window size for each mode of calculator
