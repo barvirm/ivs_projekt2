@@ -9,6 +9,7 @@
 import my_math
 import transform_string
 import pygtk
+import pango
 pygtk.require("2.0")
 
 import gtk
@@ -42,9 +43,9 @@ class Calculator():
         self.window.set_title("The Calculator")
         self.window.set_icon_from_file("thecalculator-icon.png")
 
-        fixed_font = gtk.load_font(
-                    "-misc-fixed-medium-r-*-*-*-140-*-*-*-*-iso8859-1")
-        
+        for i in range(0,7):
+            self.builder.get_object("entry"+str(i)).modify_font(pango.FontDescription("serif,monospace bold condensed 14"))
+
         # builder.connect_signals(self)
         self.builder.connect_signals({
                                       "switch_page": self.switch_page,
@@ -132,13 +133,15 @@ class Calculator():
         notebook=self.builder.get_object("notebook1").get_current_page()
         char =  widget.get_label()
         position = self.builder.get_object("entry"+str(notebook)).get_position()
-        functions = {"√":"sqrt()","x!":"!","ln":"ln()","abs":"||","sin":"sin()","cos":"cos()","tg":"tg()","cotg":"cotg()","^":"**"}
-        if char in ["0","1","2","3","4","5","6","7","8","9","+","-","/","*",",","e","π","%"]:
+        functions = {"√":"sqrt()","x!":"!","ln":"ln()","abs":"||","sin":"sin()","cos":"cos()","tg":"tg()","cotg":"cotg()"}
+        if char in ["0","1","2","3","4","5","6","7","8","9","+","-","/","*",",","e","π","%","^"]:
             self.set_entry(notebook,position,char)
         elif char in functions:
             self.set_entry(notebook,position,functions[char])
         elif char == "CLR":
             self.builder.get_object("entry"+str(notebook)).set_text("")
+            self.builder.get_object("entry2").set_text("")
+            self.builder.get_object("entry3").set_text("")
         elif char == "←":
             if position != 0:
                 ent=self.builder.get_object("entry"+str(notebook)).get_text()
@@ -179,7 +182,8 @@ class Calculator():
         if actual_page == 4:
             actual_page = 1
         text_on_actual_page = self.builder.get_object("entry"+str(actual_page)).get_text()
-        self.builder.get_object("entry"+str(1-actual_page)).set_text(text_on_actual_page)
+        self.builder.get_object("entry0").set_text(text_on_actual_page)
+        self.builder.get_object("entry1").set_text(text_on_actual_page)
     
     ## Add old calculation to history tab at first position, shit another
     # @param self pointer to class
@@ -221,7 +225,7 @@ class Calculator():
             self.window.set_size_request(515,320)
             self.builder.get_object("entry"+str(p2)).grab_focus()
         elif p2 == 2:       #Prog.
-            self.window.set_size_request(475,320)
+            self.window.set_size_request(450,320)
             self.builder.get_object("entry"+str(p2)).grab_focus()
         elif p2 == 3:       #PLOT
             self.window.set_size_request(800,600)

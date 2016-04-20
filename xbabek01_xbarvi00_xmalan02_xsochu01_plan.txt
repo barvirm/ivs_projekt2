@@ -104,3 +104,4 @@ Prezentace na EX-HDD
 	-odmocnina
 	-ošetření dělení nulou
 -Mockup
+-Help
