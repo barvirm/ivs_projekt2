@@ -40,6 +40,7 @@
                         <property name="height_request">30</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="has_focus">True</property>
                         <property name="has_frame">False</property>
                         <property name="invisible_char">•</property>
                         <property name="activates_default">True</property>
@@ -49,6 +50,7 @@
                         <property name="secondary_icon_activatable">False</property>
                         <property name="primary_icon_sensitive">True</property>
                         <property name="secondary_icon_sensitive">True</property>
+                        <signal name="changed" handler="entry_changed" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -57,7 +59,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkEntry" id="entry2">
+                      <object class="GtkEntry" id="entry3">
                         <property name="height_request">30</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -492,6 +494,7 @@
                         <property name="height_request">30</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="has_focus">True</property>
                         <property name="has_frame">False</property>
                         <property name="invisible_char">•</property>
                         <property name="activates_default">True</property>
@@ -501,6 +504,7 @@
                         <property name="secondary_icon_activatable">False</property>
                         <property name="primary_icon_sensitive">True</property>
                         <property name="secondary_icon_sensitive">True</property>
+                        <signal name="changed" handler="entry_changed" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -509,7 +513,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkEntry" id="entry3">
+                      <object class="GtkEntry" id="entry4">
                         <property name="height_request">30</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -1185,10 +1189,11 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkEntry" id="entry4">
+                      <object class="GtkEntry" id="entry2">
                         <property name="height_request">30</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="has_focus">True</property>
                         <property name="has_frame">False</property>
                         <property name="invisible_char">•</property>
                         <property name="activates_default">True</property>
@@ -1198,6 +1203,7 @@
                         <property name="secondary_icon_activatable">False</property>
                         <property name="primary_icon_sensitive">True</property>
                         <property name="secondary_icon_sensitive">True</property>
+                        <signal name="changed" handler="entry_changed" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -1263,7 +1269,7 @@
                             <property name="use_action_appearance">False</property>
                             <property name="active">True</property>
                             <property name="draw_indicator">True</property>
-                            <signal name="pressed" handler="num_base_chaged" swapped="no"/>
+                            <signal name="pressed" handler="num_base_changed" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1280,7 +1286,7 @@
                             <property name="use_action_appearance">False</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton1</property>
-                            <signal name="pressed" handler="num_base_chaged" swapped="no"/>
+                            <signal name="pressed" handler="num_base_changed" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1297,7 +1303,7 @@
                             <property name="use_action_appearance">False</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton1</property>
-                            <signal name="pressed" handler="num_base_chaged" swapped="no"/>
+                            <signal name="pressed" handler="num_base_changed" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1314,7 +1320,7 @@
                             <property name="use_action_appearance">False</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton1</property>
-                            <signal name="pressed" handler="num_base_chaged" swapped="no"/>
+                            <signal name="pressed" handler="num_base_changed" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1438,6 +1444,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="x_options">GTK_FILL</property>
@@ -1453,6 +1460,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1470,6 +1478,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1487,6 +1496,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -1504,6 +1514,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -1523,6 +1534,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1542,6 +1554,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1561,6 +1574,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">1</property>
@@ -1578,6 +1592,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">2</property>
@@ -1595,6 +1610,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1614,6 +1630,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">3</property>
@@ -1631,6 +1648,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1650,6 +1668,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1669,6 +1688,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1688,6 +1708,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -1707,6 +1728,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -1739,6 +1761,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1756,6 +1779,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="x_options">GTK_FILL</property>
@@ -1771,6 +1795,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1790,6 +1815,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1809,6 +1835,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">1</property>
@@ -1826,6 +1853,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1838,13 +1866,14 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="button71">
-                        <property name="label" translatable="yes">xor</property>
+                        <property name="label" translatable="yes">~</property>
                         <property name="width_request">50</property>
                         <property name="height_request">50</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1864,6 +1893,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">2</property>
@@ -1881,6 +1911,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="top_attach">3</property>
@@ -1891,13 +1922,14 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="button75">
-                        <property name="label" translatable="yes">xand</property>
+                        <property name="label" translatable="yes">xor</property>
                         <property name="width_request">50</property>
                         <property name="height_request">50</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1917,6 +1949,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="press_button" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -2078,7 +2111,8 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">1</property>
+                    <property name="tooltip_text" translatable="yes">
+</property>
                     <property name="use_action_appearance">False</property>
                     <signal name="clicked" handler="history_change" swapped="no"/>
                   </object>
@@ -2442,7 +2476,7 @@
                     <property name="height_request">30</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
+                    <property name="xalign">0.89999997615814209</property>
                     <property name="label" translatable="yes"> </property>
                   </object>
                   <packing>
