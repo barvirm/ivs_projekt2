@@ -2,3 +2,5 @@ Mezi mody kalkulaèky mùžete pøepínat na horní lištì. Vybrat si mùžete z modu Cla
 V Historii se mùžete podívat na vaše pøedchozí výpoèty,popøípadì si je dát znovu spoèítat.
 
 Do kalkulaèky mùžete zadávat pomocí tlaèítek, nebo pøímo vepisovat z klávesnice.
+
+Plot - lze zadávat pouze rovnice s jednou neznámou, tato promnìná se musí jmenovat x
