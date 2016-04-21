@@ -54,33 +54,33 @@ def transform_abs(coming_in):
         i_max=len(coming_in)    #Number of characters in string
         #i=0
         i_abs=0    # Number of "|" in string
-        i_kr=0     # Number of steps
-        i_ak=0     #Current index in string
-        while i_kr<i_max :  # Find a number of "|"
-            if coming_in[i_kr]=="|":
+        i_step=0     # Number of steps
+        i_cur=0     #Current index in string
+        while i_step<i_max :  # Find a number of "|"
+            if coming_in[i_step]=="|":
                 i_abs+=1
-            i_kr+=1
+            i_step+=1
             
         if i_abs% 2 != 0:   #If odd number of "|" return False
             return False
         
-        while coming_in[i_ak]=="|" or i_abs !=0:    # Find "|" and replace it for "abs(" or ")"
-            if coming_in[i_ak]=="|":
-                if coming_in[i_ak-1]=="-" or coming_in[i_ak-1]=="+" or coming_in[i_ak-1]=="("or coming_in[i_ak-1]=="*" or coming_in[i_ak-1]=="/" :   #If it's a started of abs function.
-                    zac=coming_in[:i_ak] # String berofe abs function
-                    kon=coming_in[i_ak+1:]  # String in param function
+        while coming_in[i_cur]=="|" or i_abs !=0:    # Find "|" and replace it for "abs(" or ")"
+            if coming_in[i_cur]=="|":
+                if coming_in[i_cur-1]=="-" or coming_in[i_cur-1]=="+" or coming_in[i_cur-1]=="("or coming_in[i_cur-1]=="*" or coming_in[i_cur-1]=="/" :   #If it's a started of abs function.
+                    zac=coming_in[:i_cur] # String berofe abs function
+                    kon=coming_in[i_cur+1:]  # String in param function
                     coming_in= zac + "abs(" + kon   # Compose all strings 
                     i_abs-=1
 
-                elif coming_in[i_ak-1]>="0" and coming_in[i_ak-1]<="9" or coming_in[i_ak-1]==")" or coming_in[i_ak-1]=="!" :   # @brief If it's a end "|" of abs function.
-                    zac1=coming_in[:i_ak]   # String in param function
-                    kon1=coming_in[i_ak+1:] #String after abs function
+                elif coming_in[i_cur-1]>="0" and coming_in[i_cur-1]<="9" or coming_in[i_cur-1]==")" or coming_in[i_cur-1]=="!" :   # @brief If it's a end "|" of abs function.
+                    zac1=coming_in[:i_cur]   # String in param function
+                    kon1=coming_in[i_cur+1:] #String after abs function
                     coming_in = zac1+ ")"+kon1  # Compose all strings 
                     i_abs-=1
-                elif coming_in[i_ak-1]=="!":
+                elif coming_in[i_cur-1]=="!":
                     return False
             else:
-                i_ak+=1
+                i_cur+=1
         
     if coming_in[0] == "+":
         coming_in = coming_in[1:]
