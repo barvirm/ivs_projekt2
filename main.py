@@ -45,6 +45,7 @@ class Calculator():
         self.window.set_size_request(320,320)
         self.window.set_title("The Calculator")
         self.window.set_icon_from_file("thecalculator-icon.png")
+        #self.window.set_icon_from_file("/usr/share/pixmaps/thecalculator-icon.png")
         self.builder.get_object("entry0").grab_focus()
 
         #set font type and size for all entries
