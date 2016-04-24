@@ -1,9 +1,0 @@
-Package: Calculator
-Version: 0.01
-Priority: optional
-Recommends: kaffe
-Depends: libc6 (>= 2.2.4-4)
-Architecture: i386
-Installed-Size: 292
-Maintainer: HappyPottetoes
-Description: Calculater
