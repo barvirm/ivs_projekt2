@@ -63,8 +63,10 @@ class Calculator():
                                       "num_base_changed":self.num_base_changed,
                                       "press_keyboard":self.press_keyboard,
                                       "history_change":self.history_change,
-                                      "plot":self.plot
+                                      "plot":self.plot,
+                                      "help_about":self.help
                                      })
+
         self.num_base_changed(self.builder.get_object("radiobutton1"))   #Switching of programming calculator to Binaries
     
     ######################### PLOT funcions #####################
@@ -119,7 +121,17 @@ class Calculator():
 
         self.canvas.draw_idle()
 
+
+    def help(self,widget):
+        self.about = gtk.AboutDialog()
+        self.about.set_program_name("TheCalculator")
+        self.about.set_comments("v 1.12\nYou can change bookmarks between:\nClassic, Science, Programming, Plot, History and Autors.\n\nIn history you can look on the previous calculation or you \nreturn on page where was this example solve, with history text in input.\nYou can use keyboard or click on button in calculator.\n\nPlot - Solve equation on with one unknown,\nthis parameters must be named x.")
+        self.about.set_logo(gtk.gdk.pixbuf_new_from_file("logo/team_logo_80x50.png"))
+        self.about.run()
+        self.about.destroy()
+
     ######################### PROG funcions ####################
+
     
     def prog_calc(self,base_string):
         base_dictionary = {"BIN":2,"OCT":8,"DEC":10,"HEX":16}
