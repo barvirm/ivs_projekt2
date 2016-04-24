@@ -1,0 +1,8 @@
+Name=Calculator
+Comment=Calculator
+Exec=~/tmp/usr/share/Kalkulacka/main.py
+Terminal=false
+Type=Application
+Icon=thecalculator-icon.png
+Encoding=UTF-8
+Categories=Office
