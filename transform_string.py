@@ -86,61 +86,82 @@ def transform_abs(coming_in):
         coming_in = coming_in[1:]
     return coming_in
 
-## Prevede % na modulo()
+## Converts "%" on "modulo()"
 # @param Input coming_inni string
-# @return Preformovany string pro eval
+# @return Transform string for eval
 def transform_modulo(Input):
     while "%" in Input: 
-        CharModulo = Input.find("%") # Nalezení znaku %
-
-        BeforeModulo = CharModulo - 1 # @param BeforeModulo Deklarace znaku pred %
-    
-        # Pocet znaku pred %
-        while Input[BeforeModulo] >= '0' and Input[BeforeModulo] <= '9' or Input[BeforeModulo] == '.' or Input[BeforeModulo] == '-' or (Input[BeforeModulo] == '*' and (Input[BeforeModulo+1] == '*' or Input[BeforeModulo-1] == '*')):
-            if BeforeModulo >= 0:
-                BeforeModulo -= 1
-            else:
+        Input = Input.replace("**", "?")
+        CharModulo = Input.find("%")
+        BeforeModulo = CharModulo - 1
+        while Input[BeforeModulo] not in "!|*+-!%/)": # Count chars before %
+            if BeforeModulo == 0:
                 break
-
-        AfterModulo = CharModulo + 1 # @param AfterModulo Deklarace znaku za %
-
-        # Pocet znaku za %
-        while Input[AfterModulo] >= '0' and Input[AfterModulo] <= '9' or Input[AfterModulo] == '.' or Input[AfterModulo] == '-' or (Input[AfterModulo] == '*' and (Input[AfterModulo+1] == '*' or Input[AfterModulo-1] == '*')):
+            BeforeModulo -= 1
+        if Input[BeforeModulo] == ")":
+            while Input[BeforeModulo] != "(":
+                if BeforeModulo == 0:
+                    break
+                BeforeModulo -= 1
+            BeforeModulo -= 1
+        
+        AfterModulo = CharModulo + 1
+        while Input[AfterModulo] not in "!|*+-!%/(": # Count chars after %
             AfterModulo += 1
             if AfterModulo == len(Input):
                 break
+        if Input[AfterModulo-1] == "(":
+            while Input[AfterModulo-1] != ")":
+                AfterModulo += 1
+                if AfterModulo == len(Input):
+                    break
+                
+        String_1 = Input[: BeforeModulo + 1] 
+        String_2 = Input[BeforeModulo + 1:CharModulo]
+        String_3 = Input[CharModulo + 1:AfterModulo]
+        String_4 = Input[AfterModulo:]
+         
+        print "String_1: ", String_1
+        print "String_2: ", String_2
+        print "String_3: ", String_3
+        print "String_4: ", String_4
+        
+        
 
-
-        String_1 = Input[: BeforeModulo + 1] # @param String_1 String pred Modulo()
-        String_2 = Input[BeforeModulo + 1:CharModulo] # @param String_2 Prvni parametr Modulo()
-        String_3 = Input[CharModulo + 1:AfterModulo] # @param String_3 Druhy parametr Modulo()
-        String_4 = Input[AfterModulo:] # @param String_4 String za Modulo()
-        # Presunuti modula do modulo prvniho parametru
+        # If is modulo() in String_1 then move it to string_2
+        if String_1.endswith("(") and String_2.startswith("(mod"):
+            String_2 = String_2[1:]
+        if String_1.startswith("(mod") and String_2.startswith("("):
+            String_1 = String_1[1:]
         if String_1.find('modulo(') != -1 and String_1.endswith(')'):
             String_2 = String_1
             String_1 = ""
-        # Presunuti modula do modulo druheho parametru
+        # If is modolu() in String_4 then move it to string_3
         if String_4.find('modulo(') != -1 and String_4.endswith(')'):
             String_3 = String_4
             String_4 = ""
-        # Osetreni, aby prvni parametr nebyl prazdny
+        # First part isn't empty
         if String_2 == "" and String_1 != "":
             String_2 = String_1
             String_1 = ""
-        # Osetreni, aby druhy paramtr nebyl prazdny
+
+        # Second part isn't empty
         if String_3 == "" and String_4 != "":
             String_3 = String_4
             String_4 = ""
 
-        # Kontrola prazdneho pole v prvnim parametru Modulo
+        # First part isn't empty
         if String_2 == "":
             return False
-        # Kontrola prazdneho pole druheho parametru a kontrola
+        if String_2.endswith("))"):
+            String_2 = String_2.replace("))", ")")
+        # Don't division 0
         if String_3 == "0" or String_3 == "":
             return False
             
-        # Poskladani vystupniho retezce
+        # Output string
         Input =  String_1 + "modulo(" + String_2 + "," + String_3 + ")" + String_4
+        Input = Input.replace("?", "**")
     return Input
 
 
