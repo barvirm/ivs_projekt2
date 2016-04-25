@@ -22,16 +22,16 @@ Programovací jazyk:	Python 2.7
 
 
 Rozdělení úkolů:	Grafické rozhraní - Petr Malaník
-					Matematická knihovna (testy) - David Bábek
+					Matematická knihovna (testy) - Marek Barvíř
 					Matematická knihovna - Marek Barvíř
 					Převod stringu - David Bábek, Jakub Sochůrek
-					Převod stringu (testy) - Marek Barvíř, Petr Malaník
-					Binární operace - Petr Malaník, Jakub Sochůrek
+					Převod stringu (testy) - Petr Malaník
+					Binární operace - Petr Malaník, Marek Barvíř
 					Historie - Petr Malaník
 					Dokumentace - Celá skupina (nastavení dokumentacve + správa - Marek Barvíř)
 					Grafická knihovna (PLOT) - Marek Barvíř, Petr Malaník
 					Uživatelská dokumentace - Jakub Sochůrek
-					Instalátor (.deb - Závislosti na knihovnách) - David Bábek, Marek Barvíř
+					Instalátor (.deb - Závislosti na knihovnách) - Marek Barvíř (David Bábek),
 
 
 
@@ -48,10 +48,10 @@ Docházka na schůze
 +---------------+-------+-------+-------+-------+-------+-------+
 |Termín schůze	|  22.3 |  29.3 |  5.4  |  12.4 |  19.4 |  24.4 |
 +---------------+-------+-------+-------+-------+-------+-------+
-|Bábek David	|	K 	| 	M 	| 	M 	|	K	|	X	|	 	|
-|Barvíř Marek	|	X 	| 	X 	|	X 	|	X	|	X	|	 	|
-|Malaník Petr	|	X 	| 	X 	|	X 	|	X	|	X	|	 	|
-|Jakub Sochůrek	|	X  	|	X 	| 	K 	|	K	|	X	|	 	|
+|Bábek David	|	K 	| 	M 	| 	M 	|	K	|	X	|	X	|
+|Barvíř Marek	|	X 	| 	X 	|	X 	|	X	|	X	|	X	|
+|Malaník Petr	|	X 	| 	X 	|	X 	|	X	|	X	|	X	|
+|Jakub Sochůrek	|	X  	|	X 	| 	K 	|	K	|	X	|	X	|
 +---------------+-------+-------+-------+-------+-------+-------+
 	X-dorazil 	M-nedorazil		K-konzultoval 	V-virtuálně přítomen
 
@@ -67,22 +67,12 @@ Prezentace na EX-HDD
 ***Bábek David***
 -Wireframe
 -Mockup
--Dokumentace pro funkce určené pro převod stringu (anglicky)
--Převod stringu 
-	-refaktorizace
-	-přejmenování proměných a přepsání dokumentace do angličtiny
--Instalátor
 -Přihlášení k obhajobě
 -Debbuging (gdb)
 
 ***Barvíř Marek***
--Instalátor
 
 ***Malaník Petr***
--Nápověda
 
 ***Sochůrek Jakub***
 -Uživatelská dokumentace (ideálně LaTeX a anglicky)
--Převod stringu 
-	-přejmenování proměných do angličtiny
--Help
