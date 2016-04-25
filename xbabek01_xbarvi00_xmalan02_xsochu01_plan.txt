@@ -73,6 +73,6 @@ Prezentace na EX-HDD
 ***Barvíř Marek***
 
 ***Malaník Petr***
-
+-Prog. okno (převod soustav)
 ***Sochůrek Jakub***
 -Uživatelská dokumentace (ideálně LaTeX a anglicky)
