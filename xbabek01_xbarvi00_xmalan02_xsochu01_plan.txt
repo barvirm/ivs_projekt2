@@ -55,22 +55,17 @@ Docházka na schůze
 +---------------+-------+-------+-------+-------+-------+-------+-------+
 	X-dorazil 	M-nedorazil		K-konzultoval 	V-virtuálně přítomen
 
-ToDo (18.4):
+ToDo (25.4):
 
-Skutecnost (plán vs skutecnost)
 Samostatné zhodnocení
 Prezentace na EX-HDD
 
 
 ***Bábek David***
--Wireframe
 -Mockup
--Přihlášení k obhajobě
--Debbuging (gdb)
 
 ***Barvíř Marek***
 
 ***Malaník Petr***
 
 ***Sochůrek Jakub***
--Uživatelská dokumentace - aktualizace obrázků
