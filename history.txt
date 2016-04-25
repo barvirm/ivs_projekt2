@@ -1,0 +1,189 @@
+06d25dd - Petr Malaník, 22 minutes ago : Update Makefile, rename wireframe, add documentation.zip
+da7932c - Potrk, 25 minutes ago : User manual
+e7e757d - unknown, 27 minutes ago : MockUp-Babek
+b8815f7 - Marek Barvir, 42 minutes ago : debug
+e27f777 - Petr Malaník, 43 minutes ago : Update skutecnost.txt, Makefile, body.txt
+46b691f - David, 61 minutes ago : DEbug.png
+78400b5 - Petr Malaník, 2 hours ago : Merged branch master into master
+3627972 - Petr Malaník, 2 hours ago : Packaged Documentation
+ce270d7 - Marek Barvir, 2 hours ago : Merged branch master into master
+834bbf7 - Marek Barvir, 2 hours ago : Screens
+b921eea - Potrk, 2 hours ago : deb
+30fccdc - Petr Malaník, 2 hours ago : Makefile, zip, licence, .deb package
+82cd54f - Potrk, 8 hours ago : Debugging
+db3861b - Marek Barvir, 8 hours ago : manual install/uninstall
+86d429d - Marek Barvir, 9 hours ago : why ??
+6cb8ef1 - Potrk, 9 hours ago : debugging,user manual
+a08f33e - Potrk, 10 hours ago : complete user manual
+d438140 - Petr Malaník, 12 hours ago : Upper HEX
+3de9ddc - Potrk, 12 hours ago : user manual-manual install,new pictures
+1df9a90 - David, 14 hours ago : Find bug
+f2756cc - Petr Malaník, 19 hours ago : Plan update
+b866471 - Petr Malaník, 19 hours ago : Prog. Calc
+fc4d3de - Petr Malaník, 22 hours ago : GUI
+7e53b63 - Potrk, 23 hours ago : User manual
+3ba8754 - David, 23 hours ago : Write make setup Then make dpkg
+a7b7f2e - David, 24 hours ago : Instalator
+196a1d8 - David, 26 hours ago : Created tmp/
+f56ed3a - David, 29 hours ago : Translation
+654751b - Marek Barvir, 3 days ago : #comment for pack
+123eb6d - Potrk, 4 days ago : User manual
+aa42384 - Jakub Sochůrek, 5 days ago :  translated variables
+dd5ad56 - Marek Barvir, 5 days ago : New_icon
+6815466 - David, 5 days ago : Fix bug
+fbb012f - David, 5 days ago : Fix bug
+1c6ead2 - Petr Malaník, 5 days ago : Mock up transfer
+bd3a2d6 - Petr Malaník, 5 days ago : GUI + Programmer Calc
+1d4abd9 - Marek Barvir, 5 days ago : Merged branch master into master
+3c68585 - Marek Barvir, 5 days ago : Translation
+c96b5fb - Marek Barvir, 5 days ago : update
+69c2c6f - Petr Malaník, 5 days ago : GUI
+aecab0c - Petr Malaník, 5 days ago : Merged branch master into master
+2862199 - Petr Malaník, 5 days ago : GUI
+f3bcceb - Marek Barvir, 5 days ago : muck_up
+d6eeaba - Potrk, 5 days ago : mock up
+f81bf55 - Potrk, 5 days ago : Help-calculator
+e2b03cf - Potrk, 5 days ago : Supplemented with comments .
+c1a1825 - Petr Malaník, 6 days ago : GUI
+861a647 - Petr Malaník, 6 days ago : GUI
+da160d0 - Petr Malaník, 6 days ago : Implemented Icon
+099a592 - Potrk, 6 days ago : treatment of inputs-complete
+26873a5 - Marek Barvir, 6 days ago : tmp-icon
+f51f5cc - Jakub Sochůrek, 6 days ago : refactorized -factorial
+e4a0018 - Jakub Sochůrek, 6 days ago : Merged branch master into master
+7fbb88e - Jakub Sochůrek, 6 days ago :  treated inputs-7#break
+6cc16ff - Petr Malaník, 6 days ago : Update ToDo, Test_string edit
+5a206e0 - Jakub Sochůrek, 6 days ago : Transform string-pi
+64ba4fb - Petr Malaník, 7 days ago : GUI,Tests,Documentation,Calculating
+c16a4c0 - Petr Malaník, 7 days ago : Merged branch master into master
+0cf8372 - Petr Malaník, 7 days ago : GUI documentation
+b73d258 - Marek Barvir, 7 days ago : doc_update
+23fc2a3 - David Bábek, 12 days ago : Doplneny komentare
+e1c92c6 - David Bábek, 12 days ago : Update
+4bcda00 - Petr Malaník, 12 days ago : Added calculating
+0421be7 - Potrk, 12 days ago : tu to je
+eb1daa2 - Potrk, 12 days ago : test 2
+36fffee - Potrk, 12 days ago : tu to je
+ae48093 - Potrk, 12 days ago : Added files via upload
+1b46ad3 - Potrk, 12 days ago : Added files via upload
+59b7309 - barvirm, 12 days ago : Merge pull request #29 from barvirm/Kuba
+bc3eb0f - Jakub Sochůrek, 12 days ago : snad kompletní verze
+4148f93 - David Bábek, 12 days ago : Modulo
+4f7bfdc - Potrk, 12 days ago : Added files via upload
+b1431e4 - Petr Malaník, 13 days ago : Repair tests
+2c6e903 - David Bábek, 13 days ago : Update
+77131ef - David Bábek, 13 days ago : Oprava
+3588c25 - Petr Malaník, 13 days ago : Merged branch master into master
+fb8fc90 - Petr Malaník, 13 days ago : Tests update
+c31e571 - David Bábek, 2 weeks ago : Update modulo
+989ebca - David Bábek, 2 weeks ago : Update modulo
+b159be5 - Petr Malaník, 2 weeks ago : Changing string tests
+72b3b55 - Potrk, 2 weeks ago : Added files via upload
+447af52 - Potrk, 2 weeks ago : Added files via upload
+85e520a - Potrk, 2 weeks ago : Added files via upload
+b554dfa - Potrk, 2 weeks ago : Added files via upload
+8391fe3 - Petr Malaník, 2 weeks ago : GUI + Bind + String tests
+da3e3e4 - Petr Malaník, 2 weeks ago : Renaming
+b6ac9f0 - Petr Malaník, 2 weeks ago : Tests to Transformation of string
+ad2df43 - Marek Barvíř, 2 weeks ago : test_empty
+e26866a - David Bábek, 2 weeks ago : Merge branch 'master' of https://github.com/barvirm/ivs_projekt2
+49ca355 - David Bábek, 2 weeks ago : Merge branch 'master' of https://github.com/barvirm/ivs_projekt2
+f5ef1ff - Petr Malaník, 2 weeks ago : GUI - added history
+6d0f155 - David Bábek, 2 weeks ago : Fix
+9c9925b - Marek Barvíř, 2 weeks ago : small logo
+811c342 - Marek Barvíř, 2 weeks ago : Unix is the best way
+756378c - Marek Barvíř, 2 weeks ago : Change name
+9da0883 - Marek Barvíř, 2 weeks ago : END OF FILE
+ba21096 - Marek Barvíř, 2 weeks ago : Merged branch master into master
+a4c65f1 - Marek Barvíř, 2 weeks ago : doc_update_note_mathjax
+64a1472 - David Bábek, 2 weeks ago : update
+6f7f84b - David Bábek, 2 weeks ago : Update Fce
+744affd - David Bábek, 2 weeks ago : Merge branch 'master' of https://github.com/barvirm/ivs_projekt2
+566cfe0 - David Bábek, 2 weeks ago : Update
+d7c805d - David Bábek, 2 weeks ago : Update fce Modulo
+94c6e9b - Marek Barvíř, 2 weeks ago : tabs -> space 4
+76cb5fa - David Bábek, 2 weeks ago : Add modulo
+7ecf256 - David Bábek, 2 weeks ago : create Modulo.py
+00029af - Marek Barvíř, 2 weeks ago : Math_jax in doc
+6c39b59 - Marek Barvíř, 2 weeks ago : fix
+945c911 - Marek Barvíř, 2 weeks ago : Merge remote-tracking branch 'refs/remotes/origin/master'
+5369069 - Marek Barvíř, 2 weeks ago : add plot field
+27c6593 - Marek Barvíř, 2 weeks ago : add plot field
+10fa19d - Marek Barvíř, 2 weeks ago : Logo, fix in doc
+3a3f231 - Marek Barvíř, 2 weeks ago : Finally  LOGO IS HERE
+a200d83 - Marek Barvíř, 2 weeks ago : #! add
+e6069ab - Marek Barvíř, 2 weeks ago : doc up
+eededc8 - Marek Barvíř, 2 weeks ago : piece of doc main
+baef5d1 - Marek Barvíř, 3 weeks ago : Doc
+fee8cba - Marek Barvíř, 3 weeks ago : New style documentatiton
+10e74b7 - Marek Barvíř, 3 weeks ago : Update documentation my_math and test
+33673c0 - Petr, 3 weeks ago : Math - utf8
+fb62d30 - Petr, 3 weeks ago : GUI
+71895cd - Marek Barvíř, 3 weeks ago : Documentation math
+e9485dd - Marek Barvíř, 3 weeks ago : Documentation
+b57c884 - Petr, 3 weeks ago : GUI
+a2caf1f - Petr Malaník, 3 weeks ago : Merged branch master into master
+33354d4 - Petr Malaník, 3 weeks ago : GUI
+eaeeda4 - Potrk, 3 weeks ago : Added files via upload
+bf03b96 - Potrk, 3 weeks ago : Added files via upload
+ed09413 - Potrk, 3 weeks ago : Added files via upload
+34838e1 - Potrk, 3 weeks ago : Added files via upload
+500ccd5 - Petr Malaník, 3 weeks ago : Termíny
+14a2520 - Petr Malaník, 3 weeks ago : GUI
+c8548e3 - barvirm, 3 weeks ago : Merge pull request #28 from barvirm/change
+74f071c - barvirm, 3 weeks ago : Merge pull request #27 from barvirm/master
+28c5175 - barvirm, 3 weeks ago : Merge pull request #26 from barvirm/change
+e3b7a4a - Marek Barvíř, 3 weeks ago : Update_math
+02f5157 - Potrk, 4 weeks ago : Added files via upload
+229b74f - David Bábek, 4 weeks ago : 	Plan projektu
+3d0a831 - barvirm, 4 weeks ago : Merge pull request #25 from barvirm/master
+9ee5686 - TheColonelYoung, 4 weeks ago : Merge pull request #24 from barvirm/Petr
+b660b2f - TheColonelYoung, 4 weeks ago : Merge pull request #23 from barvirm/master
+1984833 - Petr Malaník, 4 weeks ago : První WireFrame
+47d792e - barvirm, 4 weeks ago : Merge pull request #22 from barvirm/change
+debbedb - Marek Barvíř, 4 weeks ago : test + math_lib
+8f591a7 - Marek Barvíř, 4 weeks ago : Math library v1
+a1854a7 - TheColonelYoung, 7 weeks ago : Merge pull request #21 from barvirm/master
+36e1275 - barvirm, 7 weeks ago : Merge pull request #20 from barvirm/change
+85fa763 - Marek Barvíř, 7 weeks ago : start
+3da3a67 - Marek Barvíř, 7 weeks ago : main update
+082718f - TheColonelYoung, 7 weeks ago : Merge pull request #19 from barvirm/Petr
+88233b5 - TheColonelYoung, 7 weeks ago : Merge pull request #18 from barvirm/master
+6524e6e - TheColonelYoung, 7 weeks ago : Merge pull request #17 from barvirm/Petr
+a79df2c - Petr, 7 weeks ago : TEST2
+e97d3c6 - TheColonelYoung, 7 weeks ago : Merge pull request #16 from barvirm/change
+14707da - Marek Barvíř, 7 weeks ago : s
+acb00bd - barvirm, 7 weeks ago : Merge pull request #15 from barvirm/master
+99de2b1 - TheColonelYoung, 7 weeks ago : Merge pull request #14 from barvirm/Petr
+c0438dc - Petr, 7 weeks ago : k
+9ebedfc - barvirm, 7 weeks ago : Merge pull request #13 from barvirm/Petr
+1d805d2 - barvirm, 7 weeks ago : Merge pull request #12 from barvirm/master
+37f93f2 - barvirm, 7 weeks ago : Merge pull request #11 from barvirm/change
+a67a221 - Marek Barvíř, 7 weeks ago : gtk_test
+5260e55 - Marek Barvíř, 7 weeks ago : testpy
+08bffd7 - barvirm, 7 weeks ago : Merge pull request #10 from barvirm/change
+dea8f6d - Marek Barvíř, 7 weeks ago : s
+5bc9dcb - barvirm, 7 weeks ago : Merge pull request #9 from barvirm/change
+cfa0f9e - Marek Barvíř, 7 weeks ago : plot graph
+440b12c - Marek Barvíř, 7 weeks ago : math
+97cad36 - barvirm, 7 weeks ago : Merge pull request #8 from barvirm/change
+eec3036 - barvirm, 7 weeks ago : Merge pull request #7 from barvirm/change
+bd59357 - Marek Barvíř, 7 weeks ago : mat lib
+f8c88ee - Marek Barvíř, 7 weeks ago : update
+57160d8 - barvirm, 7 weeks ago : Merge pull request #6 from barvirm/change
+83892a8 - Marek Barvíř, 7 weeks ago : up
+5db1814 - Marek Barvíř, 7 weeks ago : up
+6f1c4fc - Marek Barvíř, 7 weeks ago : update
+d118e34 - barvirm, 7 weeks ago : Merge pull request #5 from barvirm/change
+3fe702c - marek, 7 weeks ago : new
+c0a2f12 - barvirm, 7 weeks ago : Merge pull request #4 from barvirm/change
+eff45d6 - marek, 7 weeks ago : Signed-off-by: marek <barvirm@seznam.cz>
+c281d3a - barvirm, 7 weeks ago : Delete .main.py.swp
+8fd4ee1 - barvirm, 7 weeks ago : Merge pull request #3 from barvirm/change
+646b56d - marek, 7 weeks ago : Signed-off-by: marek <barvirm@seznam.cz>
+26a02ce - barvirm, 7 weeks ago : Added files via upload
+45d0674 - barvirm, 7 weeks ago : Merge pull request #2 from barvirm/readme-edits
+fca2c9b - barvirm, 7 weeks ago : Create main.py
+e231305 - barvirm, 7 weeks ago : Merge pull request #1 from barvirm/readme-edits
+cebef6a - barvirm, 7 weeks ago : Update README.md
+91e2cef - barvirm, 7 weeks ago : Initial commit
