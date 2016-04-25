@@ -1,9 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-  
-# 
-# ToDo
-# Prog. kalkulačka
-# Historie
+
+"""
+License: GPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+"""
 
 import re
 import my_math
@@ -255,6 +270,7 @@ class Calculator():
     ## Performs same function as button '=' on GUI
     # @param self pointer to class
     # @param widget pointer to widget that call this function
+    # @param data indentificator of pressed key
     def press_keyboard(self, widget,data = None):
         key = gtk.gdk.keyval_name(data.keyval)
         if key in ["Return","KP_Enter"]:
@@ -381,7 +397,7 @@ class Calculator():
 
     ## Send input from calc. display to calculation
     # @param self pointer to class
-    # @param string from calc entry
+    # @param eval_string data from calc entry
     def send_to_calculate(self,eval_string):
         actual_page = self.builder.get_object("notebook1").get_current_page()
         self.history_add(eval_string) 
@@ -396,6 +412,7 @@ class Calculator():
     ## Change window size for each mode of calculator
     # @param self pointer to class
     # @param widget pointer to widget that call this function
+    # @param p1 previous page in notebook
     # @param p2 actual page in notebook
     def switch_page(self,widget,p1,p2):
         if p2 == 0:         #Classic

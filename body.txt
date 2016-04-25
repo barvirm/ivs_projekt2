@@ -1,4 +1,4 @@
-xbabek01 1 (3%)
-xbarvi00 5 (40%)
+xbabek01 0 (1%)
+xbarvi00 5 (44%)
 xmalan02 5 (50%)
-xsochu01 2 (7%)
+xsochu01 2 (5%)

@@ -1,6 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+License: GPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+"""
+
 import exceptions
 from my_math import *
 pi = 3.14159265359
@@ -120,12 +139,6 @@ def transform_modulo(Input):
         String_2 = Input[BeforeModulo + 1:CharModulo]
         String_3 = Input[CharModulo + 1:AfterModulo]
         String_4 = Input[AfterModulo:]
-         
-        print "String_1: ", String_1
-        print "String_2: ", String_2
-        print "String_3: ", String_3
-        print "String_4: ", String_4
-        
         
 
         # If is modulo() in String_1 then move it to string_2
@@ -175,7 +188,7 @@ def StrFce(coming_in):
     if type(coming_in) == str or type(coming_in) == unicode:   # Test a type of input.     
         
         if len(coming_in)==0: # When it's a empty string,return "No date for transforming".
-            print "No date for transforming"
+            #print "No date for transforming"
             return False
         coming_in = coming_in.replace(",", ".") #replace  ","  on  ".".
         
@@ -186,7 +199,7 @@ def StrFce(coming_in):
         coming_in=transform_factorial(coming_in) #call function transform factorial.
         coming_in=transform_modulo(coming_in)   #call function transform modulo.
     else:
-        print "Bad input data"
+        #print "Bad input data"
         return False
 
         

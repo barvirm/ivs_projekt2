@@ -1,7 +1,0 @@
-Error: file name expected for option GENERATE_TAGFILE, got YES instead. Ignoring...
-/home/makku/Google Drive/VUT_FIT/2.semestr/ivs/ivs_projekt2/test_math.py:7: warning: the name `mathematical' supplied as the argument of the \class, \struct, \union, or \include command is not an input file
-/home/makku/Google Drive/VUT_FIT/2.semestr/ivs/ivs_projekt2/main.py:153: warning: The following parameters of main.Calculator.history_add(self,data) are not documented:
-  parameter 'data'
-/home/makku/Google Drive/VUT_FIT/2.semestr/ivs/ivs_projekt2/main.py:170: warning: The following parameters of main.Calculator.switch_page(self,widget,p1,p2) are not documented:
-  parameter 'p1'
-  parameter 'p2'
