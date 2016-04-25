@@ -5,11 +5,12 @@
 # Prog. kalkulačka
 # Historie
 
-
+import re
 import my_math
 import transform_string
 import pygtk
 import pango
+import exceptions
 pygtk.require("2.0")
 
 import gtk
@@ -37,7 +38,6 @@ class Calculator():
 
     ## Create GUI for .glade file, connect signals, add canvas and figure
     # @param self pointer to class
-    # @todo ADD CANVAS AND FIGURE
     def gui_init(self):
         self.builder = gtk.Builder()
         self.builder.add_from_file("Glades.glade")
@@ -100,7 +100,6 @@ class Calculator():
         for x in self.x:
             try:
                 string = orig_string.replace("x",str("(%f)"%(x)))
-                #print string
                 tmp_number = transform_string.calculate(string)
                 if ( type(tmp_number) != str ):
                     self.y.append(tmp_number)
@@ -122,6 +121,9 @@ class Calculator():
         self.canvas.draw_idle()
 
 
+    ## Show help window
+    # @param self pointer to class
+    # @param widget which launch this
     def help(self,widget):
         self.about = gtk.AboutDialog()
         self.about.set_program_name("TheCalculator")
@@ -133,36 +135,105 @@ class Calculator():
     ######################### PROG funcions ####################
 
     
+    ## Evaluate string from prog. entry from engaged base to entry
+    # @param self pointer to class
+    # @param base_string raw string from entry
     def prog_calc(self,base_string):
-        base_dictionary = {"BIN":2,"OCT":8,"DEC":10,"HEX":16}
-        if len(base_string)<=0:
-            return "No input"
-        base_string=base_string.replace("xor","^")
-        for i in range(0,len(base_string)):
-            if base_string[i] not in ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","~","^","&","|","+","-","/","*",]:
-                return "Invalid input syntax"
-        print base_string
-        output = eval(base_string, {"__builtins__":None})
+
+        try:
+            base_dictionary = {"BIN":2,"OCT":8,"DEC":10,"HEX":16}
+            if len(base_string)<=0:
+                return "No input"
+            base_string=base_string.replace("xor","^")
+            for i in range(0,len(base_string)):
+                if base_string[i] not in ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","~","^","&","|","+","-","/","*"," ",]:
+                    return "Invalid input syntax"
+
+            base_to = self.get_radio_state(0)
+            insert_base = base_dictionary[self.builder.get_object("radiobutton"+str(base_to+1)).get_label()]
+
+            base_string = self.prog_transfer(base_string,insert_base)
+        
+            output = eval(base_string, {"__builtins__":None})
+        
+            if self.get_radio_state(1) == insert_base:
+                output = output
+            elif self.get_radio_state(1) == 0:
+                output = bin(int(str(output)))[2:]
+            elif self.get_radio_state(1) == 1:
+                output = oct(int(str(output)))[1:]
+            elif self.get_radio_state(1) == 2:
+                output = int(int(str(output)))
+            elif self.get_radio_state(1) == 3:
+                output = hex(int(str(output)))[2:]
+
+            return output.upper()
+
+        except exceptions.SyntaxError:
+            return "Invalid input syntax"
+        except exceptions.ValueError:
+            return "Invalid base"
+        except :
+            return "Some Error"
+        
+
+    ## Transform string to format prepared for eval
+    # @param self pointer to class
+    # @param prog_string string which is transformed to form prepared for eval
+    # @param base numeral base of string
+    def prog_transfer(self,prog_string,base):
+        prog_string = prog_string.replace(" ","")
+        numerals = re.split(r'[\^\&\|\+\-\*\/]+', prog_string)
+        operators = re.split(r'[0123456789ABCDEF~]+', prog_string)
+        for i in range(0,len(numerals)):
+            leg=len(numerals[i])
+            if "~" in numerals[i]:
+                numerals[i]=bin(int(numerals[i][1:],base))
+                numerals[i]=numerals[i][2:].zfill(leg-1)
+                numerals[i]="~0b"+numerals[i]
+            else:
+                numerals[i]=bin(int(numerals[i],base))
+                numerals[i]=numerals[i][2:].zfill(leg)
+                numerals[i]="0b"+numerals[i]
+
+        while "" in operators:
+            operators.remove("")
+        output = ""
+        for i in range(0,len(numerals)-1):
+            output +=str(numerals[i])
+            output +=str(operators[i])
+        output += str(numerals[len(numerals)-1])
+        output = self.negation(output)
+        return output
 
 
-        base_to = self.get_radio_state(0)
-        insert_base = base_dictionary[self.builder.get_object("radiobutton"+str(base_to+1)).get_label()]
+    ## Transform string by using negation
+    # @param self pointer to class
+    # @param string string which is transformed by negation(~)
+    def negation(self,string):
+        letters = '|&^+-/ *)'
+        while ( string.find('~') != -1 ):
+            after_neg=string[string.find('~'):]
+            lowerest_index = 1500000
+            for i in letters:
+                if ( after_neg.find(i) < lowerest_index and after_neg.find(i) !=-1 ):
+                    lowerest_index=after_neg.find(i)
+            if ( i == ')' ):
+                if ( lowerest_index == 1500000):
+                    lowerest_index=len(after_neg)
+                cuted_string=after_neg[:lowerest_index]
 
-        if self.get_radio_state(1) == insert_base:
-            return output
-        elif self.get_radio_state(1) == 0:
-            print output
-            print insert_base
-            return bin(int(str(output),insert_base))[2:]
-        elif self.get_radio_state(1) == 1:
-            return oct(int(str(output),insert_base))[1:]
-        elif self.get_radio_state(1) == 2:
-            return int(int(str(output),insert_base))
-        elif self.get_radio_state(1) == 3:
-            return hex(int(str(output),insert_base))[2:]
+                a=cuted_string[3:]
+                v=''
+                for i in a:
+                    r=str(not(int(i))).replace('False', '0').replace('True', '1')
+                    v+=r
+                string=string.replace('~0b'+a,'0b'+v)
+        return string
 
-
-
+    ## Get posion of radio button in group of radio buttons
+    # @param self pointer to class
+    # @param group of radio button
     def get_radio_state(self,group): #group 0 is input group, 1 is output group
         if group == 0:
             group += 1
@@ -171,8 +242,6 @@ class Calculator():
         for i in [0,1,2,3]:
             if self.builder.get_object("radiobutton"+str(group)).get_group()[i].get_active() == True:
                 return abs(i-3)
-
-
 
 
     ######################### GUI funcions #####################
@@ -309,8 +378,11 @@ class Calculator():
             self.builder.get_object("entry5").set_text("")
         self.builder.get_object("notebook1").set_current_page(final_page)
 
+
+    ## Send input from calc. display to calculation
+    # @param self pointer to class
+    # @param string from calc entry
     def send_to_calculate(self,eval_string):
-        #eval_string = self.builder.get_object("entry"+str(notebook)).get_text() #To to bude předáváno do funkce zpracovávající string 
         actual_page = self.builder.get_object("notebook1").get_current_page()
         self.history_add(eval_string) 
         if actual_page in [0,1]:
