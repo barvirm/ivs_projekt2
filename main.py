@@ -167,7 +167,7 @@ class Calculator():
             elif self.get_radio_state(1) == 3:
                 output = hex(int(str(output)))[2:]
 
-            return output.upper()
+            return str(output).upper()
 
         except exceptions.SyntaxError:
             return "Invalid input syntax"

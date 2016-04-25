@@ -45,17 +45,15 @@ Komunikační kanál:	Osobní schůze --> (ÚT 20:00)
 Správce verzí:	GIT
 
 Docházka na schůze
-+---------------+-------+-------+-------+-------+-------+-------+
-|Termín schůze	|  22.3 |  29.3 |  5.4  |  12.4 |  19.4 |  24.4 |
-+---------------+-------+-------+-------+-------+-------+-------+
-|Bábek David	|	K 	| 	M 	| 	M 	|	K	|	X	|	X	|
-|Barvíř Marek	|	X 	| 	X 	|	X 	|	X	|	X	|	X	|
-|Malaník Petr	|	X 	| 	X 	|	X 	|	X	|	X	|	X	|
-|Jakub Sochůrek	|	X  	|	X 	| 	K 	|	K	|	X	|	X	|
-+---------------+-------+-------+-------+-------+-------+-------+
++---------------+-------+-------+-------+-------+-------+-------+-------+
+|Termín schůze	|  22.3 |  29.3 |  5.4  |  12.4 |  19.4 |  24.4 |  26.4 |
++---------------+-------+-------+-------+-------+-------+-------+-------+
+|Bábek David	|	K 	| 	M 	| 	M 	|	K	|	X	|	X	|	 	|
+|Barvíř Marek	|	X 	| 	X 	|	X 	|	X	|	X	|	X	|	 	|
+|Malaník Petr	|	X 	| 	X 	|	X 	|	X	|	X	|	X	|	 	|
+|Jakub Sochůrek	|	X  	|	X 	| 	K 	|	K	|	X	|	X	|	 	|
++---------------+-------+-------+-------+-------+-------+-------+-------+
 	X-dorazil 	M-nedorazil		K-konzultoval 	V-virtuálně přítomen
-
-Speciální schůze 24.4 20:00
 
 ToDo (18.4):
 
@@ -73,6 +71,6 @@ Prezentace na EX-HDD
 ***Barvíř Marek***
 
 ***Malaník Petr***
--Prog. okno (převod soustav)
+
 ***Sochůrek Jakub***
--Uživatelská dokumentace (ideálně LaTeX a anglicky)
+-Uživatelská dokumentace - aktualizace obrázků
