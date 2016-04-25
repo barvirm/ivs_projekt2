@@ -1,0 +1,43 @@
+
+first you need install dependecy:
+
+open terminal and install dependencies
+for example: sudo apt-get install python2.7
+
+    python2.7
+    python-matplotlib
+    python-numpy
+    python-gtk2
+    pygtk - http://ftp.gnome.org/pub/GNOME/sources/pygtk/2.24/
+
+second:
+create new folder, where you want install The Calculator
+move to new folder
+open terminal: git clone https://github.com/barvirm/ivs_projekt2
+
+
+This part request root
+
+create directory thecalculator at /usr/share/
+sudo mkdir /usr/share/thecalculator
+
+copy Glades.glade to /usr/share/thecalculator
+copy main.py to /usr/share/thecalculator
+copy plot.py to /usr/share/thecalculator
+copy my_math.py to /usr/share/thecalculator
+copy transform_string.py to /usr/share/thecalculator
+copy directory logo to /usr/share/thecalculator/
+
+copy thecalculator-icon.png to /usr/share/pixmaps
+copy thecalculator.desktop to /usr/share/applications
+
+
+you can copy thecalculator.desktop to desktop if you want desktop icon
+
+You install your application to menu :)
+
+Uninstall
+
+sudo rm -rf /usr/share/thecalculator
+sudo rm -rf /usr/share/applications/thecalculator.desktop
+sudo rm -rf /usr/share/pixmaps/thecalculator-icon.png
