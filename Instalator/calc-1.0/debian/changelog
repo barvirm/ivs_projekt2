@@ -1,5 +1,0 @@
-calc (1.0-1) unstable; urgency=low
-
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
-
- -- Babek <xbabek01@stud.fit.vutbr.cz>  Sun, 24 Apr 2016 23:08:56 +0200

@@ -1,5 +1,0 @@
-You can change between mods in the top bar. You can change between Classic, Science, Programming, Plot, History and Autors.
-In history you can look on the previous calculation or you return on page where was this example solve, with history text in input.
-You can use keyboard or click on button in calculator.
-
-Plot - Solve equation on with one unknown, this parameters must be named X.
