@@ -1,0 +1,51 @@
+-Návrh testů
+	nikdy (David Bábek)
+	2 dny (Marek Barvíř) - Převzal práci
+
+-Návrh GUI 
+	1 den (Petr Malaník)
+	2 dny (Jakub Sochůrek)
+	6 dní (David Bábek) Nenahráno na git
+
+-Matematická knihovna
+	včas (Marek Barvíř)
+
+-GUI vzhled
+	včas (Petr Malaník)
+
+-Převod stringu
+	7 dní - první částečně funkční verze (Jakub Sochůrek)
+	7 dní - nefunkční verze (David Bábek)
+	14 dní - funkční verze (Jakub Sochůrek)
+	15 dní - částečně funkčí verze (David Bábek)
+
+-Převod stringu (testy)
+	včas (Petr Malaník)
+
+-Funkční GUI
+	včas (Petr Malaník)
+
+-Prototyp
+	včas (Petr Malaník)
+
+-PLOT
+	včas (Marek Barvíř, Petr Malaník)
+
+-History
+	včas (Petr Malaník)
+
+-Binární operace (Programátorská kalkulačka)
+	včas (Petr Malaník)
+	4 dny - refaktorizovaná verze + odladěny nedostatky (Petr Malaník,Marek Barvíř)
+
+-Dokumentace
+	včas (všichni) - pouzději pouze drobné úpravy
+
+-Instalátor
+	5 dní - částečně funkční (David Bábek)
+	5 dní - funkční (Marek Barvíř) - Převzal práci
+
+-Uživatelská dokumentace
+	4 dny (Jakub Sochůrek), částečná česká verze měla 1 den zpoždění
+
+
